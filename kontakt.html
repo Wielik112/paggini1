@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+
+  <title>Kontakt — Paggini</title>
+  <meta name="description" content="Skontaktuj się z Paggini — wypełnij formularz lub napisz na kontakt@paggini.com. Odpowiadamy zwykle w ciągu 24 godzin." />
+  <meta name="author" content="Paggini" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kontakt — Paggini" />
+  <meta property="og:description" content="Zbudujmy coś razem." />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:url" content="https://paggini.com/kontakt.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand" aria-label="Paggini — strona główna">
+        <img src="/assets/logo-badge-sm.png" alt="" class="nav__badge" />
+        <img src="/assets/wordmark.png" alt="Paggini" class="nav__wordmark" />
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="/uslugi.html" data-i18n="nav_services">Usługi</a>
+        <a href="/proces.html" data-i18n="nav_process">Proces</a>
+        <a href="/realizacje.html" data-i18n="nav_work">Realizacje</a>
+        <a href="/o-nas.html" data-i18n="nav_about">O nas</a>
+        <a href="/kontakt.html" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" id="lang">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+            <span id="langCurrent">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="menu">
+            <li><button data-lang="pl" role="menuitem">Polski</button></li>
+            <li><button data-lang="en" role="menuitem">English</button></li>
+            <li><button data-lang="de" role="menuitem">Deutsch</button></li>
+          </ul>
+        </div>
+        <a href="/kontakt.html" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
+        <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== CONTACT ===== -->
+    <section class="section section--first contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__info reveal">
+          <span class="section__tag" data-i18n="contact_tag">Kontakt</span>
+          <h1 class="section__title" data-i18n="contact_title">Zbudujmy coś razem</h1>
+          <p data-i18n="contact_lead">Wypełnij formularz lub napisz bezpośrednio. Wracamy z odpowiedzią zwykle w ciągu 24 godzin.</p>
+          <ul class="contact__list">
+            <li>
+              <span class="contact__ic">✉</span>
+              <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+            </li>
+            <li>
+              <span class="contact__ic">◎</span>
+              <span data-i18n="contact_area">Pracujemy zdalnie — z klientami z całej Europy</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <input type="text" id="name" name="name" required />
+            <label for="name" data-i18n="form_name">Imię i nazwisko</label>
+          </div>
+          <div class="field">
+            <input type="email" id="email" name="email" required />
+            <label for="email" data-i18n="form_email">Adres e-mail</label>
+          </div>
+          <div class="field">
+            <input type="text" id="subject" name="subject" />
+            <label for="subject" data-i18n="form_subject">Temat / rodzaj projektu</label>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="message" data-i18n="form_message">Twoja wiadomość</label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" data-magnetic><span data-i18n="form_send">Wyślij wiadomość</span></button>
+          <p class="form__note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/wordmark.png" alt="Paggini" class="footer__wordmark" />
+        <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4 data-i18n="footer_nav">Nawigacja</h4>
+          <a href="/uslugi.html" data-i18n="nav_services">Usługi</a>
+          <a href="/proces.html" data-i18n="nav_process">Proces</a>
+          <a href="/realizacje.html" data-i18n="nav_work">Realizacje</a>
+          <a href="/o-nas.html" data-i18n="nav_about">O nas</a>
+          <a href="/kontakt.html" data-i18n="nav_contact">Kontakt</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_services">Usługi</h4>
+          <a href="/uslugi.html" data-i18n="service_web_t">Strony internetowe</a>
+          <a href="/uslugi.html" data-i18n="service_shop_t">Sklepy online</a>
+          <a href="/uslugi.html" data-i18n="service_app_t">Aplikacje</a>
+          <a href="/uslugi.html" data-i18n="service_brand_t">Branding & UI/UX</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Kontakt</h4>
+          <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+          <a href="https://paggini.com">paggini.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Paggini. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer__made" data-i18n="footer_made">Zaprojektowane i zakodowane z pasją.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

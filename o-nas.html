@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#05060a" />
 
-  <title>Paggini — Strony internetowe, sklepy i aplikacje</title>
-  <meta name="description" content="Paggini projektuje i tworzy szybkie, estetyczne strony internetowe, sklepy online i aplikacje. Nowoczesny design, dopracowane animacje, technologia na najwyższym poziomie." />
+  <title>O nas — Paggini</title>
+  <meta name="description" content="Paggini to małe studio z wielką dbałością o detale — łączymy design z technologią i tworzymy każdy projekt od zera." />
   <meta name="author" content="Paggini" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Paggini — Strony, sklepy i aplikacje" />
-  <meta property="og:description" content="Projektujemy i tworzymy cyfrowe produkty klasy premium." />
+  <meta property="og:title" content="O nas — Paggini" />
+  <meta property="og:description" content="Małe studio. Wielka dbałość o detale." />
   <meta property="og:image" content="/assets/og-image.png" />
-  <meta property="og:url" content="https://paggini.com" />
+  <meta property="og:url" content="https://paggini.com/o-nas.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -30,25 +27,14 @@
 </head>
 <body>
 
-  <!-- ===== PRELOADER ===== -->
-  <div class="preloader" id="preloader">
-    <div class="preloader__inner">
-      <img src="/assets/wordmark.png" alt="Paggini" class="preloader__logo" />
-      <div class="preloader__bar"><span></span></div>
-    </div>
-  </div>
-
-  <!-- ===== CUSTOM CURSOR ===== -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
-  <!-- ===== ANIMATED BACKGROUND ===== -->
   <canvas class="bg-canvas" id="bgCanvas"></canvas>
   <div class="bg-glow bg-glow--1"></div>
   <div class="bg-glow bg-glow--2"></div>
   <div class="bg-grid"></div>
 
-  <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/" class="nav__brand" aria-label="Paggini — strona główna">
@@ -83,66 +69,47 @@
   </header>
 
   <main>
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="hero">
-      <div class="container hero__inner">
-        <div class="hero__badge reveal" data-i18n="hero_badge">✦ Cyfrowe studio kreatywne</div>
-        <img src="/assets/wordmark.png" alt="Paggini" class="hero__wordmark reveal" />
-        <h1 class="hero__title">
-          <span class="line"><span data-i18n="hero_title_1">Tworzymy strony,</span></span>
-          <span class="line"><span data-i18n="hero_title_2">sklepy i aplikacje</span></span>
-          <span class="line hero__title--accent"><span data-i18n="hero_title_3">warte milion.</span></span>
-        </h1>
-        <p class="hero__sub reveal" data-i18n="hero_sub">Projektujemy i budujemy cyfrowe produkty klasy premium — szybkie, estetyczne i dopracowane w każdym pikselu.</p>
-        <div class="hero__cta reveal">
-          <a href="/kontakt.html" class="btn btn--primary" data-magnetic><span data-i18n="hero_cta_1">Rozpocznij projekt</span></a>
-          <a href="/realizacje.html" class="btn btn--ghost" data-magnetic><span data-i18n="hero_cta_2">Zobacz realizacje</span></a>
+    <!-- ===== ABOUT ===== -->
+    <section class="section section--first about" id="about">
+      <div class="container about__inner">
+        <div class="about__text reveal">
+          <span class="section__tag" data-i18n="about_tag">O nas</span>
+          <h1 class="section__title" data-i18n="about_title">Małe studio. Wielka dbałość o detale.</h1>
+          <p data-i18n="about_p1">Paggini to zespół, który łączy design z technologią. Nie robimy szablonów z półki — każdy projekt tworzymy od zera, tak aby idealnie pasował do Twojej marki i celów.</p>
+          <p data-i18n="about_p2">Wierzymy, że dobra strona to nie tylko wygląd. To szybkość, wygoda, konwersja i efekt, który realnie pracuje na Twój biznes.</p>
+          <div class="about__features">
+            <div class="feature"><strong data-i18n="about_f1_t">Indywidualne podejście</strong><span data-i18n="about_f1_d">Kod i design szyte na miarę.</span></div>
+            <div class="feature"><strong data-i18n="about_f2_t">Nowoczesny stack</strong><span data-i18n="about_f2_d">Technologie, które są przyszłością.</span></div>
+            <div class="feature"><strong data-i18n="about_f3_t">Uczciwa komunikacja</strong><span data-i18n="about_f3_d">Jasne zasady, żadnych niespodzianek.</span></div>
+            <div class="feature"><strong data-i18n="about_f4_t">Wsparcie po wdrożeniu</strong><span data-i18n="about_f4_d">Jesteśmy z Tobą także później.</span></div>
+          </div>
+        </div>
+        <div class="about__visual reveal">
+          <div class="about__badge-wrap">
+            <img src="/assets/logo-badge-sm.png" alt="Paggini" class="about__badge" />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== MARQUEE ===== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>WEBSITES</span><span class="dot">✦</span><span>E-COMMERCE</span><span class="dot">✦</span><span>WEB APPS</span><span class="dot">✦</span><span>UI / UX DESIGN</span><span class="dot">✦</span><span>BRANDING</span><span class="dot">✦</span><span>SEO</span><span class="dot">✦</span>
-        <span>WEBSITES</span><span class="dot">✦</span><span>E-COMMERCE</span><span class="dot">✦</span><span>WEB APPS</span><span class="dot">✦</span><span>UI / UX DESIGN</span><span class="dot">✦</span><span>BRANDING</span><span class="dot">✦</span><span>SEO</span><span class="dot">✦</span>
-      </div>
-    </div>
-
-    <!-- ===== EXPLORE / SUBPAGES ===== -->
-    <section class="section explore" id="explore">
-      <div class="container">
-        <div class="section__head">
-          <span class="section__tag reveal" data-i18n="explore_tag">Odkryj Paggini</span>
-          <h2 class="section__title reveal" data-i18n="explore_title">Wszystko, czego potrzebujesz — na osobnych stronach</h2>
-          <p class="section__lead reveal" data-i18n="explore_lead">Przejdź prosto do tego, co Cię interesuje.</p>
+    <!-- ===== STATS ===== -->
+    <section class="section stats" id="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <span class="stat__label" data-i18n="stat_1">Zaangażowania w projekt</span>
         </div>
-
-        <div class="explore__grid">
-          <a class="nav-card reveal" href="/uslugi.html" data-tilt>
-            <span class="nav-card__num">01</span>
-            <h3 data-i18n="nav_services">Usługi</h3>
-            <p data-i18n="services_lead">Kompleksowo — od pomysłu i projektu, przez kod, aż po wdrożenie i rozwój.</p>
-            <span class="nav-card__go" data-i18n="explore_go">Zobacz →</span>
-          </a>
-          <a class="nav-card reveal" href="/proces.html" data-tilt>
-            <span class="nav-card__num">02</span>
-            <h3 data-i18n="nav_process">Proces</h3>
-            <p data-i18n="process_title">Prosty proces, świetny efekt</p>
-            <span class="nav-card__go" data-i18n="explore_go">Zobacz →</span>
-          </a>
-          <a class="nav-card reveal" href="/realizacje.html" data-tilt>
-            <span class="nav-card__num">03</span>
-            <h3 data-i18n="nav_work">Realizacje</h3>
-            <p data-i18n="work_lead">Pełne portfolio już wkrótce — oto kierunek, w którym tworzymy.</p>
-            <span class="nav-card__go" data-i18n="explore_go">Zobacz →</span>
-          </a>
-          <a class="nav-card reveal" href="/o-nas.html" data-tilt>
-            <span class="nav-card__num">04</span>
-            <h3 data-i18n="nav_about">O nas</h3>
-            <p data-i18n="about_title">Małe studio. Wielka dbałość o detale.</p>
-            <span class="nav-card__go" data-i18n="explore_go">Zobacz →</span>
-          </a>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="24" data-suffix="/7">0</span>
+          <span class="stat__label" data-i18n="stat_2">Kontakt i wsparcie</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="99" data-suffix="+">0</span>
+          <span class="stat__label" data-i18n="stat_3">Punktów PageSpeed</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <span class="stat__label" data-i18n="stat_4">Responsywność</span>
         </div>
       </div>
     </section>
@@ -157,7 +124,6 @@
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
@@ -193,7 +159,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="/js/i18n.js"></script>
   <script src="/js/main.js"></script>
