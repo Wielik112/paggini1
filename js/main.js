@@ -13,51 +13,46 @@
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Preloader ---------- */
-  window.addEventListener("load", () => {
-    const pl = $("#preloader");
-    if (!pl) return;
+  /* ---------- Preloader (only present on the home page) ---------- */
+  const preloader = $("#preloader");
+  if (preloader) {
+    document.body.style.overflow = "hidden";
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        preloader.classList.add("is-done");
+        document.body.style.overflow = "";
+        startHeroIntro();
+      }, prefersReduced ? 200 : 1400);
+    });
+    // safety: never lock scroll forever
     setTimeout(() => {
-      pl.classList.add("is-done");
-      document.body.style.overflow = "";
-      startHeroIntro();
-    }, prefersReduced ? 200 : 1400);
-  });
-  document.body.style.overflow = "hidden";
-  // safety: never lock scroll forever
-  setTimeout(() => {
-    const pl = $("#preloader");
-    if (pl && !pl.classList.contains("is-done")) {
-      pl.classList.add("is-done");
-      document.body.style.overflow = "";
-      startHeroIntro();
-    }
-  }, 3500);
-
-  /* ---------- Lenis smooth scroll ---------- */
-  let lenis = null;
-  if (window.Lenis && !prefersReduced) {
-    lenis = new Lenis({ duration: 1.1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-    if (window.gsap && window.ScrollTrigger) {
-      lenis.on("scroll", ScrollTrigger.update);
-    }
+      if (!preloader.classList.contains("is-done")) {
+        preloader.classList.add("is-done");
+        document.body.style.overflow = "";
+        startHeroIntro();
+      }
+    }, 3500);
+  } else {
+    // no preloader on subpages — run the hero intro right away if a hero exists
+    window.addEventListener("load", startHeroIntro);
   }
 
-  /* ---------- Anchor smooth scroll ---------- */
-  $$('a[href^="#"]').forEach((a) => {
-    a.addEventListener("click", (e) => {
-      const id = a.getAttribute("href");
-      if (id === "#" || id.length < 2) return;
-      const target = document.querySelector(id);
-      if (!target) return;
-      e.preventDefault();
-      closeMobileMenu();
-      if (lenis) lenis.scrollTo(target, { offset: -70 });
-      else target.scrollIntoView({ behavior: "smooth", block: "start" });
+  /* ---------- Active nav link (current subpage) ---------- */
+  (function markActiveNav() {
+    // normalize a path so "/uslugi", "/uslugi.html" and "/uslugi/" all match
+    const norm = (p) => {
+      p = (p || "").split("?")[0].split("#")[0];
+      p = p.replace(/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "");
+      return p === "" ? "/" : p;
+    };
+    const path = norm(window.location.pathname);
+    $$("#navLinks a").forEach((a) => {
+      if (norm(a.getAttribute("href")) === path) {
+        a.classList.add("is-active");
+        a.setAttribute("aria-current", "page");
+      }
     });
-  });
+  })();
 
   /* ---------- Nav scroll state ---------- */
   const nav = $("#nav");
@@ -161,6 +156,7 @@
 
   /* ---------- Hero intro (GSAP) ---------- */
   function startHeroIntro() {
+    if (!document.querySelector(".hero")) return;
     if (prefersReduced || !window.gsap) {
       $$(".hero__title .line > span").forEach((s) => (s.style.transform = "translateY(0)"));
       return;
@@ -170,8 +166,7 @@
       .from(".hero__badge", { y: 20, opacity: 0, duration: 0.6 }, "-=0.9")
       .from(".hero__wordmark", { y: 30, opacity: 0, duration: 0.8 }, "-=0.7")
       .from(".hero__sub", { y: 20, opacity: 0, duration: 0.6 }, "-=0.6")
-      .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5")
-      .from(".hero__scroll", { opacity: 0, duration: 0.6 }, "-=0.3");
+      .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
   }
 
   /* ---------- Counters ---------- */

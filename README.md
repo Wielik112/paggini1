@@ -7,17 +7,27 @@ Wielojęzyczna (PL / EN / DE, auto-wykrywanie języka), lekka, bez frameworka i 
 
 ```
 paggini/
-├── index.html          # cała strona (jedna sekcja = jeden blok)
+├── index.html          # strona główna (hero + odnośniki do podstron)
+├── uslugi.html         # podstrona: Usługi
+├── proces.html         # podstrona: Proces
+├── realizacje.html     # podstrona: Realizacje
+├── o-nas.html          # podstrona: O nas + statystyki
+├── kontakt.html        # podstrona: Kontakt (formularz)
 ├── css/
 │   └── style.css       # style, animacje, responsywność
 ├── js/
 │   ├── i18n.js         # tłumaczenia PL/EN/DE + logika języka
-│   └── main.js         # animacje, kursor, smooth scroll, formularz
+│   └── main.js         # animacje, kursor, nawigacja, formularz
 ├── assets/             # logo, favicon, obrazy OG
-├── vercel.json         # konfiguracja Vercel (nagłówki, cache)
+├── vercel.json         # konfiguracja Vercel (nagłówki, cache, cleanUrls)
+├── sitemap.xml         # mapa strony (wszystkie podstrony)
 ├── robots.txt
 └── .gitignore
 ```
+
+> **Struktura wielostronicowa.** Zamiast jednego długiego przewijania każda
+> sekcja ma własną podstronę. Nawigacja w nagłówku i stopce prowadzi do
+> osobnych adresów (`/uslugi`, `/proces`, `/realizacje`, `/o-nas`, `/kontakt`).
 
 ## 🚀 Wdrożenie — GitHub + Vercel
 
@@ -56,7 +66,7 @@ Strona automatycznie wykrywa język przeglądarki/systemu. Domyślny: **polski**
 Użytkownik może zmienić język w prawym górnym rogu (PL / EN / DE) — wybór jest zapamiętywany.
 
 ## 🛠 Technologie
-Czysty HTML + CSS + JavaScript. Animacje: [GSAP](https://gsap.com) + [Lenis](https://lenis.darkroom.engineering) (z CDN).
+Czysty HTML + CSS + JavaScript. Animacje: [GSAP](https://gsap.com) (z CDN).
 Fonty: Sora + Inter (Google Fonts).
 
 ---

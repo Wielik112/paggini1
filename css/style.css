@@ -40,9 +40,7 @@
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
+html { -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
@@ -190,6 +188,8 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 }
 .nav__links a:hover { color: var(--text); }
 .nav__links a:hover::after { width: 100%; }
+.nav__links a.is-active { color: var(--text); }
+.nav__links a.is-active::after { width: 100%; }
 
 .nav__right { display: flex; align-items: center; gap: 16px; }
 
@@ -251,15 +251,6 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .hero__sub { max-width: 620px; font-size: clamp(1rem, 2vw, 1.22rem); color: var(--text-dim); margin-bottom: 40px; }
 .hero__cta { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
-.hero__scroll {
-  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-faint);
-}
-.hero__scroll-line { width: 1px; height: 46px; background: linear-gradient(var(--blue), transparent); position: relative; overflow: hidden; }
-.hero__scroll-line::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 40%; background: var(--blue-bright); animation: scrollLine 1.8s var(--ease) infinite; }
-@keyframes scrollLine { 0% { transform: translateY(-100%);} 100% { transform: translateY(250%);} }
-
 /* ============================================================
    MARQUEE
    ============================================================ */
@@ -278,6 +269,8 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
    SECTION SHARED
    ============================================================ */
 .section { padding: clamp(80px, 12vw, 150px) 0; position: relative; }
+/* first section on a subpage — clear the fixed nav */
+.section--first { padding-top: calc(var(--nav-h) + clamp(48px, 8vw, 96px)); }
 .section__head { max-width: 720px; margin: 0 auto 64px; text-align: center; }
 .section__tag {
   display: inline-block; font-family: "Sora", sans-serif; font-size: 0.8rem; font-weight: 600;
@@ -322,6 +315,35 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   content: ""; position: absolute; left: 0; top: 8px; width: 10px; height: 10px; border-radius: 50%;
   background: var(--grad-blue); box-shadow: 0 0 10px rgba(47,128,255,0.6);
 }
+
+/* ============================================================
+   EXPLORE (home subpage navigation cards)
+   ============================================================ */
+.explore__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.nav-card {
+  position: relative; display: flex; flex-direction: column; padding: 34px 28px;
+  border-radius: var(--radius); min-height: 230px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+  border: 1px solid var(--border); overflow: hidden; color: var(--text);
+  transition: transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+  will-change: transform;
+}
+.nav-card::before {
+  content: ""; position: absolute; inset: 0; border-radius: var(--radius); padding: 1px;
+  background: linear-gradient(135deg, rgba(47,128,255,0.6), transparent 40%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0; transition: opacity .4s var(--ease);
+}
+.nav-card:hover { transform: translateY(-8px); border-color: transparent; box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 40px rgba(47,128,255,0.12); }
+.nav-card:hover::before { opacity: 1; }
+.nav-card__num {
+  font-family: "Sora", sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--blue-bright); margin-bottom: 18px;
+}
+.nav-card h3 { font-size: 1.28rem; margin-bottom: 12px; }
+.nav-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
+.nav-card__go { margin-top: auto; font-weight: 600; color: var(--blue-bright); font-size: 0.95rem; }
 
 /* ============================================================
    PROCESS
@@ -494,6 +516,7 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
    ============================================================ */
 @media (max-width: 980px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .explore__grid { grid-template-columns: repeat(2, 1fr); }
   .process__grid { grid-template-columns: repeat(2, 1fr); }
   .about__inner { grid-template-columns: 1fr; gap: 40px; }
   .about__visual { order: -1; }
@@ -523,7 +546,7 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 }
 
 @media (max-width: 520px) {
-  .services__grid, .process__grid { grid-template-columns: 1fr; }
+  .services__grid, .explore__grid, .process__grid { grid-template-columns: 1fr; }
   .footer__cols { grid-template-columns: 1fr; }
   .contact__form { padding: 26px 20px; }
   .container { padding: 0 20px; }
