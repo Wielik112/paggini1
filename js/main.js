@@ -1,5 +1,5 @@
 /* ============================================================
-   PAGGINI — main.js  (interactions & animations)
+   PAGGINI, main.js  (interactions & animations)
    ============================================================ */
 (function () {
   "use strict";
@@ -33,7 +33,7 @@
       }
     }, 3500);
   } else {
-    // no preloader on subpages — run the hero intro right away if a hero exists
+    // no preloader on subpages, run the hero intro right away if a hero exists
     window.addEventListener("load", startHeroIntro);
   }
 
@@ -84,40 +84,6 @@
     document.addEventListener("click", () => {
       lang.classList.remove("is-open");
       langBtn.setAttribute("aria-expanded", "false");
-    });
-  }
-
-  /* ---------- Custom cursor ---------- */
-  if (!isTouch) {
-    const cursor = $("#cursor");
-    const dot = $("#cursorDot");
-    let mx = 0, my = 0, cx = 0, cy = 0;
-    window.addEventListener("mousemove", (e) => {
-      mx = e.clientX; my = e.clientY;
-      if (dot) { dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`; }
-    });
-    function loop() {
-      cx += (mx - cx) * 0.18; cy += (my - cy) * 0.18;
-      if (cursor) cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-      requestAnimationFrame(loop);
-    }
-    loop();
-    $$("a, button, [data-magnetic], .card, .project, input, textarea").forEach((el) => {
-      el.addEventListener("mouseenter", () => cursor && cursor.classList.add("is-hover"));
-      el.addEventListener("mouseleave", () => cursor && cursor.classList.remove("is-hover"));
-    });
-  }
-
-  /* ---------- Magnetic buttons ---------- */
-  if (!isTouch && !prefersReduced) {
-    $$("[data-magnetic]").forEach((el) => {
-      el.addEventListener("mousemove", (e) => {
-        const r = el.getBoundingClientRect();
-        const x = e.clientX - r.left - r.width / 2;
-        const y = e.clientY - r.top - r.height / 2;
-        el.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
-      });
-      el.addEventListener("mouseleave", () => { el.style.transform = ""; });
     });
   }
 
@@ -215,7 +181,7 @@
         return;
       }
       // Demo: open a prefilled email. Replace with real backend/Formspree later.
-      const subject = encodeURIComponent(($("#subject").value.trim()) || "Nowe zapytanie — Paggini");
+      const subject = encodeURIComponent(($("#subject").value.trim()) || "Nowe zapytanie, Paggini");
       const body = encodeURIComponent(`Imię: ${name}\nE-mail: ${email}\n\n${msg}`);
       window.location.href = `mailto:kontakt@paggini.com?subject=${subject}&body=${body}`;
       note.textContent = (window.t ? t("form_ok") : "Dziękujemy!");
