@@ -129,7 +129,6 @@
     }
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
     tl.from(".hero__title .line > span", { yPercent: 120, duration: 1, stagger: 0.12 })
-      .from(".hero__badge", { y: 20, opacity: 0, duration: 0.6 }, "-=0.9")
       .from(".hero__wordmark", { y: 30, opacity: 0, duration: 0.8 }, "-=0.7")
       .from(".hero__sub", { y: 20, opacity: 0, duration: 0.6 }, "-=0.6")
       .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
