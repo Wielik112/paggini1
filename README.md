@@ -7,8 +7,9 @@ Wielojęzyczna (PL / EN / DE, auto-wykrywanie języka), lekka, bez frameworka i 
 
 ```
 paggini/
-├── index.html          # strona główna (hero + odnośniki do podstron)
+├── index.html          # strona główna (pełna treść wszystkich sekcji)
 ├── uslugi.html         # podstrona: Usługi
+├── oferta.html         # podstrona: Oferta / cennik (3 pakiety)
 ├── proces.html         # podstrona: Proces
 ├── realizacje.html     # podstrona: Realizacje
 ├── o-nas.html          # podstrona: O nas + statystyki
@@ -25,9 +26,16 @@ paggini/
 └── .gitignore
 ```
 
-> **Struktura wielostronicowa.** Zamiast jednego długiego przewijania każda
-> sekcja ma własną podstronę. Nawigacja w nagłówku i stopce prowadzi do
-> osobnych adresów (`/uslugi`, `/proces`, `/realizacje`, `/o-nas`, `/kontakt`).
+> **Strona główna + podstrony.** Strona główna (`/`) zawiera pełną treść
+> wszystkich sekcji (usługi, oferta, proces, realizacje, o nas, kontakt).
+> Każda sekcja ma dodatkowo własną podstronę — nawigacja w nagłówku i stopce
+> prowadzi wprost do osobnych adresów (`/uslugi`, `/oferta`, `/proces`,
+> `/realizacje`, `/o-nas`, `/kontakt`), więc klient szukający konkretnej
+> rzeczy trafia od razu na dedykowaną stronę.
+>
+> **Oferta / cennik.** Trzy pakiety: **Landing page — 1000 zł**,
+> **Podstawowy sklep — 2000 zł** oraz **Pozostałe projekty — wycena
+> indywidualna**. Treść pakietów edytujesz w `js/i18n.js` (klucze `price_*`).
 
 ## 🚀 Wdrożenie — GitHub + Vercel
 
