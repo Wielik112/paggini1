@@ -161,6 +161,36 @@
     $$(".stat__num").forEach((el) => animateCount(el));
   }
 
+  /* ---------- Price count-up (pricing cards) ---------- */
+  function fmtThousands(n) {
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+  function animatePrice(el) {
+    const target = parseInt(el.getAttribute("data-count"), 10) || 0;
+    if (prefersReduced) { el.textContent = fmtThousands(target) + " zł"; return; }
+    const dur = 1400, start = performance.now();
+    function tick(now) {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmtThousands(Math.round(target * eased)) + " zł";
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const priceNums = $$(".price__num");
+  if (priceNums.length) {
+    if ("IntersectionObserver" in window) {
+      const pio = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { animatePrice(entry.target); pio.unobserve(entry.target); }
+        });
+      }, { threshold: 0.6 });
+      priceNums.forEach((el) => pio.observe(el));
+    } else {
+      priceNums.forEach((el) => animatePrice(el));
+    }
+  }
+
   /* ---------- Contact form (client-side demo) ---------- */
   const form = $("#contactForm");
   if (form) {
