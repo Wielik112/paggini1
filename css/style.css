@@ -1,5 +1,5 @@
 /* ============================================================
-   PAGGINI — Premium landing page
+   PAGGINI, Premium landing page
    ============================================================ */
 
 /* ---------- Design tokens ---------- */
@@ -254,7 +254,7 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
    SECTION SHARED
    ============================================================ */
 .section { padding: clamp(80px, 12vw, 150px) 0; position: relative; }
-/* first section on a subpage — clear the fixed nav */
+/* first section on a subpage, clear the fixed nav */
 .section--first { padding-top: calc(var(--nav-h) + clamp(48px, 8vw, 96px)); }
 .section__head { max-width: 720px; margin: 0 auto 64px; text-align: center; }
 .section__tag {
