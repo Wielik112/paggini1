@@ -191,13 +191,15 @@
     }
   }
 
-  /* ---------- Contact form (client-side demo) ---------- */
+  /* ---------- Contact form (Formspree) ---------- */
   const form = $("#contactForm");
   if (form) {
     // required placeholders so floating labels work
     $$("input, textarea", form).forEach((f) => f.setAttribute("placeholder", " "));
     const note = $("#formNote");
-    form.addEventListener("submit", (e) => {
+    const submitBtn = $("button[type=submit]", form);
+    const tr = (key, fallback) => (window.t ? t(key) : fallback);
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = $("#name").value.trim();
       const email = $("#email").value.trim();
@@ -205,17 +207,41 @@
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       note.className = "form__note";
       if (!name || !emailOk || !msg) {
-        note.textContent = (window.t ? t("form_err") : "Uzupełnij wymagane pola.");
+        note.textContent = tr("form_err", "Uzupełnij poprawnie wymagane pola.");
         note.classList.add("is-err");
         return;
       }
-      // Demo: open a prefilled email. Replace with real backend/Formspree later.
-      const subject = encodeURIComponent(($("#subject").value.trim()) || "Nowe zapytanie, Paggini");
-      const body = encodeURIComponent(`Imię: ${name}\nE-mail: ${email}\n\n${msg}`);
-      window.location.href = `mailto:kontakt@paggini.com?subject=${subject}&body=${body}`;
-      note.textContent = (window.t ? t("form_ok") : "Dziękujemy!");
-      note.classList.add("is-ok");
-      form.reset();
+
+      note.textContent = tr("form_sending", "Wysyłanie…");
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        note.className = "form__note";
+        if (res.ok) {
+          note.textContent = tr("form_ok", "Dziękujemy! Wiadomość została wysłana.");
+          note.classList.add("is-ok");
+          form.reset();
+        } else {
+          let detail = "";
+          try {
+            const data = await res.json();
+            if (data && Array.isArray(data.errors)) detail = data.errors.map((x) => x.message).join(" ");
+          } catch (_) {}
+          note.textContent = detail || tr("form_err_send", "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na kontakt@paggini.com.");
+          note.classList.add("is-err");
+        }
+      } catch (_) {
+        note.className = "form__note";
+        note.textContent = tr("form_err_send", "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na kontakt@paggini.com.");
+        note.classList.add("is-err");
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 
