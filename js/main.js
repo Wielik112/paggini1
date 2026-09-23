@@ -128,11 +128,41 @@
       return;
     }
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-    tl.from(".hero__title .line > span", { yPercent: 120, duration: 1, stagger: 0.12 })
-      .from(".hero__wordmark", { y: 30, opacity: 0, duration: 0.8 }, "-=0.7")
+    tl.from(".hero__ghost", { opacity: 0, scale: 1.12, y: 40, filter: "blur(14px)", duration: 1.6, ease: "power3.out", clearProps: "filter,transform" })
+      .from(".hero__title .line > span", { yPercent: 120, duration: 1, stagger: 0.12 }, "-=1.3")
       .from(".hero__sub", { y: 20, opacity: 0, duration: 0.6 }, "-=0.6")
       .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
   }
+
+  /* ---------- Hero: cursor spotlight, parallax PAGGINI, scroll drift ---------- */
+  (function heroMotion() {
+    const hero = $(".hero");
+    if (!hero || prefersReduced) return;
+    if (!isTouch) {
+      hero.addEventListener("mousemove", (e) => {
+        const r = hero.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        hero.style.setProperty("--mx", (x * 100).toFixed(1) + "%");
+        hero.style.setProperty("--my", (y * 100).toFixed(1) + "%");
+        hero.style.setProperty("--px", (x - 0.5).toFixed(3));
+        hero.style.setProperty("--py", (y - 0.5).toFixed(3));
+      });
+      hero.addEventListener("mouseleave", () => {
+        hero.style.setProperty("--px", 0);
+        hero.style.setProperty("--py", 0);
+      });
+    }
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY, window.innerHeight);
+        hero.style.setProperty("--sy", (y * 0.35).toFixed(1) + "px");
+        ticking = false;
+      });
+    }, { passive: true });
+  })();
 
   /* ---------- Counters ---------- */
   function animateCount(el) {
