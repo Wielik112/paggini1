@@ -758,6 +758,43 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   .container { padding: 0 20px; }
 }
 
+/* Phones & touch devices: keep the look, drop the GPU-heavy effects.
+   Animated blur() filters, backdrop-filter, full-screen canvas and
+   repainting background animations are what make mobile scrolling stutter. */
+@media (max-width: 760px), (hover: none) and (pointer: coarse) {
+  /* glows: the radial gradients are already soft, no need for blur() + motion */
+  .bg-glow { filter: none; animation: none; opacity: 0.45; }
+  .bg-glow--1 { width: 460px; height: 460px; }
+  .bg-glow--2 { width: 380px; height: 380px; }
+  .bg-canvas { display: none; }
+
+  /* hero aura: static soft radial instead of a blurred spinning conic gradient */
+  .hero__aura {
+    filter: none; animation: none; opacity: 0.7;
+    background: radial-gradient(circle, rgba(47,128,255,0.28), rgba(10,75,255,0.1) 40%, transparent 68%);
+  }
+  .hero::before { display: none; }
+  .hero__ghost { filter: none; }
+  .hero__ghost-text { animation: none; transform: none; transition: none; }
+  .hero__title .hero__title--accent > span { animation: none; background-position: 0 0; }
+
+  /* frosted glass is very expensive on mobile GPUs, use solid backgrounds */
+  .nav.is-scrolled { background: rgba(5,6,10,0.94); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav__links { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .lang__menu { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .btn--ghost, .project__soon { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+  /* don't keep dozens of cards on their own compositor layers */
+  .btn, .card, .nav-card, .price, .project { will-change: auto; }
+
+  .about__badge { filter: none; }
+  .cta__inner::before { filter: none; background: radial-gradient(circle, rgba(47,128,255,0.3), transparent 60%); }
+  .price--featured::after { animation: none; opacity: 0.8; }
+
+  /* lighter, shorter reveal */
+  .reveal { transform: translateY(18px); transition-duration: .6s; }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }

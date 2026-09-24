@@ -6,6 +6,8 @@
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  // phones / tablets get a lighter version of the heavy visual effects
+  const isLite = isTouch || window.matchMedia("(max-width: 760px)").matches;
   const $ = (s, ctx = document) => ctx.querySelector(s);
   const $$ = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
 
@@ -22,7 +24,7 @@
         preloader.classList.add("is-done");
         document.body.style.overflow = "";
         startHeroIntro();
-      }, prefersReduced ? 200 : 1400);
+      }, prefersReduced ? 200 : isLite ? 700 : 1400);
     });
     // safety: never lock scroll forever
     setTimeout(() => {
@@ -128,7 +130,11 @@
       return;
     }
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-    tl.from(".hero__ghost", { opacity: 0, scale: 1.12, y: 40, filter: "blur(14px)", duration: 1.6, ease: "power3.out", clearProps: "filter,transform" })
+    // animating filter: blur() is very slow on phones, so fade + scale only there
+    const ghostFrom = isLite
+      ? { opacity: 0, scale: 1.06, y: 24, duration: 1.2, ease: "power3.out", clearProps: "transform" }
+      : { opacity: 0, scale: 1.12, y: 40, filter: "blur(14px)", duration: 1.6, ease: "power3.out", clearProps: "filter,transform" };
+    tl.from(".hero__ghost", ghostFrom)
       .from(".hero__title .line > span", { yPercent: 120, duration: 1, stagger: 0.12 }, "-=1.3")
       .from(".hero__sub", { y: 20, opacity: 0, duration: 0.6 }, "-=0.6")
       .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
@@ -137,21 +143,20 @@
   /* ---------- Hero: cursor spotlight, parallax PAGGINI, scroll drift ---------- */
   (function heroMotion() {
     const hero = $(".hero");
-    if (!hero || prefersReduced) return;
-    if (!isTouch) {
-      hero.addEventListener("mousemove", (e) => {
-        const r = hero.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-        hero.style.setProperty("--mx", (x * 100).toFixed(1) + "%");
-        hero.style.setProperty("--my", (y * 100).toFixed(1) + "%");
-        hero.style.setProperty("--px", (x - 0.5).toFixed(3));
-        hero.style.setProperty("--py", (y - 0.5).toFixed(3));
-      });
-      hero.addEventListener("mouseleave", () => {
-        hero.style.setProperty("--px", 0);
-        hero.style.setProperty("--py", 0);
-      });
-    }
+    // on phones the parallax/drift causes style recalcs on every scroll frame, skip it
+    if (!hero || prefersReduced || isLite) return;
+    hero.addEventListener("mousemove", (e) => {
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      hero.style.setProperty("--mx", (x * 100).toFixed(1) + "%");
+      hero.style.setProperty("--my", (y * 100).toFixed(1) + "%");
+      hero.style.setProperty("--px", (x - 0.5).toFixed(3));
+      hero.style.setProperty("--py", (y - 0.5).toFixed(3));
+    });
+    hero.addEventListener("mouseleave", () => {
+      hero.style.setProperty("--px", 0);
+      hero.style.setProperty("--py", 0);
+    });
     let ticking = false;
     window.addEventListener("scroll", () => {
       if (ticking) return;
@@ -278,7 +283,8 @@
   /* ---------- Animated particle background ---------- */
   (function particles() {
     const canvas = $("#bgCanvas");
-    if (!canvas || prefersReduced) return;
+    // full-screen canvas redrawn every frame is the biggest drain on phones
+    if (!canvas || prefersReduced || isLite) return;
     const ctx = canvas.getContext("2d");
     let w, h, dots, raf;
     const COUNT = window.innerWidth < 700 ? 34 : 66;
@@ -321,6 +327,11 @@
       raf = requestAnimationFrame(draw);
     }
     resize(); init(); draw();
+    // stop drawing while the tab is in the background
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) { cancelAnimationFrame(raf); raf = null; }
+      else if (!raf) draw();
+    });
     let rt;
     window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { resize(); init(); }, 200); });
   })();
