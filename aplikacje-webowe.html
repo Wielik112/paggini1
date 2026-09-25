@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+
+  <title>Aplikacje webowe i systemy dedykowane dla firm · Paggini</title>
+  <meta name="description" content="Aplikacje webowe i systemy dedykowane dla firm od 8 000 zł netto: CRM, portale klienta, systemy rezerwacji, dashboardy i integracje API. Zbudowane wokół Twoich procesów." />
+  <meta name="author" content="Paggini" />
+  <link rel="canonical" href="https://paggini.com/aplikacje-webowe" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Paggini" />
+  <meta property="og:title" content="Aplikacje webowe i systemy dedykowane · Paggini" />
+  <meta property="og:description" content="Aplikacje webowe i systemy dedykowane dla firm od 8 000 zł netto: CRM, portale klienta, systemy rezerwacji, dashboardy i integracje API. Zbudowane wokół Twoich procesów." />
+  <meta property="og:image" content="https://paggini.com/assets/og-image.png" />
+  <meta property="og:url" content="https://paggini.com/aplikacje-webowe" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://paggini.com/#organization",
+      "name": "Paggini",
+      "url": "https://paggini.com/",
+      "logo": "https://paggini.com/assets/logo-mark.png",
+      "image": "https://paggini.com/assets/og-image.png",
+      "email": "kontakt@paggini.com",
+      "telephone": "+48532237578",
+      "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
+      ],
+      "knowsLanguage": [
+        "pl",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paggini",
+          "item": "https://paggini.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Usługi",
+          "item": "https://paggini.com/uslugi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Aplikacje webowe",
+          "item": "https://paggini.com/aplikacje-webowe"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://paggini.com/aplikacje-webowe#service",
+      "name": "Aplikacje webowe i systemy dedykowane",
+      "serviceType": "Tworzenie oprogramowania dedykowanego",
+      "description": "Aplikacje webowe i systemy dedykowane dla firm od 8 000 zł netto: CRM, portale klienta, systemy rezerwacji, dashboardy i integracje API. Zbudowane wokół Twoich procesów.",
+      "url": "https://paggini.com/aplikacje-webowe",
+      "provider": {
+        "@id": "https://paggini.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PLN",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 8000,
+          "priceCurrency": "PLN",
+          "valueAddedTaxIncluded": false
+        }
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
+        <img src="/assets/wordmark.png" alt="Paggini" class="nav__wordmark" />
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+        <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+        <a href="/proces" data-i18n="nav_process">Proces</a>
+        <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+        <a href="/o-nas" data-i18n="nav_about">O nas</a>
+        <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" id="lang">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+            <span id="langCurrent">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="menu">
+            <li><button data-lang="pl" role="menuitem">Polski</button></li>
+            <li><button data-lang="en" role="menuitem">English</button></li>
+            <li><button data-lang="de" role="menuitem">Deutsch</button></li>
+          </ul>
+        </div>
+        <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
+        <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--first">
+      <div class="container">
+        <nav class="crumbs" aria-label="Ścieżka nawigacji"><a href="/">Paggini</a> <span aria-hidden="true">/</span> <a href="/uslugi">Usługi</a> <span aria-hidden="true">/</span> <span aria-current="page">Aplikacje webowe</span></nav>
+        <div class="page-head">
+          <span class="section__tag reveal">Aplikacje webowe</span>
+          <h1 class="section__title reveal">Aplikacje webowe i systemy szyte pod Twoją firmę</h1>
+          <p class="section__lead reveal">CRM, portal klienta, system rezerwacji, panel do zarządzania zleceniami. Budujemy oprogramowanie wokół tego, jak naprawdę pracuje Twój zespół, zamiast dopasowywać firmę do gotowego narzędzia.</p>
+          <div class="page-head__cta reveal">
+            <a href="/kontakt" class="btn btn--primary"><span>Porozmawiajmy o projekcie</span></a>
+            <a href="/oferta" class="btn btn--ghost"><span>Zobacz cennik</span></a>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact reveal"><strong>od 8 000 zł</strong><span>netto, zakres ustalamy przed startem</span></div>
+          <div class="fact reveal"><strong>Kod na własność</strong><span>bez opłat licencyjnych za użytkownika</span></div>
+          <div class="fact reveal"><strong>Web + mobile</strong><span>jedno API dla przeglądarki i aplikacji</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content">
+      <div class="container content__layout">
+        <article class="prose">
+          <h2 id="kiedy">Kiedy firma potrzebuje własnej aplikacji</h2>
+          <p>Własny system nie jest dla każdego. Ma sens, gdy widzisz u siebie co najmniej jeden z tych sygnałów:</p>
+          <ul>
+            <li>kluczowy proces firmy żyje w arkuszach Excela, mailach i komunikatorze, a informacje giną między nimi,</li>
+            <li>płacisz za kilka narzędzi SaaS, które się ze sobą nie łączą, i ktoś ręcznie przepisuje dane z jednego do drugiego,</li>
+            <li>opłaty „za użytkownika” w gotowym narzędziu rosną szybciej niż firma,</li>
+            <li>gotowe rozwiązania robią 80% tego, czego potrzebujesz, a brakujące 20% to akurat to, co wyróżnia Twoją firmę,</li>
+            <li>chcesz dać klientom lub partnerom dostęp do ich danych (zamówień, dokumentów, statusów) bez dzwonienia do biura.</li>
+          </ul>
+          <p>Jeśli gotowe narzędzie za kilkadziesiąt złotych miesięcznie rozwiązuje Twój problem, powiemy to wprost. Dedykowany system to inwestycja, która ma się zwrócić w oszczędzonym czasie albo w nowych możliwościach sprzedaży.</p>
+
+          <h2 id="przyklady">Co budujemy</h2>
+          <ul>
+            <li><strong>Portale klienta</strong>: klient loguje się i widzi swoje zamówienia, faktury, dokumenty, status zlecenia.</li>
+            <li><strong>CRM i obsługa leadów</strong>: zapytania z formularzy, telefonów i maili w jednym miejscu, z przypisaniem do handlowca i historią kontaktu.</li>
+            <li><strong>Systemy rezerwacji i harmonogramy</strong>: terminy, grafiki pracowników, przypomnienia SMS/e-mail, płatności za rezerwację.</li>
+            <li><strong>Dashboardy i panele administracyjne</strong>: dane z kilku źródeł zebrane w jednym widoku, raporty bez ręcznego liczenia.</li>
+            <li><strong>Automatyzacja procesów</strong>: obieg dokumentów, akceptacje, generowanie ofert i umów z szablonów.</li>
+            <li><strong>Backend i API</strong>: gdy potrzebujesz tylko „silnika” dla aplikacji mobilnej, sklepu lub integracji między systemami (od 8 000 zł netto).</li>
+          </ul>
+
+          <h2 id="jak-zaczynamy">Jak zaczynamy: najpierw zakres, potem kod</h2>
+          <p>Najdroższy błąd w projektach IT to budowanie nie tego, czego firma potrzebuje. Dlatego zanim napiszemy pierwszą linijkę kodu:</p>
+          <ol>
+            <li><strong>Rozmawiamy z osobami, które będą z systemu korzystać</strong>, a nie tylko z zarządem. Rozrysowujemy obecny proces krok po kroku.</li>
+            <li><strong>Definiujemy pierwszą wersję (MVP)</strong>: najmniejszy zakres, który rozwiązuje główny problem i da się szybko wdrożyć.</li>
+            <li><strong>Dostajesz zakres i wycenę na piśmie</strong>: listę funkcji, ekranów i integracji. Bez niespodzianek w trakcie.</li>
+            <li><strong>Budujemy iteracyjnie</strong>: pokazujemy działające fragmenty w trakcie prac, żeby korygować kierunek wcześnie, a nie po oddaniu całości.</li>
+          </ol>
+          <p>Kolejne funkcje dokładamy, gdy pierwsza wersja już pracuje i wiadomo, czego naprawdę brakuje.</p>
+
+          <h2 id="bezpieczenstwo">Bezpieczeństwo, dane i RODO</h2>
+          <p>Systemy firmowe przetwarzają dane klientów i pracowników, więc od początku projektujemy je z myślą o bezpieczeństwie: role i uprawnienia (kto co widzi i może zmienić), szyfrowane połączenia, bezpieczne przechowywanie haseł, kopie zapasowe bazy danych i logi zmian w ważnych danych. Pomagamy też wybrać hosting z serwerami w Unii Europejskiej, co upraszcza kwestie RODO.</p>
+
+          <h2 id="wlasnosc">Kod na własność, bez uzależnienia</h2>
+          <p>Po zakończeniu projektu dostajesz pełny kod źródłowy i dostęp do infrastruktury. Nie płacisz licencji za każdego użytkownika. Dbamy o czytelny kod i dokumentację, żeby system mógł rozwijać także inny zespół, jeśli kiedyś zdecydujesz się zmienić wykonawcę. Oczywiście wolimy, żebyś został z nami: oferujemy utrzymanie i dalszy rozwój.</p>
+
+          <h2 id="faq">Najczęstsze pytania</h2>
+          <div class="faq__list">
+            <details class="faq__item">
+              <summary>Co jest lepsze: gotowy SaaS czy system dedykowany?</summary>
+              <div class="faq__a"><p>Gotowy SaaS wygrywa, gdy Twój proces jest typowy i narzędzie pokrywa go w całości. Dedykowany system wygrywa, gdy proces jest nietypowy, łączy kilka narzędzi albo koszt licencji za użytkownika staje się wysoki. Warto policzyć koszt w perspektywie 2-3 lat, a nie tylko pierwszego miesiąca.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Ile trwa zbudowanie aplikacji?</summary>
+              <div class="faq__a"><p>To zależy przede wszystkim od zakresu pierwszej wersji. Dlatego zaczynamy od zdefiniowania MVP: po tym etapie podajemy konkretny harmonogram i cenę, zanim zaczniemy programować.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Czy aplikacja połączy się z naszymi obecnymi systemami?</summary>
+              <div class="faq__a"><p>Najczęściej tak, jeśli system ma API lub pozwala na eksport danych. Integracje z programami księgowymi, ERP, CRM, bramkami płatności czy firmami kurierskimi to standardowa część naszej pracy.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Czy aplikacja będzie działać na telefonie?</summary>
+              <div class="faq__a"><p>Tak, aplikacje webowe projektujemy responsywnie. Jeśli potrzebujesz aplikacji instalowanej ze sklepu (np. z powiadomieniami push), możemy zbudować ją na tym samym backendzie, zobacz aplikacje mobilne.</p></div>
+            </details>
+          </div>
+        </article>
+        <aside class="content__aside">
+          <div class="aside-box">
+            <h2>Na tej stronie</h2>
+            <ol>
+              <li><a href="#kiedy">Kiedy firma potrzebuje własnej aplikacji</a></li>
+              <li><a href="#przyklady">Co budujemy</a></li>
+              <li><a href="#jak-zaczynamy">Jak zaczynamy: najpierw zakres, potem kod</a></li>
+              <li><a href="#bezpieczenstwo">Bezpieczeństwo, dane i RODO</a></li>
+              <li><a href="#wlasnosc">Kod na własność, bez uzależnienia</a></li>
+              <li><a href="#faq">Najczęstsze pytania</a></li>
+            </ol>
+          </div>
+          <div class="aside-box aside-box--cta">
+            <h2>Porozmawiajmy o systemie</h2>
+            <p>Opisz proces, który chcesz usprawnić. Nie musisz znać się na technologii.</p>
+            <a href="/kontakt" class="btn btn--primary btn--full"><span>Opisz swój projekt</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section related">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__tag reveal">Czytaj dalej</span>
+          <h2 class="section__title reveal">Powiązane tematy</h2>
+        </div>
+        <div class="related__grid">
+          <a class="nav-card reveal" href="/aplikacje-mobilne">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Aplikacje mobilne</h3>
+            <p>Aplikacja na iOS i Android na tym samym backendzie co system webowy.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/sklepy-internetowe">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Sklepy internetowe</h3>
+            <p>Dedykowany e-commerce z płatnościami i wysyłką.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/oferta">
+            <span class="nav-card__num">Cennik</span>
+            <h3>Pełny cennik</h3>
+            <p>Wszystkie usługi i ceny startowe w jednym miejscu.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <h2>Masz proces, który zjada Ci czas?</h2>
+        <p>Opowiedz nam o nim. Powiemy, czy i jak da się go zautomatyzować.</p>
+        <a href="/kontakt" class="btn btn--primary btn--lg" data-magnetic><span>Porozmawiajmy o projekcie</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/wordmark.png" alt="Paggini" class="footer__wordmark" />
+        <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4 data-i18n="footer_nav">Nawigacja</h4>
+          <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+          <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+          <a href="/proces" data-i18n="nav_process">Proces</a>
+          <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+          <a href="/poradnik" data-i18n="nav_guide">Poradnik</a>
+          <a href="/o-nas" data-i18n="nav_about">O nas</a>
+          <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_services">Usługi</h4>
+          <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
+          <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
+          <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
+          <a href="/aplikacje-mobilne" data-i18n="price_4_name">Aplikacje mobilne</a>
+          <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Kontakt</h4>
+          <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+          <a href="tel:+48532237578">+48 532 237 578</a>
+          <a href="https://paggini.com">paggini.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Paggini. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer__made" data-i18n="footer_made">Zaprojektowane i zakodowane z pasją.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
