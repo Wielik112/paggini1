@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+
+  <title>Aplikacje mobilne iOS i Android, od 13 500 zł · Paggini</title>
+  <meta name="description" content="Aplikacje mobilne na iOS i Android od 13 500 zł netto. React Native: jeden kod na obie platformy, powiadomienia push, płatności, backend i publikacja w sklepach." />
+  <meta name="author" content="Paggini" />
+  <link rel="canonical" href="https://paggini.com/aplikacje-mobilne" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Paggini" />
+  <meta property="og:title" content="Aplikacje mobilne iOS i Android · Paggini" />
+  <meta property="og:description" content="Aplikacje mobilne na iOS i Android od 13 500 zł netto. React Native: jeden kod na obie platformy, powiadomienia push, płatności, backend i publikacja w sklepach." />
+  <meta property="og:image" content="https://paggini.com/assets/og-image.png" />
+  <meta property="og:url" content="https://paggini.com/aplikacje-mobilne" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://paggini.com/#organization",
+      "name": "Paggini",
+      "url": "https://paggini.com/",
+      "logo": "https://paggini.com/assets/logo-mark.png",
+      "image": "https://paggini.com/assets/og-image.png",
+      "email": "kontakt@paggini.com",
+      "telephone": "+48532237578",
+      "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
+      ],
+      "knowsLanguage": [
+        "pl",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paggini",
+          "item": "https://paggini.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Usługi",
+          "item": "https://paggini.com/uslugi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Aplikacje mobilne",
+          "item": "https://paggini.com/aplikacje-mobilne"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://paggini.com/aplikacje-mobilne#service",
+      "name": "Aplikacje mobilne iOS i Android",
+      "serviceType": "Tworzenie aplikacji mobilnych",
+      "description": "Aplikacje mobilne na iOS i Android od 13 500 zł netto. React Native: jeden kod na obie platformy, powiadomienia push, płatności, backend i publikacja w sklepach.",
+      "url": "https://paggini.com/aplikacje-mobilne",
+      "provider": {
+        "@id": "https://paggini.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PLN",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 13500,
+          "priceCurrency": "PLN",
+          "valueAddedTaxIncluded": false
+        }
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
+        <img src="/assets/wordmark.png" alt="Paggini" class="nav__wordmark" />
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+        <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+        <a href="/proces" data-i18n="nav_process">Proces</a>
+        <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+        <a href="/o-nas" data-i18n="nav_about">O nas</a>
+        <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" id="lang">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+            <span id="langCurrent">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="menu">
+            <li><button data-lang="pl" role="menuitem">Polski</button></li>
+            <li><button data-lang="en" role="menuitem">English</button></li>
+            <li><button data-lang="de" role="menuitem">Deutsch</button></li>
+          </ul>
+        </div>
+        <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
+        <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--first">
+      <div class="container">
+        <nav class="crumbs" aria-label="Ścieżka nawigacji"><a href="/">Paggini</a> <span aria-hidden="true">/</span> <a href="/uslugi">Usługi</a> <span aria-hidden="true">/</span> <span aria-current="page">Aplikacje mobilne</span></nav>
+        <div class="page-head">
+          <span class="section__tag reveal">Aplikacje mobilne</span>
+          <h1 class="section__title reveal">Aplikacje mobilne na iOS i Android z jednego kodu</h1>
+          <p class="section__lead reveal">Tworzymy aplikacje w React Native: jedna baza kodu, dwie platformy, niższy koszt budowy i utrzymania. Projekt, backend i publikacja w App Store oraz Google Play.</p>
+          <div class="page-head__cta reveal">
+            <a href="/kontakt" class="btn btn--primary"><span>Porozmawiajmy o aplikacji</span></a>
+            <a href="/oferta" class="btn btn--ghost"><span>Zobacz cennik</span></a>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact reveal"><strong>od 13 500 zł</strong><span>netto, zależnie od funkcji i backendu</span></div>
+          <div class="fact reveal"><strong>iOS + Android</strong><span>jedna aplikacja, dwie platformy</span></div>
+          <div class="fact reveal"><strong>Publikacja w sklepach</strong><span>przeprowadzamy przez App Store i Google Play</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content">
+      <div class="container content__layout">
+        <article class="prose">
+          <h2 id="kiedy">Kiedy aplikacja mobilna ma sens</h2>
+          <p>Aplikacja instalowana z App Store lub Google Play jest warta inwestycji, gdy użytkownicy wracają do niej regularnie albo potrzebujesz funkcji telefonu, do których strona internetowa nie ma pełnego dostępu. Typowe przykłady:</p>
+          <ul>
+            <li>aplikacja dla stałych klientów: rezerwacje, program lojalnościowy, historia zamówień,</li>
+            <li>aplikacja dla pracowników w terenie: zlecenia, zdjęcia z realizacji, podpisy, praca offline,</li>
+            <li>produkt cyfrowy (np. platforma treningowa, edukacyjna), gdzie aplikacja jest głównym kanałem,</li>
+            <li>usługi, w których kluczowe są <strong>powiadomienia push</strong>, lokalizacja, aparat lub skanowanie kodów.</li>
+          </ul>
+          <p>Jeśli użytkownik ma skorzystać z usługi raz lub dwa razy, zwykle lepiej sprawdzi się dobra, szybka strona lub aplikacja webowa. Nikt nie instaluje aplikacji, żeby raz zamówić usługę. Pomożemy ocenić, co ma sens w Twoim przypadku.</p>
+
+          <h2 id="react-native">Dlaczego React Native</h2>
+          <p>React Native pozwala napisać jedną aplikację, która działa natywnie na iPhone’ach i telefonach z Androidem. W praktyce oznacza to:</p>
+          <ul>
+            <li><strong>niższy koszt</strong> niż budowa dwóch osobnych aplikacji (Swift dla iOS i Kotlin dla Androida),</li>
+            <li><strong>spójne działanie</strong>: nowe funkcje i poprawki trafiają na obie platformy jednocześnie,</li>
+            <li><strong>wydajność bliską natywnej</strong> dla zdecydowanej większości aplikacji biznesowych,</li>
+            <li>dostęp do funkcji telefonu: aparat, lokalizacja, powiadomienia, biometria.</li>
+          </ul>
+          <p>Uczciwie: przy aplikacjach mocno opartych o grafikę 3D, zaawansowane przetwarzanie obrazu czy gry podejście natywne bywa lepsze. Takie przypadki omawiamy na etapie wyceny.</p>
+
+          <h2 id="w-cenie">Co obejmuje projekt aplikacji</h2>
+          <ul>
+            <li>projekt interfejsu (UI/UX) dopasowany do konwencji iOS i Androida,</li>
+            <li>konta użytkowników, logowanie i autoryzacja,</li>
+            <li>połączenie z backendem i bazą danych: nowym lub Twoim istniejącym,</li>
+            <li>powiadomienia push,</li>
+            <li>płatności i integracje z zewnętrznymi usługami,</li>
+            <li>przygotowanie i publikacja w App Store i Google Play.</li>
+          </ul>
+          <p>Aplikacja mobilna, panel administracyjny i strona www mogą korzystać z jednego API i jednej bazy danych. Budujemy je razem, zobacz <a href="/aplikacje-webowe">aplikacje webowe i backend</a>.</p>
+
+          <h2 id="publikacja">Publikacja w sklepach i koszty po starcie</h2>
+          <p>Do publikacji potrzebne są konta deweloperskie: <strong>Apple Developer Program</strong> kosztuje 99 USD rocznie, a konto <strong>Google Play</strong> to jednorazowa opłata 25 USD. Konta zakładamy na Ciebie, żeby aplikacja była od początku Twoją własnością. Przygotowujemy opisy, zrzuty ekranu i przeprowadzamy aplikację przez weryfikację, która w App Store bywa wymagająca.</p>
+          <p>Po starcie warto przewidzieć budżet na utrzymanie: serwer dla backendu, aktualizacje pod nowe wersje iOS i Androida (sklepy co jakiś czas podnoszą wymagania) oraz rozwój nowych funkcji.</p>
+
+          <h2 id="faq">Najczęstsze pytania</h2>
+          <div class="faq__list">
+            <details class="faq__item">
+              <summary>Czy potrzebuję osobnego backendu?</summary>
+              <div class="faq__a"><p>Prawie każda aplikacja, która przechowuje dane użytkowników, potrzebuje backendu. Jeśli już masz system z API, podłączymy się do niego. Jeśli nie, zbudujemy go razem z aplikacją.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Czy aplikacja może działać offline?</summary>
+              <div class="faq__a"><p>Tak, część funkcji może działać bez internetu i synchronizować dane, gdy połączenie wróci. To typowe przy aplikacjach dla ekip w terenie. Zakres pracy offline ustalamy na etapie projektu, bo wpływa na architekturę.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Ile trwa publikacja w App Store i Google Play?</summary>
+              <div class="faq__a"><p>Sama weryfikacja trwa zwykle od kilku godzin do kilku dni. Warto jednak zarezerwować zapas czasu, bo przy pierwszej publikacji sklepy potrafią poprosić o poprawki.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Czy zamiast aplikacji wystarczy PWA?</summary>
+              <div class="faq__a"><p>Czasem tak. Aplikacja webowa instalowana na ekranie telefonu (PWA) jest tańsza i nie wymaga sklepów. Ma jednak ograniczenia, szczególnie na iPhone’ach, i nie da się jej znaleźć w App Store. Doradzimy, co wybrać.</p></div>
+            </details>
+          </div>
+        </article>
+        <aside class="content__aside">
+          <div class="aside-box">
+            <h2>Na tej stronie</h2>
+            <ol>
+              <li><a href="#kiedy">Kiedy aplikacja mobilna ma sens</a></li>
+              <li><a href="#react-native">Dlaczego React Native</a></li>
+              <li><a href="#w-cenie">Co obejmuje projekt aplikacji</a></li>
+              <li><a href="#publikacja">Publikacja w sklepach i koszty po starcie</a></li>
+              <li><a href="#faq">Najczęstsze pytania</a></li>
+            </ol>
+          </div>
+          <div class="aside-box aside-box--cta">
+            <h2>Wycena aplikacji</h2>
+            <p>Opisz, kto będzie korzystać z aplikacji i jaki problem ma rozwiązać.</p>
+            <a href="/kontakt" class="btn btn--primary btn--full"><span>Porozmawiajmy</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section related">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__tag reveal">Czytaj dalej</span>
+          <h2 class="section__title reveal">Powiązane tematy</h2>
+        </div>
+        <div class="related__grid">
+          <a class="nav-card reveal" href="/aplikacje-webowe">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Aplikacje webowe i backend</h3>
+            <p>Panel administracyjny i API, na których działa aplikacja.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/proces">
+            <span class="nav-card__num">Proces</span>
+            <h3>Jak pracujemy</h3>
+            <p>Od rozmowy, przez projekt, po wdrożenie.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/oferta">
+            <span class="nav-card__num">Cennik</span>
+            <h3>Pełny cennik</h3>
+            <p>Wszystkie usługi i ceny startowe w jednym miejscu.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <h2>Masz pomysł na aplikację?</h2>
+        <p>Opowiedz nam o nim. Pomożemy określić pierwszą wersję i jej koszt.</p>
+        <a href="/kontakt" class="btn btn--primary btn--lg" data-magnetic><span>Porozmawiajmy o aplikacji</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/wordmark.png" alt="Paggini" class="footer__wordmark" />
+        <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4 data-i18n="footer_nav">Nawigacja</h4>
+          <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+          <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+          <a href="/proces" data-i18n="nav_process">Proces</a>
+          <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+          <a href="/poradnik" data-i18n="nav_guide">Poradnik</a>
+          <a href="/o-nas" data-i18n="nav_about">O nas</a>
+          <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_services">Usługi</h4>
+          <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
+          <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
+          <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
+          <a href="/aplikacje-mobilne" data-i18n="price_4_name">Aplikacje mobilne</a>
+          <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer_contact">Kontakt</h4>
+          <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+          <a href="tel:+48532237578">+48 532 237 578</a>
+          <a href="https://paggini.com">paggini.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Paggini. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer__made" data-i18n="footer_made">Zaprojektowane i zakodowane z pasją.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

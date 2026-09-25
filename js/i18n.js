@@ -12,6 +12,8 @@ const I18N = {
     nav_about: "O nas",
     nav_contact: "Kontakt",
     nav_offer: "Oferta",
+    nav_guide: "Poradnik",
+    service_more: "Dowiedz się więcej →",
     nav_cta: "Zacznijmy",
     see_more: "Zobacz więcej →",
     hero_cta_3: "Zobacz ofertę",
@@ -267,6 +269,8 @@ const I18N = {
     nav_about: "About",
     nav_contact: "Contact",
     nav_offer: "Pricing",
+    nav_guide: "Guides",
+    service_more: "Learn more →",
     nav_cta: "Let's talk",
     see_more: "See more →",
     hero_cta_3: "See our offer",
@@ -507,6 +511,8 @@ const I18N = {
     nav_about: "Über uns",
     nav_contact: "Kontakt",
     nav_offer: "Preise",
+    nav_guide: "Ratgeber",
+    service_more: "Mehr erfahren →",
     nav_cta: "Loslegen",
     see_more: "Mehr ansehen →",
     hero_cta_3: "Angebot ansehen",
@@ -743,7 +749,13 @@ const I18N = {
 
 const SUPPORTED = ["pl", "en", "de"];
 
+// Search engine crawlers render with an English browser locale. Auto-switching
+// them would get the Polish pages indexed with English text, so crawlers always
+// get the Polish source HTML as-is.
+const IS_BOT = /bot|crawl|spider|slurp|lighthouse|google-inspectiontool|chrome-lighthouse/i.test(navigator.userAgent || "");
+
 function detectLang() {
+  if (IS_BOT) return "pl";
   // 1) saved user choice
   try {
     const saved = localStorage.getItem("paggini_lang");
