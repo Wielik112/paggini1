@@ -1,21 +1,58 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/assets/tyrbud.png",
+      "destination": "/assets/tyrbud.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/fbtoutlet.png",
+      "destination": "/assets/fbtoutlet.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/logo-badge-sm.png",
+      "destination": "/assets/logo-badge-sm.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/og-image.png",
+      "destination": "/assets/og-cover.jpg",
+      "permanent": true
     }
   ]
 }

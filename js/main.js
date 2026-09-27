@@ -64,8 +64,14 @@
 
   /* ---------- Mobile menu ---------- */
   const burger = $("#burger");
-  function closeMobileMenu() { if (nav) nav.classList.remove("is-open"); }
-  if (burger) burger.addEventListener("click", () => nav.classList.toggle("is-open"));
+  function setMenu(open) {
+    if (!nav) return;
+    nav.classList.toggle("is-open", open);
+    if (burger) burger.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function closeMobileMenu() { setMenu(false); }
+  if (burger) burger.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMobileMenu(); });
 
   /* ---------- Language switcher ---------- */
   const lang = $("#lang");
