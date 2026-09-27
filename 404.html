@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+
+  <title>Nie znaleziono strony (404) | Paggini</title>
+  <meta name="description" content="Ta strona nie istnieje lub została przeniesiona. Wróć na stronę główną Paggini." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Przejdź do treści</a>
+
+
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="nav__wordmark" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Menu główne">
+        <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+        <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+        <a href="/proces" data-i18n="nav_process">Proces</a>
+        <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+        <a href="/o-nas" data-i18n="nav_about">O nas</a>
+        <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" id="lang">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Zmień język">
+            <span id="langCurrent">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="menu">
+            <li><button data-lang="pl" role="menuitem">Polski</button></li>
+            <li><button data-lang="en" role="menuitem">English</button></li>
+            <li><button data-lang="de" role="menuitem">Deutsch</button></li>
+          </ul>
+        </div>
+        <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
+        <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section--first notfound">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__tag" data-i18n="nf_tag">Błąd 404</span>
+          <h1 class="section__title" data-i18n="nf_title">Nie znaleźliśmy tej strony</h1>
+          <p class="section__lead" data-i18n="nf_lead">Adres mógł się zmienić albo strona została usunięta. Sprawdź, czy link jest poprawny, lub przejdź do jednej z sekcji poniżej.</p>
+          <div class="hero__cta notfound__cta">
+            <a href="/" class="btn btn--primary"><span data-i18n="nf_home">Wróć na stronę główną</span></a>
+            <a href="/kontakt" class="btn btn--ghost"><span data-i18n="nf_contact">Napisz do nas</span></a>
+          </div>
+        </div>
+        <nav class="explore__grid notfound__links" aria-label="Popularne strony">
+          <a class="nav-card" href="/uslugi"><h2 data-i18n="nav_services">Usługi</h2></a>
+          <a class="nav-card" href="/oferta"><h2 data-i18n="nav_offer">Oferta</h2></a>
+          <a class="nav-card" href="/realizacje"><h2 data-i18n="nav_work">Realizacje</h2></a>
+          <a class="nav-card" href="/poradnik"><h2 data-i18n="nav_guide">Poradnik</h2></a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="footer__wordmark" />
+        <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_nav">Nawigacja</p>
+          <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+          <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+          <a href="/proces" data-i18n="nav_process">Proces</a>
+          <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+          <a href="/poradnik" data-i18n="nav_guide">Poradnik</a>
+          <a href="/o-nas" data-i18n="nav_about">O nas</a>
+          <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_services">Usługi</p>
+          <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
+          <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
+          <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
+          <a href="/aplikacje-mobilne" data-i18n="price_4_name">Aplikacje mobilne</a>
+          <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_contact">Kontakt</p>
+          <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+          <a href="tel:+48532237578">+48 532 237 578</a>
+          <a href="https://paggini.com">paggini.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Paggini. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer__made" data-i18n="footer_made">Zaprojektowane i zakodowane z pasją.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

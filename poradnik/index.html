@@ -5,26 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#05060a" />
 
-  <title>Poradnik: strony, sklepy i aplikacje · Paggini</title>
+  <title>Poradnik: strony, sklepy i aplikacje | Paggini</title>
   <meta name="description" content="Poradnik Paggini: ile kosztuje strona internetowa, jak wybrać platformę sklepu, jak przygotować się do projektu. Konkretnie, bez marketingowej waty." />
   <meta name="author" content="Paggini" />
   <link rel="canonical" href="https://paggini.com/poradnik" />
 
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pl_PL" />
   <meta property="og:site_name" content="Paggini" />
-  <meta property="og:title" content="Poradnik Paggini" />
+  <meta property="og:title" content="Poradnik: strony, sklepy i aplikacje" />
   <meta property="og:description" content="Poradnik Paggini: ile kosztuje strona internetowa, jak wybrać platformę sklepu, jak przygotować się do projektu. Konkretnie, bez marketingowej waty." />
-  <meta property="og:image" content="https://paggini.com/assets/og-image.png" />
   <meta property="og:url" content="https://paggini.com/poradnik" />
+  <meta property="og:image" content="https://paggini.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Paggini, web design &amp; development" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Poradnik: strony, sklepy i aplikacje" />
+  <meta name="twitter:description" content="Poradnik Paggini: ile kosztuje strona internetowa, jak wybrać platformę sklepu, jak przygotować się do projektu. Konkretnie, bez marketingowej waty." />
+  <meta name="twitter:image" content="https://paggini.com/assets/og-cover.jpg" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/style.css" />
 
@@ -33,12 +41,12 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": "Organization",
       "@id": "https://paggini.com/#organization",
       "name": "Paggini",
       "url": "https://paggini.com/",
       "logo": "https://paggini.com/assets/logo-mark.png",
-      "image": "https://paggini.com/assets/og-image.png",
+      "image": "https://paggini.com/assets/og-cover.jpg",
       "email": "kontakt@paggini.com",
       "telephone": "+48532237578",
       "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
@@ -102,6 +110,7 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Przejdź do treści</a>
 
 
   <canvas class="bg-canvas" id="bgCanvas"></canvas>
@@ -112,10 +121,10 @@
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
-        <img src="/assets/wordmark.png" alt="Paggini" class="nav__wordmark" />
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="nav__wordmark" />
       </a>
 
-      <nav class="nav__links" id="navLinks">
+      <nav class="nav__links" id="navLinks" aria-label="Menu główne">
         <a href="/uslugi" data-i18n="nav_services">Usługi</a>
         <a href="/oferta" data-i18n="nav_offer">Oferta</a>
         <a href="/proces" data-i18n="nav_process">Proces</a>
@@ -126,7 +135,7 @@
 
       <div class="nav__right">
         <div class="lang" id="lang">
-          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Zmień język">
             <span id="langCurrent">PL</span>
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
@@ -137,12 +146,12 @@
           </ul>
         </div>
         <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
-        <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+        <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section section--first">
       <div class="container">
         <nav class="crumbs" aria-label="Ścieżka nawigacji"><a href="/">Paggini</a> <span aria-hidden="true">/</span> <span aria-current="page">Poradnik</span></nav>
@@ -185,12 +194,12 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="/assets/wordmark.png" alt="Paggini" class="footer__wordmark" />
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="footer__wordmark" />
         <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
-          <h4 data-i18n="footer_nav">Nawigacja</h4>
+          <p class="footer__title" data-i18n="footer_nav">Nawigacja</p>
           <a href="/uslugi" data-i18n="nav_services">Usługi</a>
           <a href="/oferta" data-i18n="nav_offer">Oferta</a>
           <a href="/proces" data-i18n="nav_process">Proces</a>
@@ -200,7 +209,7 @@
           <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer_services">Usługi</h4>
+          <p class="footer__title" data-i18n="footer_services">Usługi</p>
           <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
           <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
           <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
@@ -208,7 +217,7 @@
           <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer_contact">Kontakt</h4>
+          <p class="footer__title" data-i18n="footer_contact">Kontakt</p>
           <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
           <a href="tel:+48532237578">+48 532 237 578</a>
           <a href="https://paggini.com">paggini.com</a>
@@ -221,8 +230,8 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="/js/i18n.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>

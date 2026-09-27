@@ -1,0 +1,14 @@
+{
+  "name": "paggini",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paggini, strona studia web design & development (statyczny HTML/CSS/JS).",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

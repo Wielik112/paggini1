@@ -5,18 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#05060a" />
 
-  <title>Paggini · Strony internetowe, sklepy i aplikacje</title>
-  <meta name="description" content="Paggini projektuje i tworzy szybkie, estetyczne strony internetowe, sklepy online i aplikacje. Nowoczesny design, dopracowane animacje, technologia na najwyższym poziomie." />
+  <title>Paggini | Tworzenie stron internetowych, sklepów i aplikacji</title>
+  <meta name="description" content="Paggini to studio web design &amp; development. Projektujemy i tworzymy nowoczesne strony internetowe, sklepy online i aplikacje dla firm z Polski i Europy." />
   <meta name="author" content="Paggini" />
+  <!-- Google Search Console: najprościej zweryfikować domenę rekordem DNS TXT (bez zmian w kodzie).
+       Jeśli wybierzesz weryfikację metatagiem, wklej tutaj otrzymany tag, np.:
+       <meta name="google-site-verification" content="TWOJ_KOD" /> -->
   <link rel="canonical" href="https://paggini.com/" />
 
-  <!-- Open Graph -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Paggini · Strony, sklepy i aplikacje" />
-  <meta property="og:description" content="Projektujemy i tworzymy cyfrowe produkty klasy premium." />
-  <meta property="og:image" content="https://paggini.com/assets/og-image.png" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Paggini" />
+  <meta property="og:title" content="Paggini | Web Design &amp; Development" />
+  <meta property="og:description" content="Paggini to studio web design &amp; development. Projektujemy i tworzymy nowoczesne strony internetowe, sklepy online i aplikacje dla firm z Polski i Europy." />
   <meta property="og:url" content="https://paggini.com/" />
+  <meta property="og:image" content="https://paggini.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Paggini, web design &amp; development" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paggini | Web Design &amp; Development" />
+  <meta name="twitter:description" content="Paggini to studio web design &amp; development. Projektujemy i tworzymy nowoczesne strony internetowe, sklepy online i aplikacje dla firm z Polski i Europy." />
+  <meta name="twitter:image" content="https://paggini.com/assets/og-cover.jpg" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
@@ -25,7 +37,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/style.css" />
 
@@ -34,12 +46,12 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": "Organization",
       "@id": "https://paggini.com/#organization",
       "name": "Paggini",
       "url": "https://paggini.com/",
       "logo": "https://paggini.com/assets/logo-mark.png",
-      "image": "https://paggini.com/assets/og-image.png",
+      "image": "https://paggini.com/assets/og-cover.jpg",
       "email": "kontakt@paggini.com",
       "telephone": "+48532237578",
       "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
@@ -68,17 +80,32 @@
       "publisher": {
         "@id": "https://paggini.com/#organization"
       }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://paggini.com/#webpage",
+      "url": "https://paggini.com/",
+      "name": "Paggini | Tworzenie stron internetowych, sklepów i aplikacji",
+      "description": "Paggini to studio web design & development. Projektujemy i tworzymy nowoczesne strony internetowe, sklepy online i aplikacje dla firm z Polski i Europy.",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@id": "https://paggini.com/#website"
+      },
+      "about": {
+        "@id": "https://paggini.com/#organization"
+      }
     }
   ]
 }
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Przejdź do treści</a>
 
   <!-- ===== PRELOADER ===== -->
-  <div class="preloader" id="preloader">
+  <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__inner">
-      <img src="/assets/wordmark.png" alt="Paggini" class="preloader__logo" />
+      <img src="/assets/wordmark.webp" width="600" height="60" alt="" class="preloader__logo" />
       <div class="preloader__bar"><span></span></div>
     </div>
   </div>
@@ -93,10 +120,10 @@
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
-        <img src="/assets/wordmark.png" alt="Paggini" class="nav__wordmark" />
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="nav__wordmark" />
       </a>
 
-      <nav class="nav__links" id="navLinks">
+      <nav class="nav__links" id="navLinks" aria-label="Menu główne">
         <a href="/uslugi" data-i18n="nav_services">Usługi</a>
         <a href="/oferta" data-i18n="nav_offer">Oferta</a>
         <a href="/proces" data-i18n="nav_process">Proces</a>
@@ -107,7 +134,7 @@
 
       <div class="nav__right">
         <div class="lang" id="lang">
-          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Zmień język">
             <span id="langCurrent">PL</span>
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
@@ -118,23 +145,23 @@
           </ul>
         </div>
         <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
-        <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+        <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
       <div class="hero__aura" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__ghost" aria-hidden="true"><div class="hero__ghost-text"></div></div>
         <h1 class="hero__title">
-          <span class="line"><span data-i18n="hero_title_1">Tworzymy strony,</span></span>
+          <span class="line"><span data-i18n="hero_title_1">Tworzymy strony internetowe,</span></span>
           <span class="line"><span data-i18n="hero_title_2">sklepy i aplikacje</span></span>
           <span class="line hero__title--accent"><span data-i18n="hero_title_3">warte milion.</span></span>
         </h1>
-        <p class="hero__sub reveal" data-i18n="hero_sub">Projektujemy i budujemy cyfrowe produkty klasy premium, szybkie, estetyczne i dopracowane w każdym pikselu.</p>
+        <p class="hero__sub reveal" data-i18n="hero_sub">Projektujemy i budujemy nowoczesne strony internetowe, sklepy online i aplikacje dla firm, szybkie, estetyczne i dopracowane w każdym pikselu.</p>
         <div class="hero__cta reveal">
           <a href="/kontakt" class="btn btn--primary" data-magnetic><span data-i18n="hero_cta_1">Rozpocznij projekt</span></a>
           <a href="/oferta" class="btn btn--ghost" data-magnetic><span data-i18n="hero_cta_3">Zobacz ofertę</span></a>
@@ -157,7 +184,7 @@
           <span class="section__tag reveal" data-i18n="services_tag">Co robimy</span>
           <h2 class="section__title reveal" data-i18n="services_title">Usługi, które dowożą wyniki</h2>
           <p class="section__lead reveal" data-i18n="services_lead">Kompleksowo, od pomysłu i projektu, przez kod, aż po wdrożenie i rozwój.</p>
-          <a class="section__more reveal" href="/uslugi" data-i18n="see_more">Zobacz więcej →</a>
+          <a class="section__more reveal" href="/uslugi" data-i18n="more_services">Zobacz wszystkie usługi →</a>
         </div>
 
         <div class="services__grid">
@@ -172,7 +199,7 @@
               <li data-i18n="service_web_2">Animacje i mikrointerakcje</li>
               <li data-i18n="service_web_3">SEO i wydajność</li>
             </ul>
-            <a class="card__more" href="/strony-internetowe" data-i18n="service_more">Dowiedz się więcej →</a>
+            <a class="card__more" href="/strony-internetowe" data-i18n="more_web">Więcej o stronach internetowych →</a>
           </article>
 
           <article class="card reveal" data-tilt>
@@ -186,7 +213,7 @@
               <li data-i18n="service_shop_2">Panel zarządzania</li>
               <li data-i18n="service_shop_3">Optymalizacja konwersji</li>
             </ul>
-            <a class="card__more" href="/sklepy-internetowe" data-i18n="service_more">Dowiedz się więcej →</a>
+            <a class="card__more" href="/sklepy-internetowe" data-i18n="more_shop">Więcej o sklepach internetowych →</a>
           </article>
 
           <article class="card reveal" data-tilt>
@@ -200,7 +227,7 @@
               <li data-i18n="service_app_2">Dedykowane systemy</li>
               <li data-i18n="service_app_3">Integracje API</li>
             </ul>
-            <a class="card__more" href="/aplikacje-webowe" data-i18n="service_more">Dowiedz się więcej →</a>
+            <a class="card__more" href="/aplikacje-webowe" data-i18n="more_app">Więcej o aplikacjach →</a>
           </article>
 
           <article class="card reveal" data-tilt>
@@ -281,7 +308,7 @@
           <span class="section__tag reveal" data-i18n="pricing_tag">Cennik</span>
           <h2 class="section__title reveal" data-i18n="pricing_title">Przejrzysta oferta</h2>
           <p class="section__lead reveal" data-i18n="pricing_lead">Wybierz pakiet dopasowany do Twoich potrzeb. Ceny startowe, finalna wycena zależy od zakresu.</p>
-          <a class="section__more reveal" href="/oferta" data-i18n="see_more">Zobacz więcej →</a>
+          <a class="section__more reveal" href="/oferta" data-i18n="more_offer">Zobacz pełny cennik →</a>
         </div>
 
         <div class="pricing__grid">
@@ -370,7 +397,7 @@
         <div class="section__head">
           <span class="section__tag reveal" data-i18n="process_tag">Jak pracujemy</span>
           <h2 class="section__title reveal" data-i18n="process_title">Prosty proces, świetny efekt</h2>
-          <a class="section__more reveal" href="/proces" data-i18n="see_more">Zobacz więcej →</a>
+          <a class="section__more reveal" href="/proces" data-i18n="more_process">Zobacz, jak pracujemy →</a>
         </div>
 
         <div class="process__grid">
@@ -405,7 +432,7 @@
           <span class="section__tag reveal" data-i18n="work_tag">Realizacje</span>
           <h2 class="section__title reveal" data-i18n="work_title">Wybrane projekty</h2>
           <p class="section__lead reveal" data-i18n="work_lead">Wybrane wdrożenia, które już działają w sieci.</p>
-          <a class="section__more reveal" href="/realizacje" data-i18n="see_more">Zobacz więcej →</a>
+          <a class="section__more reveal" href="/realizacje" data-i18n="more_work">Zobacz nasze realizacje →</a>
         </div>
 
         <div class="work__grid">
@@ -540,7 +567,7 @@
         <div class="about__text reveal">
           <span class="section__tag" data-i18n="about_tag">O nas</span>
           <h2 class="section__title" data-i18n="about_title">Małe studio. Wielka dbałość o detale.</h2>
-          <p data-i18n="about_p1">Paggini to zespół, który łączy design z technologią. Nie robimy szablonów z półki, każdy projekt tworzymy od zera, tak aby idealnie pasował do Twojej marki i celów.</p>
+          <p data-i18n="about_p1">Paggini to studio web design & development, które łączy design z technologią. Nie robimy szablonów z półki, każdy projekt tworzymy od zera, tak aby idealnie pasował do Twojej marki i celów.</p>
           <p data-i18n="about_p2">Wierzymy, że dobra strona to nie tylko wygląd. To szybkość, wygoda, konwersja i efekt, który realnie pracuje na Twój biznes.</p>
           <div class="about__features">
             <div class="feature"><strong data-i18n="about_f1_t">Indywidualne podejście</strong><span data-i18n="about_f1_d">Kod i design szyte na miarę.</span></div>
@@ -548,7 +575,7 @@
             <div class="feature"><strong data-i18n="about_f3_t">Uczciwa komunikacja</strong><span data-i18n="about_f3_d">Jasne zasady, żadnych niespodzianek.</span></div>
             <div class="feature"><strong data-i18n="about_f4_t">Wsparcie po wdrożeniu</strong><span data-i18n="about_f4_d">Jesteśmy z Tobą także później.</span></div>
           </div>
-          <a class="section__more reveal" href="/o-nas" data-i18n="see_more">Zobacz więcej →</a>
+          <a class="section__more reveal" href="/o-nas" data-i18n="more_about">Poznaj studio Paggini →</a>
         </div>
         <div class="about__visual reveal">
           <div class="about__badge-wrap">
@@ -618,12 +645,12 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="/assets/wordmark.png" alt="Paggini" class="footer__wordmark" />
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="footer__wordmark" />
         <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
-          <h4 data-i18n="footer_nav">Nawigacja</h4>
+          <p class="footer__title" data-i18n="footer_nav">Nawigacja</p>
           <a href="/uslugi" data-i18n="nav_services">Usługi</a>
           <a href="/oferta" data-i18n="nav_offer">Oferta</a>
           <a href="/proces" data-i18n="nav_process">Proces</a>
@@ -633,7 +660,7 @@
           <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer_services">Usługi</h4>
+          <p class="footer__title" data-i18n="footer_services">Usługi</p>
           <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
           <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
           <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
@@ -641,7 +668,7 @@
           <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer_contact">Kontakt</h4>
+          <p class="footer__title" data-i18n="footer_contact">Kontakt</p>
           <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
           <a href="tel:+48532237578">+48 532 237 578</a>
           <a href="https://paggini.com">paggini.com</a>
@@ -655,8 +682,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="/js/i18n.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>

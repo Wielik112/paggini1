@@ -13,7 +13,7 @@
 
   --text: #eef2f9;
   --text-dim: #9aa4b6;
-  --text-faint: #5f6a7d;
+  --text-faint: #7d889c;
 
   --blue: #2f80ff;
   --blue-bright: #4fb0ff;
@@ -52,7 +52,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
@@ -61,6 +61,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
 
 .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* Keyboard focus */
+:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 3px; border-radius: 6px; }
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 10001; padding: 12px 18px; border-radius: 10px;
+  background: var(--blue); color: #fff; font-weight: 600; transition: top .2s var(--ease);
+}
+.skip-link:focus { top: 12px; }
 
 /* Selection */
 ::selection { background: var(--blue); color: #fff; }
@@ -250,11 +258,11 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
     linear-gradient(105deg, transparent 38%, rgba(170,210,255,0.55) 50%, transparent 62%) 0 0 / 280% 100% no-repeat,
     linear-gradient(180deg, rgba(255,255,255,0.2), rgba(120,170,255,0.08));
   animation: ghostShine 7s ease-in-out infinite;
-  -webkit-mask-image: url(/assets/wordmark.png), linear-gradient(180deg, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%);
+  -webkit-mask-image: url(/assets/wordmark-lg.webp), linear-gradient(180deg, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%);
   -webkit-mask-size: 100% 100%, 100% 100%;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-composite: source-in;
-  mask-image: url(/assets/wordmark.png), linear-gradient(180deg, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%);
+  mask-image: url(/assets/wordmark-lg.webp), linear-gradient(180deg, #000 0%, rgba(0,0,0,0.55) 55%, transparent 100%);
   mask-size: 100% 100%, 100% 100%;
   mask-repeat: no-repeat;
   mask-composite: intersect;
@@ -341,14 +349,13 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   border: 1px solid rgba(47,128,255,0.25); color: var(--blue-bright);
 }
 .card__icon svg { width: 26px; height: 26px; }
-.card h3 { font-size: 1.28rem; margin-bottom: 12px; }
+.card h2, .card h3 { font-size: 1.28rem; margin-bottom: 12px; }
 .card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
 .card__list { display: flex; flex-direction: column; gap: 9px; }
 .card__list li { position: relative; padding-left: 22px; font-size: 0.88rem; color: var(--text-dim); }
 .card__more {
-  display: inline-block; margin-top: 22px; font-weight: 600; font-size: 0.92rem; color: var(--blue-bright);
-  position: relative; z-index: 2; transition: color .2s;
-}
+  display: inline-block; margin-top: 16px; font-weight: 600; font-size: 0.92rem; color: var(--blue-bright);
+  position: relative; z-index: 2; transition: color .2s; padding: 6px 0; }
 .card__more:hover { color: var(--text); }
 .card__list li::before {
   content: ""; position: absolute; left: 0; top: 8px; width: 10px; height: 10px; border-radius: 50%;
@@ -553,7 +560,7 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   background: var(--grad-blue); -webkit-background-clip: text; background-clip: text; color: transparent;
   display: block; margin-bottom: 14px; opacity: 0.9;
 }
-.step h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.step h2, .step h3 { font-size: 1.2rem; margin-bottom: 10px; }
 .step p { color: var(--text-dim); font-size: 0.92rem; }
 
 /* ============================================================
@@ -594,7 +601,7 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 }
 .project__body { padding: 22px 24px; display: flex; flex-direction: column; gap: 6px; }
 .project__cat { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-bright); font-weight: 600; }
-.project__body h3 { font-size: 1.4rem; }
+.project__body h2, .project__body h3 { font-size: 1.4rem; }
 
 /* ============================================================
    STATS
@@ -698,7 +705,7 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .footer__wordmark { height: 24px; width: auto; margin-bottom: 16px; }
 .footer__brand p { color: var(--text-dim); font-size: 0.92rem; max-width: 300px; }
 .footer__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.footer__col h4 { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 16px; font-weight: 600; }
+.footer__col h4, .footer__title { font-family: "Sora", sans-serif; line-height: 1.08; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 16px; font-weight: 600; }
 .footer__col a { display: block; color: var(--text-dim); font-size: 0.92rem; margin-bottom: 10px; transition: color .2s; }
 .footer__col a:hover { color: var(--blue-bright); }
 .footer__bottom {
@@ -886,3 +893,12 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   404
+   ============================================================ */
+.notfound__cta { margin-top: 34px; }
+.notfound__links { margin-top: 64px; }
+.notfound__links .nav-card { min-height: 0; }
+.notfound__links .nav-card h2 { margin-bottom: 0; }
+.notfound__cta .btn { flex: 1 1 220px; }

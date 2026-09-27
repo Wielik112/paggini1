@@ -5,28 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#05060a" />
 
-  <title>Usługi · Paggini</title>
-  <meta name="description" content="Usługi Paggini: strony internetowe, sklepy online, aplikacje webowe i mobilne oraz branding i UI/UX. Kompleksowo od projektu po wdrożenie." />
+  <title>Usługi: strony internetowe, sklepy i aplikacje | Paggini</title>
+  <meta name="description" content="Tworzenie stron internetowych, sklepów online, aplikacji webowych i mobilnych oraz branding i UI/UX. Kompleksowo: od projektu, przez kod, po wdrożenie." />
   <meta name="author" content="Paggini" />
   <link rel="canonical" href="https://paggini.com/uslugi" />
 
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Usługi · Paggini" />
-  <meta property="og:description" content="Strony, sklepy, aplikacje, branding i UI/UX." />
-  <meta property="og:image" content="https://paggini.com/assets/og-image.png" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Paggini" />
+  <meta property="og:title" content="Usługi: strony internetowe, sklepy i aplikacje" />
+  <meta property="og:description" content="Tworzenie stron internetowych, sklepów online, aplikacji webowych i mobilnych oraz branding i UI/UX. Kompleksowo: od projektu, przez kod, po wdrożenie." />
   <meta property="og:url" content="https://paggini.com/uslugi" />
+  <meta property="og:image" content="https://paggini.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Paggini, web design &amp; development" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Usługi: strony internetowe, sklepy i aplikacje" />
+  <meta name="twitter:description" content="Tworzenie stron internetowych, sklepów online, aplikacji webowych i mobilnych oraz branding i UI/UX. Kompleksowo: od projektu, przez kod, po wdrożenie." />
+  <meta name="twitter:image" content="https://paggini.com/assets/og-cover.jpg" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/style.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://paggini.com/#organization",
+      "name": "Paggini",
+      "url": "https://paggini.com/",
+      "logo": "https://paggini.com/assets/logo-mark.png",
+      "image": "https://paggini.com/assets/og-cover.jpg",
+      "email": "kontakt@paggini.com",
+      "telephone": "+48532237578",
+      "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
+      ],
+      "knowsLanguage": [
+        "pl",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://paggini.com/uslugi#webpage",
+      "url": "https://paggini.com/uslugi",
+      "name": "Usługi: strony internetowe, sklepy i aplikacje | Paggini",
+      "description": "Tworzenie stron internetowych, sklepów online, aplikacji webowych i mobilnych oraz branding i UI/UX. Kompleksowo: od projektu, przez kod, po wdrożenie.",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@id": "https://paggini.com/#website"
+      },
+      "about": {
+        "@id": "https://paggini.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://paggini.com/uslugi#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://paggini.com/uslugi#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paggini",
+          "item": "https://paggini.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Usługi",
+          "item": "https://paggini.com/uslugi"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Przejdź do treści</a>
 
 
   <canvas class="bg-canvas" id="bgCanvas"></canvas>
@@ -37,10 +116,10 @@
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
-        <img src="/assets/wordmark.png" alt="Paggini" class="nav__wordmark" />
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="nav__wordmark" />
       </a>
 
-      <nav class="nav__links" id="navLinks">
+      <nav class="nav__links" id="navLinks" aria-label="Menu główne">
         <a href="/uslugi" data-i18n="nav_services">Usługi</a>
         <a href="/oferta" data-i18n="nav_offer">Oferta</a>
         <a href="/proces" data-i18n="nav_process">Proces</a>
@@ -51,7 +130,7 @@
 
       <div class="nav__right">
         <div class="lang" id="lang">
-          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Zmień język">
             <span id="langCurrent">PL</span>
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
@@ -62,12 +141,12 @@
           </ul>
         </div>
         <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
-        <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+        <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ===== SERVICES ===== -->
     <section class="section section--first services" id="services">
       <div class="container">
@@ -82,49 +161,49 @@
             <div class="card__icon">
               <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h18M7 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <h3 data-i18n="service_web_t">Strony internetowe</h3>
+            <h2 data-i18n="service_web_t">Strony internetowe</h2>
             <p data-i18n="service_web_d">Nowoczesne, szybkie i responsywne strony, które budują wizerunek i sprzedają. Landing page, strony firmowe, portfolio.</p>
             <ul class="card__list">
               <li data-i18n="service_web_1">Indywidualny design</li>
               <li data-i18n="service_web_2">Animacje i mikrointerakcje</li>
               <li data-i18n="service_web_3">SEO i wydajność</li>
             </ul>
-            <a class="card__more" href="/strony-internetowe" data-i18n="service_more">Dowiedz się więcej →</a>
+            <a class="card__more" href="/strony-internetowe" data-i18n="more_web">Więcej o stronach internetowych →</a>
           </article>
 
           <article class="card reveal" data-tilt>
             <div class="card__icon">
               <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h2l1.6 10.4a1 1 0 001 .85h8.2a1 1 0 001-.83L20 8H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19" r="1.4" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="19" r="1.4" stroke="currentColor" stroke-width="1.5"/></svg>
             </div>
-            <h3 data-i18n="service_shop_t">Sklepy online</h3>
+            <h2 data-i18n="service_shop_t">Sklepy online</h2>
             <p data-i18n="service_shop_d">Sklepy e-commerce gotowe na skalowanie. Wygodne zakupy, płatności, integracje i panel, który sam obsłużysz.</p>
             <ul class="card__list">
               <li data-i18n="service_shop_1">Płatności i wysyłki</li>
               <li data-i18n="service_shop_2">Panel zarządzania</li>
               <li data-i18n="service_shop_3">Optymalizacja konwersji</li>
             </ul>
-            <a class="card__more" href="/sklepy-internetowe" data-i18n="service_more">Dowiedz się więcej →</a>
+            <a class="card__more" href="/sklepy-internetowe" data-i18n="more_shop">Więcej o sklepach internetowych →</a>
           </article>
 
           <article class="card reveal" data-tilt>
             <div class="card__icon">
               <svg viewBox="0 0 24 24" fill="none"><rect x="7" y="2.5" width="10" height="19" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
-            <h3 data-i18n="service_app_t">Aplikacje</h3>
+            <h2 data-i18n="service_app_t">Aplikacje</h2>
             <p data-i18n="service_app_d">Aplikacje webowe i mobilne, od paneli i dashboardów po dedykowane systemy szyte pod Twój biznes.</p>
             <ul class="card__list">
               <li data-i18n="service_app_1">Web & mobile</li>
               <li data-i18n="service_app_2">Dedykowane systemy</li>
               <li data-i18n="service_app_3">Integracje API</li>
             </ul>
-            <a class="card__more" href="/aplikacje-webowe" data-i18n="service_more">Dowiedz się więcej →</a>
+            <a class="card__more" href="/aplikacje-webowe" data-i18n="more_app">Więcej o aplikacjach →</a>
           </article>
 
           <article class="card reveal" data-tilt>
             <div class="card__icon">
               <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             </div>
-            <h3 data-i18n="service_brand_t">Branding & UI/UX</h3>
+            <h2 data-i18n="service_brand_t">Branding & UI/UX</h2>
             <p data-i18n="service_brand_d">Spójna identyfikacja i projekty interfejsów, które wyglądają świetnie i są wygodne w użyciu.</p>
             <ul class="card__list">
               <li data-i18n="service_brand_1">Logo i identyfikacja</li>
@@ -149,12 +228,12 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="/assets/wordmark.png" alt="Paggini" class="footer__wordmark" />
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="footer__wordmark" />
         <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
       </div>
       <div class="footer__cols">
         <div class="footer__col">
-          <h4 data-i18n="footer_nav">Nawigacja</h4>
+          <p class="footer__title" data-i18n="footer_nav">Nawigacja</p>
           <a href="/uslugi" data-i18n="nav_services">Usługi</a>
           <a href="/oferta" data-i18n="nav_offer">Oferta</a>
           <a href="/proces" data-i18n="nav_process">Proces</a>
@@ -164,7 +243,7 @@
           <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer_services">Usługi</h4>
+          <p class="footer__title" data-i18n="footer_services">Usługi</p>
           <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
           <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
           <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
@@ -172,7 +251,7 @@
           <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer_contact">Kontakt</h4>
+          <p class="footer__title" data-i18n="footer_contact">Kontakt</p>
           <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
           <a href="tel:+48532237578">+48 532 237 578</a>
           <a href="https://paggini.com">paggini.com</a>
@@ -185,8 +264,8 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="/js/i18n.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>
