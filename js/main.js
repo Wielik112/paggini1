@@ -167,7 +167,8 @@
       .from(".hero__ghost", ghostFrom, 0)
       .from(".hero__title .line > span", { yPercent: 120, duration: 1, stagger: 0.12 }, "-=1.3")
       .from(".hero__sub", { y: 20, opacity: 0, duration: 0.6 }, "-=0.6")
-      .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
+      .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5")
+      .from(".hero__call", { y: 16, opacity: 0, duration: 0.6, clearProps: "transform" }, "-=0.4");
   }
 
   /* ---------- Hero: cursor spotlight, parallax PAGGINI, scroll drift ---------- */

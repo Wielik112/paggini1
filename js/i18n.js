@@ -160,7 +160,7 @@ const I18N = {
     how_3_d: "Dostajesz zakres projektu i przejrzystą wycenę, zanim zaczniemy pracę.",
     how_tail: "Bez gotowych pakietów. Bez ukrytych kosztów. Projekt zbudowany wokół Twoich wymagań.",
     // hero
-    hero_badge: "Web design & development dla firm z Polski i Europy",
+    hero_badge: "Web design & development · Polska i Europa",
     hero_title_1: "Tworzymy strony internetowe,",
     hero_title_2: "sklepy i aplikacje",
     hero_title_3: "warte milion.",
@@ -343,6 +343,11 @@ const I18N = {
     trust_title: "Strony i sklepy dla firm z różnych branż",
     trust_clients: "Zaufali nam",
     fab_cta: "Wycena projektu",
+    // SEO content (added)
+    call_now: "Zadzwoń teraz",
+    call_or: "lub zadzwoń:",
+    menu_call: "Zadzwoń: +48 532 237 578",
+    hero_call_hint: "Wolisz porozmawiać? Zadzwoń, doradzimy od ręki",
   },
 
   en: {
@@ -494,7 +499,7 @@ const I18N = {
     how_3_t: "You receive a clear proposal",
     how_3_d: "You get a project scope and a transparent quote before development begins.",
     how_tail: "No fixed packages. No surprise pricing. Just a project built around your requirements.",
-    hero_badge: "Web design & development for businesses across Europe",
+    hero_badge: "Web design & development · Europe-wide",
     hero_title_1: "We build websites,",
     hero_title_2: "stores and apps",
     hero_title_3: "worth a million.",
@@ -668,6 +673,11 @@ const I18N = {
     trust_title: "Websites and stores for businesses in many industries",
     trust_clients: "Trusted by",
     fab_cta: "Get a quote",
+    // SEO content (added)
+    call_now: "Call us now",
+    call_or: "or call:",
+    menu_call: "Call: +48 532 237 578",
+    hero_call_hint: "Prefer to talk? Call us for quick advice",
   },
 
   de: {
@@ -819,7 +829,7 @@ const I18N = {
     how_3_t: "Sie erhalten ein klares Angebot",
     how_3_d: "Sie bekommen einen Projektumfang und ein transparentes Angebot, bevor wir beginnen.",
     how_tail: "Keine starren Pakete. Keine Preisüberraschungen. Ein Projekt rund um Ihre Anforderungen.",
-    hero_badge: "Webdesign & Entwicklung für Unternehmen in ganz Europa",
+    hero_badge: "Webdesign & Entwicklung · europaweit",
     hero_title_1: "Wir bauen Websites,",
     hero_title_2: "Shops und Apps",
     hero_title_3: "eine Million wert.",
@@ -993,6 +1003,11 @@ const I18N = {
     trust_title: "Websites und Shops für Unternehmen vieler Branchen",
     trust_clients: "Sie vertrauen uns",
     fab_cta: "Angebot anfragen",
+    // SEO content (added)
+    call_now: "Jetzt anrufen",
+    call_or: "oder rufen Sie an:",
+    menu_call: "Anrufen: +48 532 237 578",
+    hero_call_hint: "Lieber sprechen? Rufen Sie an, wir beraten sofort",
   },
 };
 

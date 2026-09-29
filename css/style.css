@@ -916,12 +916,49 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
    NAV PHONE
    ============================================================ */
 .nav__phone {
-  display: none; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: var(--text);
-  white-space: nowrap; transition: color .2s var(--ease);
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex: none;
+  width: 40px; height: 40px; border-radius: 50%; color: var(--text);
+  border: 1px solid rgba(47,128,255,0.45); background: rgba(47,128,255,0.12);
+  transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
 }
+.nav__phone span { display: none; }
 .nav__phone svg { color: var(--blue-bright); }
-.nav__phone:hover { color: var(--blue-bright); }
-@media (min-width: 1240px) { .nav__phone { display: inline-flex; } }
+.nav__phone:hover { color: var(--blue-bright); border-color: var(--blue); background: rgba(47,128,255,0.2); }
+@media (min-width: 1240px) {
+  .nav__phone { width: auto; height: auto; padding: 9px 16px; border-radius: 100px; font-size: 0.92rem; font-weight: 700; white-space: nowrap; }
+  .nav__phone span { display: inline; }
+}
+.nav__menu-call { display: none; }
+@media (max-width: 760px) {
+  .nav__right { gap: 10px; }
+  .nav .nav__links a.nav__menu-call {
+    display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 18px; padding: 15px 20px;
+    border: none; border-radius: 100px; background: var(--grad-blue); color: #fff; font-weight: 700;
+  }
+  .nav .nav__links a.nav__menu-call::after { display: none; }
+}
+
+/* big tap-to-call link in the hero */
+.hero__call {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 14px; margin-top: 30px;
+  padding: 10px 22px 10px 10px; border-radius: 100px; text-align: left; margin-top: 26px;
+  background: rgba(255,255,255,0.035); border: 1px solid var(--border-strong);
+  transition: border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
+}
+.hero__call:hover { border-color: var(--blue); background: rgba(47,128,255,0.08); transform: translateY(-2px); }
+.hero__call-icon {
+  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; flex: none; color: #fff;
+  background: var(--grad-blue); box-shadow: 0 8px 24px rgba(47,128,255,0.45);
+}
+.hero__call-text { display: flex; flex-direction: column; line-height: 1.25; }
+.hero__call-hint { font-size: 0.8rem; color: var(--text-dim); }
+.hero__call-number { font-family: "Sora", sans-serif; font-weight: 700; font-size: clamp(1.15rem, 2.4vw, 1.4rem); color: var(--text); letter-spacing: 0.01em; }
+
+/* number under every CTA box */
+.cta__phone { margin-top: 22px; margin-bottom: 0 !important; color: var(--text-dim); font-size: 1rem; }
+.cta__phone a { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); white-space: nowrap; }
+.cta__phone a:hover { color: var(--blue-bright); }
+.contact__phone { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--text); }
 
 .text-accent {
   background: var(--grad-blue); -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -1018,12 +1055,13 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 }
 .fab.is-visible:not(.is-covered) { opacity: 1; transform: none; pointer-events: auto; }
 .fab__call {
-  width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; color: #fff;
+  height: 52px; padding: 0 18px 0 16px; border-radius: 100px; display: inline-flex; align-items: center; gap: 8px; color: #fff;
+  font-weight: 700; font-size: 0.92rem; white-space: nowrap;
   background: #0f1422; border: 1px solid var(--border-strong); box-shadow: 0 12px 30px rgba(0,0,0,0.5);
   transition: border-color .25s var(--ease), transform .25s var(--ease);
 }
 .fab__call:hover { border-color: var(--blue); transform: translateY(-2px); }
-.fab__call svg { width: 22px; height: 22px; color: var(--blue-bright); }
+.fab__call svg { width: 20px; height: 20px; color: var(--blue-bright); flex: none; }
 .fab__cta { padding: 15px 24px; font-size: 0.92rem; }
 .fab__close {
   position: absolute; top: -9px; left: -9px; width: 22px; height: 22px; border-radius: 50%; font-size: 15px; line-height: 1;
