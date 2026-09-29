@@ -58,7 +58,30 @@
 
   /* ---------- Nav scroll state ---------- */
   const nav = $("#nav");
-  const onScroll = () => { if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 30); };
+  /* floating contact buttons: shown after the first screen, can be dismissed for the session */
+  const fab = $("#fab");
+  let fabDismissed = false;
+  try { fabDismissed = sessionStorage.getItem("paggini_fab") === "0"; } catch (e) {}
+  if (fab && fabDismissed) fab.remove();
+  const fabClose = $("#fabClose");
+  if (fabClose) fabClose.addEventListener("click", () => {
+    fab.remove();
+    try { sessionStorage.setItem("paggini_fab", "0"); } catch (e) {}
+  });
+  // hide them while a CTA, the contact form or the footer is on screen, so they never cover those buttons
+  if (fab && "IntersectionObserver" in window) {
+    const covering = new Set();
+    const fio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? covering.add(e.target) : covering.delete(e.target)));
+      fab.classList.toggle("is-covered", covering.size > 0);
+    });
+    $$(".cta, #contact, .footer, .hero__cta, .hub-section__text .btn, .page-head__cta, .notfound__cta").forEach((el) => fio.observe(el));
+  }
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle("is-scrolled", y > 30);
+    if (fab && fab.isConnected) fab.classList.toggle("is-visible", y > window.innerHeight * 0.6);
+  };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -140,10 +163,12 @@
     const ghostFrom = isLite
       ? { opacity: 0, scale: 1.06, y: 24, duration: 1.2, ease: "power3.out", clearProps: "transform" }
       : { opacity: 0, scale: 1.12, y: 40, filter: "blur(14px)", duration: 1.6, ease: "power3.out", clearProps: "filter,transform" };
-    tl.from(".hero__ghost", ghostFrom)
+    tl.from(".hero__badge", { y: -12, opacity: 0, duration: 0.7 }, 0)
+      .from(".hero__ghost", ghostFrom, 0)
       .from(".hero__title .line > span", { yPercent: 120, duration: 1, stagger: 0.12 }, "-=1.3")
       .from(".hero__sub", { y: 20, opacity: 0, duration: 0.6 }, "-=0.6")
-      .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5");
+      .from(".hero__cta", { y: 20, opacity: 0, duration: 0.6 }, "-=0.5")
+      .from(".hero__call", { y: 16, opacity: 0, duration: 0.6, clearProps: "transform" }, "-=0.4");
   }
 
   /* ---------- Hero: cursor spotlight, parallax PAGGINI, scroll drift ---------- */
