@@ -1094,3 +1094,17 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 @media (prefers-reduced-motion: reduce) {
   .chips__track, .hub__lines line, .hub__core-ring, .hero__badge-dot { animation: none; }
 }
+
+/* ============================================================
+   PROMO PRICE (websites card)
+   ============================================================ */
+.price--promo { border-color: rgba(255,122,89,0.45); }
+.price__badge--promo {
+  left: auto; right: 22px; transform: none;
+  background: linear-gradient(135deg, #ff9f43, #ff5e62); box-shadow: 0 8px 24px rgba(255,94,98,0.35);
+}
+.price__was { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; font-size: 0.85rem; color: var(--text-faint); }
+.price__was del {
+  font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--text-dim);
+  text-decoration-color: #ff5e62; text-decoration-thickness: 2px;
+}
