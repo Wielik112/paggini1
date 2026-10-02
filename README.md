@@ -9,7 +9,9 @@ Wielojęzyczna (PL / EN / DE, auto-wykrywanie języka), lekka, bez frameworka. C
 paggini/
 ├── index.html          # strona główna (pełna treść wszystkich sekcji)
 ├── strony-internetowe.html, sklepy-internetowe.html,
-│   aplikacje-webowe.html, aplikacje-mobilne.html   # podstrony usług
+│   aplikacje-webowe.html, aplikacje-mobilne.html,
+│   aplikacje-saas.html   # podstrony usług
+├── strona-internetowa-dla-firmy-budowlanej.html   # strona branżowa
 ├── poradnik/           # poradnik (artykuły)
 ├── 404.html            # strona błędu (noindex)
 ├── uslugi.html         # podstrona: Usługi

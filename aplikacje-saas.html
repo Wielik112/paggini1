@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+
+  <title>Tworzenie aplikacji SaaS i MVP dla startupów | Paggini</title>
+  <meta name="description" content="Budujemy aplikacje SaaS od MVP: konta firmowe, subskrypcje, płatności cykliczne, faktury z KSeF i panel operatora. MVP SaaS od 20 000 zł netto, kod na własność." />
+  <meta name="author" content="Paggini" />
+  <link rel="canonical" href="https://paggini.com/aplikacje-saas" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Paggini" />
+  <meta property="og:title" content="Tworzenie aplikacji SaaS: od MVP do płacących klientów" />
+  <meta property="og:description" content="Budujemy aplikacje SaaS od MVP: konta firmowe, subskrypcje, płatności cykliczne, faktury z KSeF i panel operatora. MVP SaaS od 20 000 zł netto, kod na własność." />
+  <meta property="og:url" content="https://paggini.com/aplikacje-saas" />
+  <meta property="og:image" content="https://paggini.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Paggini, web design &amp; development" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tworzenie aplikacji SaaS: od MVP do płacących klientów" />
+  <meta name="twitter:description" content="Budujemy aplikacje SaaS od MVP: konta firmowe, subskrypcje, płatności cykliczne, faktury z KSeF i panel operatora. MVP SaaS od 20 000 zł netto, kod na własność." />
+  <meta name="twitter:image" content="https://paggini.com/assets/og-cover.jpg" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://paggini.com/#organization",
+      "name": "Paggini",
+      "url": "https://paggini.com/",
+      "logo": "https://paggini.com/assets/logo-mark.png",
+      "image": "https://paggini.com/assets/og-cover.jpg",
+      "email": "kontakt@paggini.com",
+      "telephone": "+48532237578",
+      "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
+      ],
+      "knowsLanguage": [
+        "pl",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paggini",
+          "item": "https://paggini.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Usługi",
+          "item": "https://paggini.com/uslugi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Aplikacje SaaS",
+          "item": "https://paggini.com/aplikacje-saas"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://paggini.com/aplikacje-saas#service",
+      "url": "https://paggini.com/aplikacje-saas",
+      "name": "Tworzenie aplikacji SaaS i MVP",
+      "serviceType": "Tworzenie oprogramowania SaaS",
+      "description": "Projektowanie i budowa aplikacji SaaS od pierwszej wersji (MVP): konta firmowe, subskrypcje i płatności cykliczne, faktury, panel operatora i dalszy rozwój produktu.",
+      "provider": {
+        "@id": "https://paggini.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PLN",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 20000,
+          "priceCurrency": "PLN",
+          "valueAddedTaxIncluded": false
+        }
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Przejdź do treści</a>
+
+
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="nav__wordmark" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Menu główne">
+        <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+        <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+        <a href="/proces" data-i18n="nav_process">Proces</a>
+        <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+        <a href="/o-nas" data-i18n="nav_about">O nas</a>
+        <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        <a href="tel:+48532237578" class="nav__menu-call"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="menu_call">Zadzwoń: +48 532 237 578</span></a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" id="lang">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Zmień język">
+            <span id="langCurrent">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="menu">
+            <li><button data-lang="pl" role="menuitem">Polski</button></li>
+            <li><button data-lang="en" role="menuitem">English</button></li>
+            <li><button data-lang="de" role="menuitem">Deutsch</button></li>
+          </ul>
+        </div>
+        <a href="tel:+48532237578" class="nav__phone" aria-label="Zadzwoń: +48 532 237 578"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>+48 532 237 578</span></a>
+        <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
+        <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="section section--first">
+      <div class="container">
+        <nav class="crumbs" aria-label="Ścieżka nawigacji"><a href="/">Paggini</a> <span aria-hidden="true">/</span> <a href="/uslugi">Usługi</a> <span aria-hidden="true">/</span> <span aria-current="page">Aplikacje SaaS</span></nav>
+        <div class="page-head">
+          <span class="section__tag reveal">Aplikacje SaaS</span>
+          <h1 class="section__title reveal">Aplikacje SaaS: od pierwszej wersji do płacących klientów</h1>
+          <p class="section__lead reveal">Masz pomysł na produkt, za który firmy albo użytkownicy będą płacić co miesiąc? Pomagamy wyciąć z niego pierwszą wersję, którą da się sprzedać, i budujemy ją tak, żeby kolejne funkcje nie wymagały przepisywania wszystkiego od nowa.</p>
+          <div class="page-head__cta reveal">
+            <a href="/kontakt" class="btn btn--primary"><span>Opowiedz o swoim produkcie</span></a>
+            <a href="/oferta" class="btn btn--ghost"><span>Zobacz cennik</span></a>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact reveal"><strong>MVP od 20 000 zł</strong><span>netto, z kontami, subskrypcją i panelem</span></div>
+          <div class="fact reveal"><strong>Płatności cykliczne</strong><span>plany, okres próbny, faktury i KSeF</span></div>
+          <div class="fact reveal"><strong>Kod na własność</strong><span>repozytorium i konta w chmurze na Ciebie</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content">
+      <div class="container content__layout">
+        <article class="prose">
+          <h2 id="czym-sie-rozni">Czym SaaS różni się od zwykłej aplikacji webowej</h2>
+          <p>Na demo SaaS wygląda jak każda inna aplikacja: logowanie, kilka ekranów, tabelki. Różnica leży w rzeczach, których na prezentacji nie widać, a które zjadają dużą część budżetu. Warto je znać, zanim porównasz wyceny, bo tańsza oferta często po prostu ich nie obejmuje.</p>
+          <ul>
+            <li><strong>Wiele firm w jednym systemie.</strong> Każdy klient (firma, zespół, szkoła) ma swoje konto i nie może zobaczyć danych innych. Ta izolacja musi być wpisana w bazę danych i każde zapytanie, nie dopisana na końcu.</li>
+            <li><strong>Samodzielny start klienta.</strong> Rejestracja, potwierdzenie e-maila, pierwsze kroki w aplikacji i zaproszenie współpracowników bez rozmowy z Tobą. Od tego, jak dobrze działa pierwsze 10 minut, zależy, ile kont próbnych zamieni się w płatne.</li>
+            <li><strong>Rozliczenia.</strong> Plany cenowe, okres próbny, zmiana planu w trakcie miesiąca (z proporcjonalnym przeliczeniem), odrzucona karta, ponowienie płatności, blokada konta po kilku nieudanych próbach. Każdy z tych scenariuszy trzeba zaprojektować i przetestować.</li>
+            <li><strong>Role w obrębie konta.</strong> Właściciel, administrator, zwykły użytkownik, czasem gość z dostępem tylko do odczytu. Klienci biznesowi pytają o to bardzo szybko.</li>
+            <li><strong>Panel operatora.</strong> Ty i Twój zespół musicie widzieć konta klientów, przedłużyć komuś okres próbny, pomóc w problemie. Bez takiego panelu każda prośba klienta kończy się na programiście.</li>
+            <li><strong>Liczby.</strong> Ile osób się zarejestrowało, ile zaczęło korzystać, ile płaci, ile zrezygnowało. Bez tego nie wiesz, co poprawiać.</li>
+          </ul>
+
+          <h2 id="mvp">MVP: co budować w pierwszej wersji, a co odłożyć</h2>
+          <p>Najczęstszy błąd przy SaaS to próba zbudowania od razu produktu „jak konkurencja, tylko lepszego”. Konkurencja rozwijała go latami. Pierwsza wersja ma udowodnić jedno: że ktoś zapłaci za rozwiązanie konkretnego problemu. Dlatego robimy jeden główny proces od początku do końca, razem z płatnością, a resztę odkładamy.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Obszar</th><th>W pierwszej wersji</th><th>Może poczekać</th></tr></thead>
+              <tbody>
+                <tr><td>Logowanie</td><td>e-mail i hasło lub link logujący, logowanie przez Google</td><td>SSO dla korporacji (SAML), weryfikacja dwuetapowa wymuszana na całe konto</td></tr>
+                <tr><td>Cennik</td><td>jeden lub dwa plany, okres próbny</td><td>rozliczenia roczne, kody rabatowe, opłaty za zużycie</td></tr>
+                <tr><td>Rozliczenia</td><td>gotowy ekran płatności i portal klienta operatora płatności</td><td>własny, dopracowany ekran zarządzania subskrypcją</td></tr>
+                <tr><td>Obsługa klientów</td><td>prosty panel operatora, część rzeczy robiona ręcznie</td><td>pełna automatyzacja wyjątków</td></tr>
+                <tr><td>Dane</td><td>eksport do CSV</td><td>integracje z innymi systemami, publiczne API</td></tr>
+                <tr><td>Urządzenia</td><td>aplikacja webowa działająca dobrze na telefonie</td><td>osobna aplikacja mobilna</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Rzeczy z prawej kolumny nie znikają, tylko czekają, aż pierwsi płacący klienci powiedzą, której z nich naprawdę potrzebują. Często okazuje się, że zupełnie innej.</p>
+
+          <h2 id="platnosci">Płatności, faktury i podatki w Polsce</h2>
+          <p>Ta część najczęściej zaskakuje założycieli, bo sam operator płatności nie załatwia wszystkiego.</p>
+          <ul>
+            <li><strong>Subskrypcje.</strong> Najczęściej korzystamy ze Stripe, który obsługuje plany, okresy próbne i ponawianie nieudanych płatności. Za karty z Europejskiego Obszaru Gospodarczego płacisz 1,5% + 1 zł od transakcji, a moduł subskrypcji kosztuje dodatkowo 0,7% obrotu (stawki z cennika Stripe na 2026 rok, warto je sprawdzić przed startem). Przy subskrypcjach podstawą są karty. BLIK sprawdza się przy płatnościach jednorazowych, a cykliczny BLIK oferują tylko niektóre polskie bramki.</li>
+            <li><strong>Faktury VAT i KSeF.</strong> Stripe nie wystawia polskich faktur, które trafią do Krajowego Systemu e-Faktur. Od 2026 roku faktury dla firm w Polsce przechodzą przez KSeF, dlatego łączymy rozliczenia z programem do fakturowania (np. przez API), który wysyła faktury do KSeF automatycznie po każdej płatności.</li>
+            <li><strong>Klienci z innych krajów UE.</strong> Firmy z numerem VAT UE rozlicza się zwykle w mechanizmie odwrotnego obciążenia, a klientom prywatnym nalicza się VAT kraju klienta (procedura OSS). Aplikacja musi zbierać odpowiednie dane przy zakupie, a szczegóły warto ustalić z księgowym jeszcze przed startem.</li>
+          </ul>
+          <p class="note">Jeśli Twoi klienci to firmy, które płacą przelewem na fakturę, a nie kartą, pierwsza wersja może w ogóle nie mieć automatycznych płatności. Ręczne fakturowanie kilkunastu klientów to rozsądny kompromis, dopóki nie wiesz, czy produkt się sprzedaje.</p>
+
+          <h2 id="architektura">Fundamenty, które nie zablokują wzrostu</h2>
+          <p>Nie budujemy MVP „na brudno, potem się przepisze”, bo potem nigdy nie ma na to czasu. Nie budujemy też infrastruktury dla miliona użytkowników, bo za nią płacisz od pierwszego dnia. Kilka decyzji trzeba jednak podjąć dobrze od początku:</p>
+          <ul>
+            <li><strong>Model danych z podziałem na konta klientów.</strong> W większości produktów wystarcza jedna baza, w której każdy rekord należy do konkretnego konta. Osobne bazy dla każdego klienta mają sens dopiero przy dużych klientach z wymaganiami prawnymi.</li>
+            <li><strong>Dane w Unii Europejskiej i RODO.</strong> Jako dostawca SaaS przetwarzasz dane swoich klientów w ich imieniu, więc potrzebujesz umowy powierzenia przetwarzania danych, a klienci biznesowi zapytają o nią przed zakupem. Hosting w UE, kopie zapasowe i dziennik ważnych zmian ułatwiają odpowiedź na ich pytania.</li>
+            <li><strong>Włączanie funkcji dla wybranych kont.</strong> Nową funkcję możesz najpierw udostępnić kilku zaufanym klientom, a dopiero potem wszystkim.</li>
+            <li><strong>Automatyczne testy kluczowych ścieżek</strong>: rejestracji, płatności i dostępu do danych. Błąd, w którym jeden klient widzi dane drugiego, to w SaaS najgorszy możliwy scenariusz.</li>
+          </ul>
+
+          <h2 id="koszt">Ile kosztuje i co wpływa na cenę</h2>
+          <p>MVP aplikacji SaaS budujemy od 20 000 zł netto. W tej kwocie mieści się jeden główny proces, konta firmowe z rolami, subskrypcja z okresem próbnym i podstawowy panel operatora. Cenę podnoszą przede wszystkim:</p>
+          <ul>
+            <li>liczba różnych typów użytkowników (np. firma, jej pracownicy i jej klienci to w praktyce trzy aplikacje),</li>
+            <li>integracje z zewnętrznymi systemami, zwłaszcza takimi bez dobrej dokumentacji,</li>
+            <li>praca w czasie rzeczywistym (czat, wspólna edycja, mapy na żywo),</li>
+            <li>raporty i rozbudowane uprawnienia,</li>
+            <li>aplikacja mobilna obok webowej.</li>
+          </ul>
+          <p>Po starcie dochodzą koszty stałe: serwery (na początku zwykle od kilkudziesięciu do kilkuset złotych miesięcznie), wysyłka e-maili, prowizje operatora płatności i dalszy rozwój. Szczegółowo rozpisujemy to w poradniku <a href="/poradnik/ile-kosztuje-aplikacja-webowa">ile kosztuje aplikacja webowa</a>.</p>
+
+          <h2 id="wlasnosc">Twój produkt, Twój kod</h2>
+          <p>Repozytorium kodu, konto w chmurze, konto operatora płatności i domena są zakładane na Ciebie albo od razu przekazywane. To ważne, gdy będziesz szukać inwestora: przy weryfikacji spółki pytanie „do kogo należy kod?” pada zawsze. Po starcie możemy dalej rozwijać produkt albo przekazać go Twojemu zespołowi, razem z dokumentacją.</p>
+
+          <h2 id="faq">Najczęstsze pytania</h2>
+          <div class="faq__list">
+            <details class="faq__item">
+              <summary>Czy nie wystarczy narzędzie no-code, np. Bubble?</summary>
+              <div class="faq__a"><p>Na sprawdzenie pomysłu czasem tak, zwłaszcza gdy budujesz sam i bez budżetu. Problemy pojawiają się później: koszt rośnie z liczbą użytkowników, trudniej o wydajność i nietypowe funkcje, a kodu nie da się przenieść gdzie indziej. Jeśli masz już klientów gotowych płacić, zwykle taniej jest od razu zbudować produkt na własnym kodzie.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Ile trwa zbudowanie MVP?</summary>
+              <div class="faq__a"><p>Zależy od zakresu, dlatego zaczynamy od jego spisania. Po tym etapie dostajesz listę funkcji, harmonogram i cenę, zanim zaczniemy programować. Im ciaśniej przytniemy pierwszą wersję, tym szybciej trafi do pierwszych klientów.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Mam już prototyp lub działającą aplikację. Przejmiecie ją?</summary>
+              <div class="faq__a"><p>Tak, ale najpierw przeglądamy kod i infrastrukturę. Po przeglądzie mówimy wprost, co warto zostawić, co poprawić, a co lepiej przepisać, i ile to kosztuje.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Czy zbudujecie też aplikację mobilną?</summary>
+              <div class="faq__a"><p>Tak. Aplikacja mobilna może korzystać z tego samego API i tej samej bazy co wersja webowa, więc nie budujemy wszystkiego dwa razy. Więcej na stronie <a href="/aplikacje-mobilne">aplikacje mobilne</a>.</p></div>
+            </details>
+          </div>
+        </article>
+        <aside class="content__aside">
+          <div class="aside-box">
+            <h2>Na tej stronie</h2>
+            <ol>
+              <li><a href="#czym-sie-rozni">Czym SaaS różni się od zwykłej aplikacji</a></li>
+              <li><a href="#mvp">MVP: co budować w pierwszej wersji</a></li>
+              <li><a href="#platnosci">Płatności, faktury i podatki</a></li>
+              <li><a href="#architektura">Fundamenty, które nie zablokują wzrostu</a></li>
+              <li><a href="#koszt">Ile kosztuje i co wpływa na cenę</a></li>
+              <li><a href="#wlasnosc">Twój produkt, Twój kod</a></li>
+              <li><a href="#faq">Najczęstsze pytania</a></li>
+            </ol>
+          </div>
+          <div class="aside-box aside-box--cta">
+            <h2>Porozmawiajmy o produkcie</h2>
+            <p>Opisz, dla kogo jest Twój SaaS i jaki problem rozwiązuje. Pomożemy przyciąć pierwszą wersję.</p>
+            <a href="/kontakt" class="btn btn--primary btn--full"><span>Opisz swój pomysł</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section related">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__tag reveal">Czytaj dalej</span>
+          <h2 class="section__title reveal">Powiązane tematy</h2>
+        </div>
+        <div class="related__grid">
+          <a class="nav-card reveal" href="/poradnik/ile-kosztuje-aplikacja-webowa">
+            <span class="nav-card__num">Poradnik</span>
+            <h3>Ile kosztuje aplikacja webowa?</h3>
+            <p>Widełki cen, ukryte koszty i przykład wyliczenia: gotowe narzędzie czy własny system.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/aplikacje-webowe">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Aplikacje webowe i systemy</h3>
+            <p>Dedykowane systemy dla firm: CRM, portale klienta, rezerwacje.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/aplikacje-mobilne">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Aplikacje mobilne</h3>
+            <p>iOS i Android z jednego kodu, na wspólnym backendzie z wersją webową.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <h2>Masz pomysł na SaaS?</h2>
+        <p>Opowiedz nam o nim. Pomożemy określić pierwszą wersję, którą da się sprzedać, i jej koszt.</p>
+        <a href="/kontakt" class="btn btn--primary btn--lg" data-magnetic><span>Porozmawiajmy o produkcie</span></a>
+      </div>
+    </section>
+  </main>
+
+  <div class="fab" id="fab">
+    <a class="fab__call" href="tel:+48532237578" aria-label="Zadzwoń: +48 532 237 578"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>532 237 578</span></a>
+    <a class="fab__cta btn btn--primary" href="/kontakt"><span data-i18n="fab_cta">Wycena projektu</span></a>
+    <button class="fab__close" type="button" id="fabClose" aria-label="Ukryj przyciski kontaktu">×</button>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="footer__wordmark" />
+        <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_nav">Nawigacja</p>
+          <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+          <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+          <a href="/proces" data-i18n="nav_process">Proces</a>
+          <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+          <a href="/poradnik" data-i18n="nav_guide">Poradnik</a>
+          <a href="/o-nas" data-i18n="nav_about">O nas</a>
+          <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_services">Usługi</p>
+          <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
+          <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
+          <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
+          <a href="/aplikacje-mobilne" data-i18n="price_4_name">Aplikacje mobilne</a>
+          <a href="/aplikacje-saas" data-i18n="footer_saas">Aplikacje SaaS</a>
+          <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_contact">Kontakt</p>
+          <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+          <a href="tel:+48532237578">+48 532 237 578</a>
+          <a href="https://paggini.com">paggini.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Paggini. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer__made" data-i18n="footer_made">Zaprojektowane i zakodowane z pasją.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
