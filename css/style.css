@@ -786,6 +786,14 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .prose th { color: var(--text); font-weight: 600; background: rgba(255,255,255,0.03); }
 .prose tr:last-child td { border-bottom: none; }
 .prose .faq__list { max-width: none; margin: 0; }
+.prose figure { margin: 0; }
+.prose figure img { display: block; width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.prose figcaption { margin-top: 10px; font-size: 0.85rem; color: var(--text-faint); }
+.prose blockquote {
+  margin: 0; padding: 4px 0 4px 22px; border-left: 2px solid var(--blue-bright);
+  color: var(--text); font-size: 1.05rem; font-style: italic;
+}
+.prose blockquote cite { display: block; margin-top: 8px; font-size: 0.85rem; font-style: normal; color: var(--text-faint); }
 
 .related { padding-top: 0; }
 .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
