@@ -41,7 +41,7 @@ paggini/
 > `/realizacje`, `/o-nas`, `/kontakt`), więc klient szukający konkretnej
 > rzeczy trafia od razu na dedykowaną stronę.
 >
-> **Oferta / cennik.** Trzy pakiety: **Strona internetowa, od 500 zł**,
+> **Oferta / cennik.** Trzy pakiety: **Strona internetowa, od 1 000 zł**,
 > **Sklep internetowy, do 3000 zł** oraz **Pozostałe projekty, wycena
 > indywidualna**. Treść pakietów edytujesz w `js/i18n.js` (klucze `price_*`).
 > Strona zawiera też sekcję „Dlaczego Paggini", opinie klientów i FAQ,
