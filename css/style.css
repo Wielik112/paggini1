@@ -594,12 +594,6 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .project__media--2 { background: linear-gradient(135deg, #0a2440, #05121f); }
 .project__media--3 { background: linear-gradient(135deg, #101a3a, #0a0f22); }
 .project__media--4 { background: linear-gradient(135deg, #0d1430, #08152c); }
-/* text wordmark for projects without a screenshot */
-.project__brand {
-  position: relative; z-index: 2; font-family: "Sora", sans-serif; font-weight: 800;
-  font-size: clamp(2rem, 6vw, 3.4rem); letter-spacing: -0.02em;
-  background: var(--grad-blue); -webkit-background-clip: text; background-clip: text; color: transparent;
-}
 .project__soon {
   position: relative; z-index: 2; font-family: "Sora", sans-serif; font-weight: 600; font-size: 0.78rem;
   letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim);
