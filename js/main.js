@@ -132,8 +132,11 @@
   }
 
   /* ---------- Reveal on scroll ---------- */
+  // <html class="reveal-on"> is set in <head> only when the animation can run; without it
+  // content stays visible (CSS hides .reveal only under .reveal-on).
+  const motionOn = document.documentElement.classList.contains("reveal-on");
   const revealEls = $$(".reveal");
-  if ("IntersectionObserver" in window && !prefersReduced) {
+  if (motionOn && "IntersectionObserver" in window && !prefersReduced) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
@@ -147,7 +150,9 @@
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     revealEls.forEach((el) => io.observe(el));
+    window.__pagginiReveal = true; // tells the <head> fail-safe that the observer is running
   } else {
+    document.documentElement.classList.remove("reveal-on");
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
@@ -216,15 +221,16 @@
     }
     requestAnimationFrame(tick);
   }
-  if ("IntersectionObserver" in window) {
+  // The real values are in the static HTML. Count up from 0 only when the reveal animation is on;
+  // otherwise (no JS, crawler, reduced motion, no IntersectionObserver) the HTML values stay.
+  if (motionOn && "IntersectionObserver" in window) {
+    $$(".stat__num").forEach((el) => { el.textContent = "0"; });
     const cio = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) { animateCount(entry.target); cio.unobserve(entry.target); }
       });
     }, { threshold: 0.6 });
     $$(".stat__num").forEach((el) => cio.observe(el));
-  } else {
-    $$(".stat__num").forEach((el) => animateCount(el));
   }
 
   /* ---------- Price count-up (pricing cards) ---------- */
