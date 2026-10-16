@@ -34,6 +34,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- Reveal animations hide content only when they can actually run (JS + IntersectionObserver,
+       no reduced motion, not a crawler). main.js confirms it started; otherwise content is shown after 4 s. -->
+  <script>(function(d){var u=navigator.userAgent||"";if("IntersectionObserver"in window&&!/bot|crawl|spider|slurp|google-inspectiontool/i.test(u)&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){d.classList.add("reveal-on");setTimeout(function(){if(!window.__pagginiReveal)d.classList.remove("reveal-on")},4000)}})(document.documentElement)</script>
   <link rel="stylesheet" href="/css/style.css" />
 
   <script type="application/ld+json">

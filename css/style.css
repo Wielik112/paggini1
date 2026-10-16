@@ -716,8 +716,10 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 /* ============================================================
    REVEAL ANIMATION
    ============================================================ */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+/* content is visible by default; it is hidden for the animation only when <html> has .reveal-on
+   (set in <head> when JS, IntersectionObserver and motion are available) */
+.reveal-on .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal-on .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 /* ============================================================
    CONTENT PAGES (service landing pages + guides)
@@ -893,13 +895,13 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   .price--featured::after { animation: none; opacity: 0.8; }
 
   /* lighter, shorter reveal */
-  .reveal { transform: translateY(18px); transition-duration: .6s; }
+  .reveal-on .reveal { transform: translateY(18px); transition-duration: .6s; }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal-on .reveal { opacity: 1; transform: none; }
 }
 
 /* ============================================================
