@@ -221,7 +221,7 @@
           <p>Ta część najczęściej zaskakuje założycieli, bo sam operator płatności nie załatwia wszystkiego.</p>
           <ul>
             <li><strong>Subskrypcje.</strong> Najczęściej korzystamy ze Stripe, który obsługuje plany, okresy próbne i ponawianie nieudanych płatności. Za karty z Europejskiego Obszaru Gospodarczego płacisz 1,5% + 1 zł od transakcji, a moduł subskrypcji kosztuje dodatkowo 0,7% obrotu (stawki z cennika Stripe na 2026 rok, warto je sprawdzić przed startem). Przy subskrypcjach podstawą są karty. BLIK sprawdza się przy płatnościach jednorazowych, a cykliczny BLIK oferują tylko niektóre polskie bramki.</li>
-            <li><strong>Faktury VAT i KSeF.</strong> Stripe nie wystawia polskich faktur, które trafią do Krajowego Systemu e-Faktur. Od 2026 roku faktury dla firm w Polsce przechodzą przez KSeF, dlatego łączymy rozliczenia z programem do fakturowania (np. przez API), który wysyła faktury do KSeF automatycznie po każdej płatności.</li>
+            <li><strong>Faktury VAT i KSeF.</strong> Stripe nie wystawia polskich faktur, które trafią do Krajowego Systemu e-Faktur. Od 2026 roku faktury dla firm w Polsce przechodzą przez KSeF, dlatego łączymy rozliczenia z programem do fakturowania (np. przez API), który wysyła faktury do KSeF automatycznie po każdej płatności. Jak to wygląda technicznie, opisujemy na stronie <a href="/integracja-ksef">integracja KSeF</a>.</li>
             <li><strong>Klienci z innych krajów UE.</strong> Firmy z numerem VAT UE rozlicza się zwykle w mechanizmie odwrotnego obciążenia, a klientom prywatnym nalicza się VAT kraju klienta (procedura OSS). Aplikacja musi zbierać odpowiednie dane przy zakupie, a szczegóły warto ustalić z księgowym jeszcze przed startem.</li>
           </ul>
           <p class="note">Jeśli Twoi klienci to firmy, które płacą przelewem na fakturę, a nie kartą, pierwsza wersja może w ogóle nie mieć automatycznych płatności. Ręczne fakturowanie kilkunastu klientów to rozsądny kompromis, dopóki nie wiesz, czy produkt się sprzedaje.</p>
@@ -359,6 +359,7 @@
           <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
           <a href="/aplikacje-mobilne" data-i18n="price_4_name">Aplikacje mobilne</a>
           <a href="/aplikacje-saas" data-i18n="footer_saas">Aplikacje SaaS</a>
+          <a href="/integracja-ksef" data-i18n="footer_ksef">Integracja KSeF</a>
           <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
         </div>
         <div class="footer__col">

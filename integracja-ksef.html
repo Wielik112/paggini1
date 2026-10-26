@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+
+  <title>Integracja KSeF z systemem, sklepem i ERP | Paggini</title>
+  <meta name="description" content="Integracja KSeF ze sklepem internetowym, ERP, CRM lub własną aplikacją. Automatyczna wysyłka i odbiór faktur przez API KSeF 2.0, statusy i obsługa błędów." />
+  <meta name="author" content="Paggini" />
+  <link rel="canonical" href="https://paggini.com/integracja-ksef" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Paggini" />
+  <meta property="og:title" content="Integracja KSeF z Twoim systemem, sklepem lub ERP" />
+  <meta property="og:description" content="Integracja KSeF ze sklepem internetowym, ERP, CRM lub własną aplikacją. Automatyczna wysyłka i odbiór faktur przez API KSeF 2.0, statusy i obsługa błędów." />
+  <meta property="og:url" content="https://paggini.com/integracja-ksef" />
+  <meta property="og:image" content="https://paggini.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Paggini, web design &amp; development" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Integracja KSeF z Twoim systemem, sklepem lub ERP" />
+  <meta name="twitter:description" content="Integracja KSeF ze sklepem internetowym, ERP, CRM lub własną aplikacją. Automatyczna wysyłka i odbiór faktur przez API KSeF 2.0, statusy i obsługa błędów." />
+  <meta name="twitter:image" content="https://paggini.com/assets/og-cover.jpg" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Reveal animations hide content only when they can actually run (JS + IntersectionObserver,
+       no reduced motion, not a crawler). main.js confirms it started; otherwise content is shown after 4 s. -->
+  <script>(function(d){var u=navigator.userAgent||"";if("IntersectionObserver"in window&&!/bot|crawl|spider|slurp|google-inspectiontool/i.test(u)&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){d.classList.add("reveal-on");setTimeout(function(){if(!window.__pagginiReveal)d.classList.remove("reveal-on")},4000)}})(document.documentElement)</script>
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://paggini.com/#organization",
+      "name": "Paggini",
+      "url": "https://paggini.com/",
+      "logo": "https://paggini.com/assets/logo-mark.png",
+      "image": "https://paggini.com/assets/og-cover.jpg",
+      "email": "kontakt@paggini.com",
+      "telephone": "+48532237578",
+      "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
+      ],
+      "knowsLanguage": [
+        "pl",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paggini",
+          "item": "https://paggini.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Usługi",
+          "item": "https://paggini.com/uslugi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Integracja KSeF",
+          "item": "https://paggini.com/integracja-ksef"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://paggini.com/integracja-ksef#service",
+      "url": "https://paggini.com/integracja-ksef",
+      "name": "Integracja KSeF z systemami firmowymi",
+      "serviceType": "Integracja systemów z Krajowym Systemem e-Faktur (KSeF)",
+      "description": "Integracja sklepów internetowych, systemów ERP i CRM oraz własnych aplikacji z Krajowym Systemem e-Faktur przez API KSeF 2.0: automatyczna wysyłka i odbiór faktur, obsługa statusów i błędów, dostosowanie istniejących integracji.",
+      "provider": {
+        "@id": "https://paggini.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Przejdź do treści</a>
+
+
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="nav__wordmark" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Menu główne">
+        <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+        <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+        <a href="/proces" data-i18n="nav_process">Proces</a>
+        <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+        <a href="/o-nas" data-i18n="nav_about">O nas</a>
+        <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        <a href="tel:+48532237578" class="nav__menu-call"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="menu_call">Zadzwoń: +48 532 237 578</span></a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" id="lang">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Zmień język">
+            <span id="langCurrent">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="menu">
+            <li><button data-lang="pl" role="menuitem">Polski</button></li>
+            <li><button data-lang="en" role="menuitem">English</button></li>
+            <li><button data-lang="de" role="menuitem">Deutsch</button></li>
+          </ul>
+        </div>
+        <a href="tel:+48532237578" class="nav__phone" aria-label="Zadzwoń: +48 532 237 578"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>+48 532 237 578</span></a>
+        <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
+        <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="section section--first">
+      <div class="container">
+        <nav class="crumbs" aria-label="Ścieżka nawigacji"><a href="/">Paggini</a> <span aria-hidden="true">/</span> <a href="/uslugi">Usługi</a> <span aria-hidden="true">/</span> <span aria-current="page">Integracja KSeF</span></nav>
+        <div class="page-head">
+          <span class="section__tag reveal">Integracja KSeF</span>
+          <h1 class="section__title reveal">Integracja KSeF z Twoim systemem: faktury trafiają do KSeF same, bez przepisywania</h1>
+          <p class="section__lead reveal">Łączymy sklepy internetowe, systemy sprzedażowe, ERP, CRM i aplikacje firmowe z Krajowym Systemem e-Faktur. Faktura wystawiona w Twoim systemie trafia do KSeF automatycznie, numer KSeF wraca do dokumentu, a faktury zakupowe same pojawiają się tam, gdzie pracuje księgowość.</p>
+          <div class="page-head__cta reveal">
+            <a href="/kontakt" class="btn btn--primary"><span>Porozmawiajmy o integracji</span></a>
+            <a href="#proces" class="btn btn--ghost"><span>Jak pracujemy</span></a>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact reveal"><strong>Wysyłka i odbiór</strong><span>faktury sprzedażowe i zakupowe w jednym przepływie</span></div>
+          <div class="fact reveal"><strong>API KSeF 2.0</strong><span>struktura FA(3), certyfikaty KSeF, tryb offline</span></div>
+          <div class="fact reveal"><strong>Najpierw analiza</strong><span>zakres i wykonalność potwierdzamy przed wyceną</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content">
+      <div class="container content__layout">
+        <article class="prose">
+          <h2 id="problemy">Z czym przychodzą do nas firmy</h2>
+          <p>KSeF jest obowiązkowy od 2026 roku: od 1 lutego dla największych podatników, od 1 kwietnia dla pozostałych firm. Większość programów do fakturowania już go obsługuje. Kłopot zaczyna się tam, gdzie faktury powstają w innym miejscu: w sklepie, we własnym systemie sprzedaży, w aplikacji rozliczającej klientów. Najczęściej słyszymy o takich sytuacjach:</p>
+          <ul>
+            <li><strong>Ręczne przenoszenie faktur.</strong> Sklep albo system sprzedaży wystawia faktury, ale do KSeF trafiają przez eksport, import lub przepisywanie. Przy kilkudziesięciu dokumentach dziennie to etat i źródło pomyłek.</li>
+            <li><strong>Brak informacji zwrotnej.</strong> Nie wiadomo, czy faktura została przyjęta, jaki dostała numer KSeF ani dlaczego została odrzucona. Klient pyta o fakturę, a nikt nie potrafi szybko odpowiedzieć.</li>
+            <li><strong>Faktury zakupowe pobierane ręcznie.</strong> Faktury od dostawców są w KSeF, ale ktoś musi je stamtąd ściągnąć i wprowadzić do ERP albo do obiegu akceptacji.</li>
+            <li><strong>Integracja zrobiona „na szybko” przed terminem.</strong> Działa, ale korzysta z tokenów, nie obsługuje trybu offline ani korekt i nikt w firmie nie wie, jak ją utrzymać.</li>
+            <li><strong>Kilka systemów, kilka źródeł prawdy.</strong> Sklep, ERP i program księgowy mają różne dane o tej samej fakturze, a uzgadnianie ich zajmuje czas przy każdym zamknięciu miesiąca.</li>
+          </ul>
+
+          <h2 id="zakres">Zakres integracji</h2>
+          <p>Każdy projekt zaczynamy od sprawdzenia, jak wygląda Twój system i skąd biorą się faktury. Dopiero wtedy proponujemy rozwiązanie. Najczęściej obejmuje ono jeden lub kilka z poniższych obszarów.</p>
+
+          <h3>Integracja sklepu z KSeF</h3>
+          <p>Faktura wystawiana po opłaceniu lub wysłaniu zamówienia jest od razu przesyłana do KSeF, a numer KSeF zapisuje się przy zamówieniu i w panelu klienta. Pracujemy ze sklepami na własnym kodzie, a w przypadku platform takich jak WooCommerce czy Shopify sprawdzamy, na ile pozwalają one na rozszerzenia i dostęp przez API.</p>
+
+          <h3>Integracja KSeF z ERP, CRM i systemami sprzedaży</h3>
+          <p>Łączymy KSeF z systemami, w których faktury powstają lub są księgowane. Możliwości zależą od samego systemu: jedne mają dobrze opisane API, inne pozwalają tylko na wymianę plików albo wymagają modułu od producenta. To ustalamy na etapie analizy, zanim podamy cenę.</p>
+
+          <h3>Integracja własnych aplikacji i oprogramowania firmowego</h3>
+          <p>Jeśli faktury wystawia Twoja aplikacja (np. SaaS z subskrypcjami, system rezerwacji, portal klienta), dodajemy do niej moduł komunikacji z KSeF albo podłączamy ją do programu do fakturowania, który z KSeF już współpracuje.</p>
+
+          <h3>Automatyczna wysyłka i odbiór faktur</h3>
+          <p>Wysyłka faktur sprzedażowych, pobieranie faktur zakupowych według ustalonego harmonogramu i przekazywanie ich dalej: do ERP, do obiegu akceptacji albo do księgowości.</p>
+
+          <h3>Synchronizacja danych i obsługa statusów</h3>
+          <p>Integracja zapisuje numer KSeF i potwierdzenie przyjęcia (UPO), ponawia wysyłkę po chwilowych błędach, a przy odrzuceniu faktury pokazuje powód i powiadamia wskazaną osobę. Wiesz, co się stało z każdym dokumentem, bez logowania się do KSeF.</p>
+
+          <h3>Rozbudowa istniejących integracji i dostosowanie do KSeF 2.0</h3>
+          <p>Przejmujemy integracje zbudowane wcześniej: przeglądamy kod, dostosowujemy je do API KSeF 2.0 i struktury FA(3), dodajemy uwierzytelnianie certyfikatem, tryb offline czy obsługę korekt.</p>
+
+          <h3 id="zastosowania">Przykładowe zastosowania</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Sytuacja</th><th>Co robi integracja</th></tr></thead>
+              <tbody>
+                <tr><td>Sklep B2B, klienci proszą o fakturę</td><td>po opłaceniu zamówienia wystawia fakturę, wysyła ją do KSeF i pokazuje klientowi numer KSeF w historii zamówień</td></tr>
+                <tr><td>Hurtownia z własnym systemem sprzedaży i ERP</td><td>przesyła faktury z systemu sprzedaży do KSeF, a status i numer KSeF zapisuje w ERP</td></tr>
+                <tr><td>Aplikacja SaaS z płatnościami cyklicznymi</td><td>po każdej udanej płatności przekazuje dane do programu do fakturowania lub bezpośrednio do KSeF</td></tr>
+                <tr><td>Firma usługowa z dużą liczbą faktur kosztowych</td><td>codziennie pobiera faktury zakupowe z KSeF i przekazuje je do obiegu akceptacji lub do księgowości</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="bezposrednio">Bezpośrednio z KSeF czy przez program do fakturowania?</h2>
+          <p>Nie zawsze trzeba łączyć się z KSeF bezpośrednio. Jeśli używasz programu do fakturowania, który już wysyła faktury do KSeF i ma API, często prościej i taniej jest połączyć z nim sklep lub system sprzedaży. Bezpośrednia integracja z API KSeF ma sens, gdy faktury powstają w Twoim systemie, gdy chcesz uniknąć kolejnego pośrednika albo gdy potrzebujesz pełnej kontroli nad statusami i danymi.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Kryterium</th><th>Przez program do fakturowania</th><th>Bezpośrednio przez API KSeF 2.0</th></tr></thead>
+              <tbody>
+                <tr><td>Kto wysyła fakturę do KSeF</td><td>program do fakturowania</td><td>Twój system</td></tr>
+                <tr><td>Kiedy się sprawdza</td><td>masz już program, który działa, i chcesz tylko przestać przepisywać dane</td><td>faktury powstają we własnym systemie lub sklepie, jest ich dużo albo potrzebujesz własnej logiki</td></tr>
+                <tr><td>Koszty stałe</td><td>abonament programu, czasem limit dokumentów lub wywołań API</td><td>utrzymanie integracji i reagowanie na zmiany w API KSeF</td></tr>
+                <tr><td>Zakres prac</td><td>zwykle mniejszy</td><td>większy: uwierzytelnianie, struktura FA(3), sesje, statusy, tryb offline</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Którą drogę wybrać, mówimy po analizie. Nie mamy umów z producentami programów do fakturowania, więc rekomendujemy to, co pasuje do Twojej sytuacji.</p>
+
+          <h2 id="technicznie">Co obejmuje integracja z API KSeF 2.0</h2>
+          <ul>
+            <li><strong>Uwierzytelnianie.</strong> Dostęp do KSeF nadaje Twoja firma, a integracja korzysta tylko z uprawnień, które jej przyznasz. Według obecnych zapowiedzi Ministerstwa Finansów tokeny mają działać do końca 2026 roku, a od 2027 roku podstawą będą certyfikaty KSeF. Nowe integracje budujemy od razu z myślą o certyfikatach.</li>
+            <li><strong>Struktura faktury FA(3).</strong> Mapujemy dane z Twojego systemu na schemat XML wymagany przez KSeF, łącznie z przypadkami, o których łatwo zapomnieć: korektami, zaliczkami, fakturami w walutach obcych czy odwrotnym obciążeniem.</li>
+            <li><strong>Wysyłka i potwierdzenia.</strong> Faktury wysyłamy pojedynczo lub paczkami, zależnie od ich liczby, a potwierdzenia przyjęcia i numery KSeF zapisujemy przy dokumentach.</li>
+            <li><strong>Tryb offline i awarie.</strong> Gdy KSeF jest niedostępny albo faktura powstaje offline, integracja zachowuje dokumenty, oznacza je kodami QR wymaganymi na wizualizacji i dosyła do KSeF w wymaganym terminie.</li>
+            <li><strong>Odbiór faktur.</strong> Pobieranie faktur zakupowych z KSeF i przekazywanie ich dalej w formacie, którego potrzebuje Twój system.</li>
+            <li><strong>Dziennik i powiadomienia.</strong> Każda operacja jest zapisywana, a błędy trafiają do osoby, która może na nie zareagować.</li>
+          </ul>
+          <p class="note">Przepisy dotyczące KSeF były kilka razy zmieniane. Aktualne terminy i wymagania warto sprawdzać na stronie Ministerstwa Finansów: <a href="https://ksef.podatki.gov.pl/" target="_blank" rel="noopener">ksef.podatki.gov.pl</a>. Kwestie podatkowe, np. które faktury muszą trafić do KSeF w Twojej firmie, ustal z księgowym. My zajmujemy się stroną techniczną.</p>
+
+          <h2 id="proces">Jak wygląda współpraca</h2>
+          <ol>
+            <li><strong>Analiza.</strong> Rozmawiamy o tym, gdzie powstają faktury, ile ich jest i kto z nimi pracuje. Przeglądamy dokumentację Twojego systemu, jego API lub możliwości rozszerzeń i kilka przykładowych faktur. Jeśli na tym etapie okaże się, że integracji nie da się sensownie zrobić, mówimy to wprost.</li>
+            <li><strong>Wycena i zakres na piśmie.</strong> Dostajesz opis rozwiązania, listę obsługiwanych przypadków, harmonogram i cenę, zanim zaczniemy programować.</li>
+            <li><strong>Wdrożenie.</strong> Budujemy integrację etapami i pokazujemy postępy. Dostęp do Twoich systemów ograniczamy do tego, co jest potrzebne.</li>
+            <li><strong>Testy.</strong> Sprawdzamy integrację na środowisku testowym KSeF udostępnionym przez Ministerstwo Finansów, na Twoich prawdziwych przypadkach: korektach, rabatach, walutach, błędnych danych nabywcy.</li>
+            <li><strong>Uruchomienie i wsparcie.</strong> Przełączamy integrację na środowisko produkcyjne, obserwujemy pierwsze dni pracy i zostajemy w kontakcie, gdy API KSeF lub Twój system się zmienią.</li>
+          </ol>
+          <p>Ogólny opis naszego sposobu pracy znajdziesz na stronie <a href="/proces">proces współpracy</a>.</p>
+
+          <h2 id="korzysci">Co zyskujesz</h2>
+          <ul>
+            <li><strong>Mniej ręcznej pracy.</strong> Nikt nie przepisuje faktur między systemami ani nie pobiera ich ręcznie z KSeF.</li>
+            <li><strong>Jedno źródło danych.</strong> Numer KSeF i status faktury są w tym samym miejscu co zamówienie lub klient.</li>
+            <li><strong>Błędy widać od razu.</strong> Odrzucona faktura nie czeka na zamknięcie miesiąca, tylko trafia do osoby, która może ją poprawić.</li>
+            <li><strong>Spokój przy kolejnych zmianach.</strong> Integracja jest zbudowana pod KSeF 2.0 i certyfikaty, a nie pod rozwiązania, które przestaną działać.</li>
+            <li><strong>Kod na własność.</strong> Dostajesz kod źródłowy i dokumentację, więc integrację może rozwijać także Twój zespół.</li>
+          </ul>
+
+          <h2 id="faq">Najczęstsze pytania</h2>
+          <div class="faq__list">
+            <details class="faq__item">
+              <summary>Czy zintegrujecie KSeF z każdym systemem?</summary>
+              <div class="faq__a"><p>Nie z każdym i nie bez warunków. Potrzebujemy dostępu do danych o fakturach: przez API, bazę danych, wymianę plików albo mechanizm rozszerzeń. Zamknięte systemy, w których producent nie przewiduje żadnej z tych dróg, mogą wymagać jego modułu. Dlatego wykonalność potwierdzamy po analizie technicznej, a nie przy pierwszej rozmowie.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Mój program do fakturowania obsługuje KSeF. Czy potrzebuję integracji?</summary>
+              <div class="faq__a"><p>Jeśli wszystkie faktury wystawiasz w tym programie, prawdopodobnie nie. Integracja ma sens, gdy faktury powstają gdzie indziej (w sklepie, systemie sprzedaży, aplikacji) albo gdy faktury zakupowe trzeba automatycznie przenosić do innego systemu.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Mamy integrację z KSeF zrobioną wcześniej. Czy trzeba ją zmieniać?</summary>
+              <div class="faq__a"><p>Jeśli powstała przed KSeF 2.0, najpewniej tak: zmieniło się API, struktura faktury (FA(3)) i sposób uwierzytelniania. Warto też sprawdzić, czy integracja korzysta z tokenów, które według obecnych zapowiedzi mają działać tylko do końca 2026 roku. Przeglądamy taki kod i mówimy, co wymaga zmian.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Co się dzieje, gdy KSeF nie działa?</summary>
+              <div class="faq__a"><p>Integracja nie gubi faktur. Dokumenty są zachowywane i wysyłane ponownie, gdy system wróci, a faktury wystawione w trybie offline są oznaczane wymaganymi kodami QR i dosyłane w terminie przewidzianym w przepisach.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Czy obsługujecie także faktury zakupowe?</summary>
+              <div class="faq__a"><p>Tak. Pobieramy faktury od dostawców z KSeF i przekazujemy je do ERP, programu księgowego albo do obiegu akceptacji, w formacie, którego potrzebuje dany system.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Ile kosztuje i jak długo trwa integracja KSeF?</summary>
+              <div class="faq__a"><p>Zależy od systemu, liczby przypadków do obsłużenia (korekty, zaliczki, waluty) i od tego, czy łączymy się z KSeF bezpośrednio, czy przez program do fakturowania. Po analizie dostajesz wycenę i harmonogram na piśmie.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Czy jesteście partnerem Ministerstwa Finansów?</summary>
+              <div class="faq__a"><p>Nie. KSeF jest systemem Ministerstwa Finansów, a my jesteśmy niezależną firmą programistyczną. Budujemy połączenie między Twoimi systemami a KSeF, korzystając z publicznego API i dokumentacji udostępnionej przez Ministerstwo.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary>Kto ma dostęp do naszych faktur?</summary>
+              <div class="faq__a"><p>Uprawnienia w KSeF nadaje Twoja firma i może je w każdej chwili odebrać. Integracja działa na Twojej infrastrukturze albo na serwerach, które wskażesz. Dostęp, którego potrzebujemy na czas wdrożenia, ustalamy z Tobą i ograniczamy do niezbędnego minimum.</p></div>
+            </details>
+          </div>
+        </article>
+        <aside class="content__aside">
+          <div class="aside-box">
+            <h2>Na tej stronie</h2>
+            <ol>
+              <li><a href="#problemy">Z czym przychodzą do nas firmy</a></li>
+              <li><a href="#zakres">Zakres integracji</a></li>
+              <li><a href="#bezposrednio">Bezpośrednio czy przez program</a></li>
+              <li><a href="#technicznie">Integracja z API KSeF 2.0</a></li>
+              <li><a href="#proces">Jak wygląda współpraca</a></li>
+              <li><a href="#korzysci">Co zyskujesz</a></li>
+              <li><a href="#faq">Najczęstsze pytania</a></li>
+            </ol>
+          </div>
+          <div class="aside-box aside-box--cta">
+            <h2>Porozmawiajmy o integracji</h2>
+            <p>Napisz, w jakim systemie powstają Twoje faktury i ile ich jest. Odpowiemy, od czego zacząć.</p>
+            <a href="/kontakt" class="btn btn--primary btn--full"><span>Porozmawiajmy o integracji</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section related">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__tag reveal">Czytaj dalej</span>
+          <h2 class="section__title reveal">Powiązane tematy</h2>
+        </div>
+        <div class="related__grid">
+          <a class="nav-card reveal" href="/aplikacje-webowe">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Aplikacje webowe i systemy</h3>
+            <p>Dedykowane systemy dla firm: CRM, portale klienta, obieg dokumentów i integracje.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/sklepy-internetowe">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Sklepy internetowe</h3>
+            <p>Sklepy na zamówienie z płatnościami, wysyłką i integracjami z ERP.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/aplikacje-saas">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Aplikacje SaaS</h3>
+            <p>Subskrypcje, płatności cykliczne i faktury trafiające do KSeF.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <h2>Faktury wciąż przechodzą przez ręce?</h2>
+        <p>Opisz, gdzie powstają i dokąd trafiają. Sprawdzimy, jak połączyć Twój system z KSeF i ile to będzie kosztować.</p>
+        <a href="/kontakt" class="btn btn--primary btn--lg" data-magnetic><span>Porozmawiajmy o integracji</span></a>
+      </div>
+    </section>
+  </main>
+
+
+  <div class="fab" id="fab">
+    <a class="fab__call" href="tel:+48532237578" aria-label="Zadzwoń: +48 532 237 578"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>532 237 578</span></a>
+    <a class="fab__cta btn btn--primary" href="/kontakt"><span data-i18n="fab_cta">Wycena projektu</span></a>
+    <button class="fab__close" type="button" id="fabClose" aria-label="Ukryj przyciski kontaktu">×</button>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="footer__wordmark" />
+        <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_nav">Nawigacja</p>
+          <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+          <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+          <a href="/proces" data-i18n="nav_process">Proces</a>
+          <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+          <a href="/poradnik" data-i18n="nav_guide">Poradnik</a>
+          <a href="/o-nas" data-i18n="nav_about">O nas</a>
+          <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_services">Usługi</p>
+          <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
+          <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
+          <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
+          <a href="/aplikacje-mobilne" data-i18n="price_4_name">Aplikacje mobilne</a>
+          <a href="/aplikacje-saas" data-i18n="footer_saas">Aplikacje SaaS</a>
+          <a href="/integracja-ksef" data-i18n="footer_ksef">Integracja KSeF</a>
+          <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_contact">Kontakt</p>
+          <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+          <a href="tel:+48532237578">+48 532 237 578</a>
+          <a href="https://paggini.com">paggini.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Paggini. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer__made" data-i18n="footer_made">Zaprojektowane i zakodowane z pasją.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

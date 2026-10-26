@@ -12,6 +12,7 @@ paggini/
 │   aplikacje-webowe.html, aplikacje-mobilne.html,
 │   aplikacje-saas.html   # podstrony usług
 ├── strona-internetowa-dla-firmy-budowlanej.html   # strona branżowa
+├── integracja-ksef.html   # podstrona usługi: integracja KSeF
 ├── poradnik/           # poradnik (artykuły)
 ├── 404.html            # strona błędu (noindex)
 ├── uslugi.html         # podstrona: Usługi
