@@ -135,6 +135,15 @@ for (const file of pages) {
     }
   }
   for (const m of html.matchAll(/"(https:\/\/paggini\.com\/assets\/[^"]+)"/g)) referenced.add(m[1].replace(SITE, ""));
+  // responsive variants listed in srcset ("/assets/a-800.webp 800w, /assets/a.webp 1600w")
+  for (const m of html.matchAll(/\ssrcset="([^"]+)"/g)) {
+    for (const candidate of m[1].split(",")) {
+      const p = candidate.trim().split(/\s+/)[0];
+      if (!p.startsWith("/assets/")) continue;
+      referenced.add(p);
+      if (!exists(p)) errors.push(`${where}: missing file ${p}`);
+    }
+  }
 
   // i18n keys
   for (const m of html.matchAll(/data-i18n="([^"]+)"/g)) {
