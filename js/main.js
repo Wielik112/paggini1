@@ -75,7 +75,7 @@
       entries.forEach((e) => (e.isIntersecting ? covering.add(e.target) : covering.delete(e.target)));
       fab.classList.toggle("is-covered", covering.size > 0);
     });
-    $$(".cta, #contact, .footer, .hero__cta, .hub-section__text .btn, .page-head__cta, .notfound__cta").forEach((el) => fio.observe(el));
+    $$(".cta, #contact, #wycena, .footer, .hero__cta, .hub-section__text .btn, .page-head__cta, .notfound__cta").forEach((el) => fio.observe(el));
   }
   const onScroll = () => {
     const y = window.scrollY;

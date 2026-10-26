@@ -693,6 +693,13 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 }
 .field input, .field textarea { }
 .field input::placeholder, .field textarea::placeholder { color: transparent; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 16px; }
+.form__group { border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px 16px; }
+.form__group legend { padding: 0 6px; font-size: 0.85rem; color: var(--text-faint); }
+.form__checks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+.check { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: var(--text-dim); cursor: pointer; }
+.check input { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--blue); }
+@media (max-width: 560px) { .form__row, .form__checks { grid-template-columns: 1fr; } }
 .form__note { font-size: 0.9rem; text-align: center; min-height: 1.2em; }
 .form__note.is-ok { color: #4fd18b; }
 .form__note.is-err { color: #ff6b6b; }
