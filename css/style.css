@@ -1175,10 +1175,10 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .wa-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px 56px; align-items: end; margin-bottom: 56px; }
 .wa-head .section__title { margin-bottom: 0; }
 .wa-head .section__lead p + p { margin-top: 14px; }
-.wa-head .section__lead a, .wa-note a, .wa-text a, .faq__a a {
+.wa-head .section__lead a, .wa-note a, .wa-text a, .faq__a a, .card p a {
   color: var(--blue-bright); text-decoration: underline; text-decoration-color: rgba(79,176,255,0.35); text-underline-offset: 3px;
 }
-.wa-head .section__lead a:hover, .wa-note a:hover, .wa-text a:hover, .faq__a a:hover { text-decoration-color: var(--blue-bright); }
+.wa-head .section__lead a:hover, .wa-note a:hover, .wa-text a:hover, .faq__a a:hover, .card p a:hover { text-decoration-color: var(--blue-bright); }
 
 .wa-num { font-family: "Sora", sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.12em; color: var(--blue-bright); display: block; margin-bottom: 16px; }
 .wa-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -1286,3 +1286,56 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   .wa-steps { gap: 56px; }
 }
 .wa-layers, .wa-steps, .wa-process, .wa-factors, .wa-time .how__grid { list-style: none; }
+
+/* ============================================================
+   CLIENT PORTAL PAGE (portal-klienta)
+   ============================================================ */
+/* illustrative portal mock-up built in HTML, not a screenshot */
+.pk-mock { display: grid; grid-template-columns: 190px minmax(0, 1fr); min-height: 420px; font-size: 0.82rem; }
+.pk-mock__side { padding: 20px 14px; border-right: 1px solid var(--border); background: rgba(255,255,255,0.015); }
+.pk-mock__brand { display: flex; align-items: center; gap: 10px; font-family: "Sora", sans-serif; font-weight: 700; color: var(--text); margin-bottom: 22px; }
+.pk-mock__logo { width: 26px; height: 26px; border-radius: 8px; background: var(--grad-blue); flex: none; }
+.pk-mock__nav { display: flex; flex-direction: column; gap: 4px; }
+.pk-mock__nav span { padding: 8px 10px; border-radius: 8px; color: var(--text-dim); }
+.pk-mock__nav .is-active { background: rgba(47,128,255,0.12); color: var(--text); }
+.pk-mock__main { padding: 22px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px; align-content: start; }
+.pk-mock__top { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+.pk-mock__hello { font-family: "Sora", sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text); }
+.pk-mock__hello small { display: block; font-family: "Inter", sans-serif; font-size: 0.75rem; font-weight: 400; color: var(--text-faint); margin-top: 2px; }
+.pk-mock__btn { padding: 8px 14px; border-radius: 100px; background: var(--grad-blue); color: #fff; font-weight: 600; white-space: nowrap; }
+.pk-mock__card { padding: 14px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: rgba(255,255,255,0.025); }
+.pk-mock__card--wide { grid-row: span 2; }
+.pk-mock__title { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); font-weight: 600; margin-bottom: 10px; }
+.pk-mock__row { padding: 10px 0; border-top: 1px solid var(--border); }
+.pk-mock__row:first-of-type { border-top: 0; padding-top: 2px; }
+.pk-mock__line { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--text); }
+.pk-mock__meta { display: block; color: var(--text-faint); font-size: 0.74rem; margin-top: 2px; }
+.pk-mock__status { flex: none; padding: 3px 9px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; background: rgba(47,128,255,0.14); color: var(--blue-bright); }
+.pk-mock__status--wait { background: rgba(255,196,77,0.12); color: #ffc44d; }
+.pk-mock__status--done { background: rgba(79,209,139,0.12); color: #4fd18b; }
+.pk-mock__bar { height: 5px; margin-top: 8px; border-radius: 10px; background: rgba(255,255,255,0.06); overflow: hidden; }
+.pk-mock__bar span { display: block; height: 100%; border-radius: inherit; background: var(--grad-blue); }
+.pk-mock__file { display: flex; align-items: center; gap: 10px; padding: 7px 0; color: var(--text-dim); }
+.pk-mock__file::before { content: ""; width: 18px; height: 22px; flex: none; border-radius: 4px; border: 1px solid var(--border-strong); background: rgba(255,255,255,0.04); }
+.pk-mock__msg { padding: 7px 0; color: var(--text-dim); }
+.pk-mock__msg strong { display: block; color: var(--text); font-weight: 600; }
+
+/* no phone overlay here, so the browser frame takes the full width */
+.pk-shots .wa-browser { margin-right: 0; }
+
+.pk-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.pk-grid-2 .card p { margin-bottom: 0; }
+.pk-grid-2 .card p + p { margin-top: 12px; }
+
+@media (max-width: 980px) {
+  .pk-mock { grid-template-columns: 1fr; }
+  .pk-mock__side { display: none; }
+}
+@media (max-width: 640px) {
+  .pk-grid-2 { grid-template-columns: 1fr; }
+  .pk-mock { min-height: 0; font-size: 0.78rem; }
+  .pk-mock__main { grid-template-columns: 1fr; padding: 16px; }
+  .pk-mock__card--wide { grid-row: auto; }
+  .pk-mock__card--msgs { display: none; }
+  .pk-mock__top { flex-direction: column; align-items: flex-start; }
+}
