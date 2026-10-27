@@ -14,6 +14,7 @@ paggini/
 ├── strona-internetowa-dla-firmy-budowlanej.html   # strona branżowa
 ├── strona-internetowa-dla-warsztatu-samochodowego.html   # strona branżowa (warsztaty, rezerwacje)
 ├── integracja-ksef.html   # podstrona usługi: integracja KSeF
+├── portal-klienta.html   # podstrona usługi: portal klienta
 ├── poradnik/           # poradnik (artykuły)
 ├── 404.html            # strona błędu (noindex)
 ├── uslugi.html         # podstrona: Usługi

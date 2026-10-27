@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+
+  <title>Portal klienta dla firmy: dedykowany panel online | Paggini</title>
+  <meta name="description" content="Stwórz portal klienta dopasowany do procesów Twojej firmy. Udostępniaj dokumenty, obsługuj zlecenia i uporządkuj komunikację z klientami w jednym miejscu." />
+  <meta name="author" content="Paggini" />
+  <link rel="canonical" href="https://paggini.com/portal-klienta" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="Paggini" />
+  <meta property="og:title" content="Portal klienta dopasowany do sposobu działania Twojej firmy" />
+  <meta property="og:description" content="Stwórz portal klienta dopasowany do procesów Twojej firmy. Udostępniaj dokumenty, obsługuj zlecenia i uporządkuj komunikację z klientami w jednym miejscu." />
+  <meta property="og:url" content="https://paggini.com/portal-klienta" />
+  <meta property="og:image" content="https://paggini.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Paggini, web design &amp; development" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portal klienta dopasowany do sposobu działania Twojej firmy" />
+  <meta name="twitter:description" content="Stwórz portal klienta dopasowany do procesów Twojej firmy. Udostępniaj dokumenty, obsługuj zlecenia i uporządkuj komunikację z klientami w jednym miejscu." />
+  <meta name="twitter:image" content="https://paggini.com/assets/og-cover.jpg" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Reveal animations hide content only when they can actually run (JS + IntersectionObserver,
+       no reduced motion, not a crawler). main.js confirms it started; otherwise content is shown after 4 s. -->
+  <script>(function(d){var u=navigator.userAgent||"";if("IntersectionObserver"in window&&!/bot|crawl|spider|slurp|google-inspectiontool/i.test(u)&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){d.classList.add("reveal-on");setTimeout(function(){if(!window.__pagginiReveal)d.classList.remove("reveal-on")},4000)}})(document.documentElement)</script>
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://paggini.com/#organization",
+      "name": "Paggini",
+      "url": "https://paggini.com/",
+      "logo": "https://paggini.com/assets/logo-mark.png",
+      "image": "https://paggini.com/assets/og-cover.jpg",
+      "email": "kontakt@paggini.com",
+      "telephone": "+48532237578",
+      "description": "Studio tworzące strony internetowe, sklepy online, aplikacje webowe i mobilne.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
+      ],
+      "knowsLanguage": [
+        "pl",
+        "en",
+        "de"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Paggini",
+          "item": "https://paggini.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Usługi",
+          "item": "https://paggini.com/uslugi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Aplikacje webowe",
+          "item": "https://paggini.com/aplikacje-webowe"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Portal klienta",
+          "item": "https://paggini.com/portal-klienta"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://paggini.com/portal-klienta#service",
+      "url": "https://paggini.com/portal-klienta",
+      "name": "Portal klienta dla firmy",
+      "serviceType": "Projektowanie i tworzenie dedykowanych portali klienta",
+      "description": "Dedykowany portal klienta dopasowany do procesów firmy: status zleceń, udostępnianie dokumentów, komunikacja z klientami, konta i uprawnienia oraz panel administracyjny dla zespołu.",
+      "provider": {
+        "@id": "https://paggini.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Przejdź do treści</a>
+
+
+  <canvas class="bg-canvas" id="bgCanvas"></canvas>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand" aria-label="Paggini, strona główna">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="nav__wordmark" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Menu główne">
+        <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+        <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+        <a href="/proces" data-i18n="nav_process">Proces</a>
+        <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+        <a href="/o-nas" data-i18n="nav_about">O nas</a>
+        <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        <a href="tel:+48532237578" class="nav__menu-call"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="menu_call">Zadzwoń: +48 532 237 578</span></a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang" id="lang">
+          <button class="lang__btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Zmień język">
+            <span id="langCurrent">PL</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="menu">
+            <li><button data-lang="pl" role="menuitem">Polski</button></li>
+            <li><button data-lang="en" role="menuitem">English</button></li>
+            <li><button data-lang="de" role="menuitem">Deutsch</button></li>
+          </ul>
+        </div>
+        <a href="tel:+48532237578" class="nav__phone" aria-label="Zadzwoń: +48 532 237 578"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>+48 532 237 578</span></a>
+        <a href="/kontakt" class="btn btn--primary nav__cta" data-i18n="nav_cta">Zacznijmy</a>
+        <button class="nav__burger" id="burger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="section section--first wa-hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Ścieżka nawigacji"><a href="/">Paggini</a> <span aria-hidden="true">/</span> <a href="/uslugi">Usługi</a> <span aria-hidden="true">/</span> <a href="/aplikacje-webowe">Aplikacje webowe</a> <span aria-hidden="true">/</span> <span aria-current="page">Portal klienta</span></nav>
+        <div class="page-head">
+          <span class="section__tag reveal">Portal klienta</span>
+          <h1 class="section__title reveal">Portal klienta dopasowany do sposobu działania Twojej firmy</h1>
+          <p class="section__lead reveal">Udostępnij klientom jedno miejsce do sprawdzania statusu zleceń, pobierania dokumentów i kontaktu z Twoim zespołem. Zaprojektujemy portal internetowy dopasowany do procesów Twojej firmy, zamiast zmuszać Cię do korzystania z narzędzia, które nie odpowiada Twoim potrzebom.</p>
+          <div class="page-head__cta reveal">
+            <a href="/kontakt" class="btn btn--primary"><span>Porozmawiajmy o portalu</span></a>
+            <a href="#mozliwosci" class="btn btn--ghost"><span>Poznaj możliwości</span></a>
+          </div>
+        </div>
+
+        <figure class="wa-shots pk-shots reveal">
+          <div class="wa-browser">
+            <div class="wa-browser__bar" aria-hidden="true"><span class="wa-browser__dots"><span></span><span></span><span></span></span><span class="wa-browser__url">portal.twojafirma.pl</span></div>
+            <div class="pk-mock" role="img" aria-label="Przykładowa wizualizacja panelu klienta: lista aktywnych zleceń ze statusem realizacji, dokumenty do pobrania, ostatnie wiadomości i przycisk nowego zapytania">
+              <div class="pk-mock__side">
+                <div class="pk-mock__brand"><span class="pk-mock__logo"></span>Twoja firma</div>
+                <div class="pk-mock__nav"><span class="is-active">Pulpit</span><span>Zlecenia</span><span>Dokumenty</span><span>Wiadomości</span><span>Ustawienia konta</span></div>
+              </div>
+              <div class="pk-mock__main">
+                <div class="pk-mock__top">
+                  <div class="pk-mock__hello">Dzień dobry, Anna<small>Firma Przykładowa sp. z o.o.</small></div>
+                  <span class="pk-mock__btn">+ Nowe zapytanie</span>
+                </div>
+                <div class="pk-mock__card pk-mock__card--wide">
+                  <div class="pk-mock__title">Aktywne zlecenia</div>
+                  <div class="pk-mock__row">
+                    <div class="pk-mock__line"><span>Modernizacja biura, etap 2</span><span class="pk-mock__status">W realizacji</span></div>
+                    <span class="pk-mock__meta">Ostatnia zmiana: wczoraj</span>
+                    <div class="pk-mock__bar"><span style="width: 64%"></span></div>
+                  </div>
+                  <div class="pk-mock__row">
+                    <div class="pk-mock__line"><span>Przegląd okresowy instalacji</span><span class="pk-mock__status pk-mock__status--wait">Czeka na akceptację</span></div>
+                    <span class="pk-mock__meta">Oferta do zatwierdzenia</span>
+                    <div class="pk-mock__bar"><span style="width: 20%"></span></div>
+                  </div>
+                  <div class="pk-mock__row">
+                    <div class="pk-mock__line"><span>Dokumentacja powykonawcza</span><span class="pk-mock__status pk-mock__status--done">Zakończone</span></div>
+                    <span class="pk-mock__meta">Pliki gotowe do pobrania</span>
+                    <div class="pk-mock__bar"><span style="width: 100%"></span></div>
+                  </div>
+                </div>
+                <div class="pk-mock__card">
+                  <div class="pk-mock__title">Dokumenty</div>
+                  <div class="pk-mock__file">Umowa ramowa.pdf</div>
+                  <div class="pk-mock__file">Raport z etapu 1.pdf</div>
+                  <div class="pk-mock__file">Harmonogram prac.xlsx</div>
+                </div>
+                <div class="pk-mock__card pk-mock__card--msgs">
+                  <div class="pk-mock__title">Ostatnie wiadomości</div>
+                  <div class="pk-mock__msg"><strong>Opiekun zlecenia</strong>Dodaliśmy zdjęcia z dzisiejszych prac.</div>
+                  <div class="pk-mock__msg"><strong>Ty</strong>Czy termin odbioru jest aktualny?</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="wa-caption">Przykładowa wizualizacja z fikcyjnymi danymi. Wygląd i zakres funkcji portalu projektujemy dla każdej firmy osobno.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== ON-PAGE NAV ===== -->
+    <nav class="wa-toc" aria-label="Na tej stronie">
+      <div class="container wa-toc__inner">
+        <span class="wa-toc__label">Na tej stronie</span>
+        <ul>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#mozliwosci">Możliwości</a></li>
+          <li><a href="#branze">Dla kogo</a></li>
+          <li><a href="#dopasowanie">Dedykowany czy gotowy</a></li>
+          <li><a href="#bezpieczenstwo">Bezpieczeństwo</a></li>
+          <li><a href="#wspolpraca">Współpraca</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="section wa-anchor" id="problem">
+      <div class="container">
+        <div class="wa-head">
+          <div>
+            <span class="section__tag reveal">Problem</span>
+            <h2 class="section__title reveal">Ile czasu Twoja firma traci na ręczną obsługę klientów?</h2>
+          </div>
+          <div class="section__lead reveal">
+            <p>W wielu firmach obsługa klienta to skrzynka e-mail, telefon i kilka osób, które pamiętają, co komu obiecały. Dopóki klientów jest kilku, to działa. Przy kilkudziesięciu aktywnych sprawach zaczyna zjadać czas, którego nikt nie liczy.</p>
+          </div>
+        </div>
+
+        <ul class="wa-grid-3">
+          <li class="card reveal">
+            <span class="wa-num">01</span>
+            <h3>„Na jakim etapie jest moje zlecenie?”</h3>
+            <p>Klienci regularnie dzwonią i piszą z tym samym pytaniem, a ktoś z zespołu musi za każdym razem sprawdzić i odpowiedzieć.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">02</span>
+            <h3>Dokumenty w dziesiątkach maili</h3>
+            <p>Umowy, raporty, faktury i załączniki są rozsyłane w osobnych wiadomościach, a klient prosi o ponowne przesłanie, bo nie może ich znaleźć.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">03</span>
+            <h3>Która wersja pliku jest aktualna?</h3>
+            <p>Kilka wersji tego samego dokumentu krąży między firmą a klientem i trudno ustalić, na której podstawie podjęto decyzję.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">04</span>
+            <h3>Wiedza o kliencie w głowach pracowników</h3>
+            <p>Ustalenia są w skrzynce jednej osoby, notatki u drugiej, a pliki na dysku trzeciej. Urlop albo zmiana opiekuna oznacza szukanie informacji od nowa.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">05</span>
+            <h3>Powtarzalne zapytania zabierają czas</h3>
+            <p>Prośby o kopię dokumentu, pytania o termin czy status to praca, która nie posuwa żadnego zlecenia do przodu, a wypełnia dzień zespołu.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">06</span>
+            <h3>Klient nie wie, gdzie szukać</h3>
+            <p>Część informacji jest w mailu, część w umowie, część w rozmowie telefonicznej. Klient nie ma jednego miejsca, w którym sprawdzi, co się dzieje.</p>
+          </li>
+        </ul>
+
+        <p class="wa-note reveal">Dobrze zaprojektowany portal klienta porządkuje te procesy: klient sam sprawdza status i pobiera dokumenty, a zespół odpowiada na pytania, które naprawdę wymagają jego udziału. Ile czasu to oszczędzi, zależy od skali i sposobu pracy firmy, dlatego zaczynamy od przyjrzenia się temu, jak obsługujesz klientów dziś.</p>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="section wa-anchor" id="mozliwosci">
+      <div class="container">
+        <div class="wa-head">
+          <div>
+            <span class="section__tag reveal">Możliwości</span>
+            <h2 class="section__title reveal">Wszystko, czego klient potrzebuje, w jednym miejscu</h2>
+          </div>
+          <div class="section__lead reveal">
+            <p>Portal klienta to nie gotowy produkt z pudełka, tylko panel klienta online budowany wokół Twoich procesów. Poniżej elementy, z których najczęściej składa się wdrożenie. Które z nich trafią do Twojego portalu, ustalamy po analizie.</p>
+          </div>
+        </div>
+
+        <ul class="wa-grid-3">
+          <li class="card reveal">
+            <span class="wa-num">01</span>
+            <h3>Status zleceń i projektów</h3>
+            <p>Klienci mogą sprawdzać aktualny etap realizacji, historię zmian statusu i najważniejsze informacje dotyczące swoich spraw.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">02</span>
+            <h3>Dokumenty dostępne online</h3>
+            <p>Bezpieczne udostępnianie umów, raportów, faktur, załączników i innych plików przypisanych do klienta lub konkretnego zlecenia.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">03</span>
+            <h3>Komunikacja z firmą</h3>
+            <p>Zapytania i rozmowy prowadzone przy konkretnym zleceniu, a nie w rozproszonych mailach. Cała historia ustaleń zostaje w jednym miejscu.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">04</span>
+            <h3>Indywidualne konta klientów</h3>
+            <p>Każdy użytkownik widzi dane, dokumenty i sprawy przypisane do siebie lub swojej firmy, zgodnie z nadanymi uprawnieniami.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">05</span>
+            <h3>Powiadomienia</h3>
+            <p>Opcjonalne powiadomienia e-mail o zmianie statusu, nowym dokumencie albo odpowiedzi zespołu, żeby klient nie musiał sprawdzać portalu na zapas.</p>
+          </li>
+          <li class="card reveal">
+            <span class="wa-num">06</span>
+            <h3>Panel administracyjny</h3>
+            <p>Miejsce, w którym Twoi pracownicy zarządzają klientami, zleceniami, dokumentami i uprawnieniami, w zakresie ustalonym w projekcie.</p>
+          </li>
+        </ul>
+
+        <p class="wa-note reveal">Każda z tych funkcji to element możliwego zakresu wdrożenia, a nie moduł gotowy do włączenia. Często pierwsza wersja portalu obejmuje tylko status zleceń i dokumenty, a komunikację czy powiadomienia dodaje się później, gdy widać, czego klienci faktycznie używają.</p>
+      </div>
+    </section>
+
+    <!-- ===== INDUSTRIES ===== -->
+    <section class="section wa-anchor" id="branze">
+      <div class="container">
+        <div class="wa-head">
+          <div>
+            <span class="section__tag reveal">Dla kogo</span>
+            <h2 class="section__title reveal">Portal klienta, który odpowiada na potrzeby Twojej branży</h2>
+          </div>
+          <div class="section__lead reveal">
+            <p>Portal ma największy sens tam, gdzie współpraca z klientem trwa dłużej niż jedną transakcję: są zlecenia z kilkoma etapami, dokumenty do przekazania i pytania, które wracają.</p>
+          </div>
+        </div>
+
+        <ul class="pk-grid-2">
+          <li class="card reveal">
+            <h3>Firmy budowlane i wykonawcze</h3>
+            <p>Klienci mogą sprawdzać postęp realizacji, przeglądać dokumentację projektową, pobierać raporty i przekazywać dodatkowe informacje, np. zdjęcia albo uwagi do etapu prac.</p>
+            <p>Szukasz najpierw strony, która przyprowadzi zlecenia? Zobacz <a href="/strona-internetowa-dla-firmy-budowlanej">stronę internetową dla firmy budowlanej</a>.</p>
+          </li>
+          <li class="card reveal">
+            <h3>Biura rachunkowe i doradcze</h3>
+            <p>Portal może ułatwiać przekazywanie dokumentów, komunikację z klientami i dostęp do uzgodnionych materiałów, bez wysyłania skanów mailem i pytania, czy wszystko dotarło.</p>
+            <p>Jeśli dokumenty mają trafiać też do innych systemów, np. faktury z Krajowego Systemu e-Faktur, zobacz <a href="/integracja-ksef">integrację KSeF</a>.</p>
+          </li>
+          <li class="card reveal">
+            <h3>Firmy usługowe</h3>
+            <p>Klienci mogą sprawdzać status zlecenia, przekazywać pliki i uzyskiwać informacje bez konieczności kontaktowania się z kilkoma osobami. Dla zespołu to mniej telefonów i jedno miejsce z historią każdej sprawy.</p>
+          </li>
+          <li class="card reveal">
+            <h3>Firmy B2B</h3>
+            <p>Portal klienta B2B może stanowić wspólną przestrzeń współpracy z klientami biznesowymi: zamówienia, projekty, dokumentacja i komunikacja, z osobnymi kontami dla kilku osób po stronie klienta.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CUSTOM VS OFF-THE-SHELF ===== -->
+    <section class="section wa-anchor" id="dopasowanie">
+      <div class="container wa-cost">
+        <div class="wa-cost__head">
+          <span class="section__tag reveal">Dedykowane rozwiązanie</span>
+          <h2 class="section__title reveal">Nie zmieniaj całej firmy, żeby dopasować ją do oprogramowania</h2>
+          <p class="section__lead reveal">Gotowe systemy obsługi klientów zakładają określony sposób pracy. Jeśli Twój jest inny, albo Ty dopasowujesz się do narzędzia, albo zespół zaczyna obchodzić je arkuszami i mailami. Dedykowany portal internetowy odwraca tę zależność.</p>
+        </div>
+        <div>
+          <ol class="wa-factors">
+            <li class="reveal"><div><h3>Funkcje wynikają z Twoich procesów</h3><p>Etapy zleceń, rodzaje dokumentów i nazwy w portalu odpowiadają temu, jak naprawdę pracujecie, a nie temu, co przewidział producent narzędzia.</p></div></li>
+            <li class="reveal"><div><h3>Własne role i zakresy dostępu</h3><p>Możesz ustalić, co widzi klient, co jego pracownicy, co Twój opiekun zlecenia, a co księgowość.</p></div></li>
+            <li class="reveal"><div><h3>Integracja z obecnymi systemami</h3><p>Portal może pobierać i przekazywać dane do CRM, systemu księgowego czy ERP, jeśli te systemy udostępniają API lub inny sposób wymiany danych.</p></div></li>
+            <li class="reveal"><div><h3>Rozwój razem z firmą</h3><p>Zakres można rozbudowywać etapami, gdy zmieniają się potrzeby, bez przenoszenia danych do kolejnego narzędzia.</p></div></li>
+            <li class="reveal"><div><h3>Interfejs dla klientów i pracowników</h3><p>Klient dostaje prosty widok swoich spraw, a zespół panel, w którym szybko obsłuży wiele zleceń naraz.</p></div></li>
+          </ol>
+          <p class="wa-cost__after reveal">Dedykowane oprogramowanie dla firm nie zawsze jest lepszym wyborem. Jeśli Twoje potrzeby są standardowe i gotowe narzędzie pokrywa je w całości, zwykle będzie tańsze i szybsze we wdrożeniu, i wtedy powiemy to wprost. Indywidualny system dla firmy warto rozważyć, gdy proces jest nietypowy, łączy kilka narzędzi albo opłaty za użytkownika w gotowym rozwiązaniu rosną szybciej niż firma. Szerzej piszemy o tym na stronie <a href="/aplikacje-webowe">aplikacje webowe</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECURITY ===== -->
+    <section class="section wa-anchor" id="bezpieczenstwo">
+      <div class="container">
+        <div class="wa-head">
+          <div>
+            <span class="section__tag reveal">Bezpieczeństwo</span>
+            <h2 class="section__title reveal">Dostęp do informacji pod kontrolą</h2>
+          </div>
+          <div class="section__lead reveal">
+            <p>W portalu klienta są umowy, faktury i dane, które nie mogą trafić do niewłaściwej osoby. Dlatego kontrolę dostępu projektujemy razem z funkcjami, a nie dopisujemy na końcu.</p>
+          </div>
+        </div>
+
+        <div class="wa-design__list">
+          <div class="feature reveal">
+            <h3><strong>Indywidualne konta użytkowników</strong></h3>
+            <span>Każda osoba loguje się na własne konto, więc wiadomo, kto co zrobił, a dostęp można odebrać jednej osobie bez wpływu na pozostałe.</span>
+          </div>
+          <div class="feature reveal">
+            <h3><strong>Uprawnienia zależne od roli</strong></h3>
+            <span>Klient, jego współpracownicy, opiekun po Twojej stronie i administrator widzą i mogą zmieniać różne rzeczy.</span>
+          </div>
+          <div class="feature reveal">
+            <h3><strong>Dane przypisane do klienta</strong></h3>
+            <span>Dostęp do zleceń, wiadomości i plików jest ograniczony do konkretnego klienta. To reguła sprawdzana przy każdym zapytaniu do danych, nie tylko ukryty przycisk w interfejsie.</span>
+          </div>
+          <div class="feature reveal">
+            <h3><strong>Bezpieczne uwierzytelnianie</strong></h3>
+            <span>Logowanie z bezpiecznym przechowywaniem haseł, a w razie potrzeby także z weryfikacją dwuetapową lub logowaniem przez konto firmowe.</span>
+          </div>
+          <div class="feature reveal">
+            <h3><strong>Kontrola dostępu do dokumentów</strong></h3>
+            <span>Pliki nie są dostępne pod publicznym adresem. Pobrać je może tylko zalogowana osoba z odpowiednimi uprawnieniami.</span>
+          </div>
+          <div class="feature reveal">
+            <h3><strong>Rejestr wybranych operacji</strong></h3>
+            <span>Jeśli jest taka potrzeba, portal może zapisywać, kto i kiedy pobrał dokument, zmienił status albo nadał uprawnienia.</span>
+          </div>
+        </div>
+
+        <p class="wa-note reveal">Zabezpieczenia dobieramy do charakteru danych, wymagań biznesowych i zakresu projektu, a uprawnienia testujemy przed uruchomieniem. Żaden system nie daje stuprocentowej gwarancji bezpieczeństwa, dlatego ważne są też aktualizacje, kopie zapasowe i hosting z serwerami w Unii Europejskiej, które ustalamy razem z Tobą.</p>
+      </div>
+    </section>
+
+    <!-- ===== HOW WE WORK ===== -->
+    <section class="section wa-anchor" id="wspolpraca">
+      <div class="container">
+        <div class="wa-head">
+          <div>
+            <span class="section__tag reveal">Współpraca</span>
+            <h2 class="section__title reveal">Od problemu do działającego rozwiązania</h2>
+          </div>
+          <div class="section__lead reveal">
+            <p>Harmonogram i wycenę podajemy po ustaleniu zakresu, bo dopiero wtedy wiadomo, co ma powstać. Ogólny opis naszego sposobu pracy znajdziesz na stronie <a href="/proces">Proces</a>.</p>
+          </div>
+        </div>
+
+        <ol class="wa-process">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3>Poznajemy procesy</h3>
+            <p>Ustalamy, jak firma obsługuje dziś klientów, gdzie powstają dokumenty, kto odpowiada na pytania i co warto usprawnić.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3>Definiujemy zakres</h3>
+            <p>Określamy funkcje, role użytkowników i integracje oraz to, co powinno trafić do pierwszej wersji, a co może poczekać.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3>Projektujemy rozwiązanie</h3>
+            <p>Przygotowujemy strukturę i interfejs portalu. Widzisz, jak będzie wyglądał i działał, zanim powstanie jego kod.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <h3>Tworzymy i testujemy</h3>
+            <p>Implementujemy uzgodnione funkcje, regularnie pokazujemy postępy i sprawdzamy działanie, w tym uprawnienia i dostęp do danych.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">05</span>
+            <h3>Wdrażamy i rozwijamy</h3>
+            <p>Uruchamiamy portal i ustalamy dalsze wsparcie zgodnie z warunkami współpracy. Kod źródłowy dostajesz na własność.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section wa-anchor" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__tag reveal">FAQ</span>
+          <h2 class="section__title reveal">Najczęstsze pytania o portal klienta</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item reveal">
+            <summary>Ile kosztuje stworzenie portalu klienta?</summary>
+            <div class="faq__a"><p>Koszt zależy od liczby funkcji, typów użytkowników, integracji z innymi systemami, wymagań dotyczących bezpieczeństwa i zakresu panelu administracyjnego. Dlatego wycenę przygotowujemy po ustaleniu wymagań, z podziałem na etapy, żeby było widać, z czego wynika cena i co można przesunąć do kolejnej wersji. Ogólne przedziały cen systemów dla firm opisujemy w poradniku <a href="/poradnik/ile-kosztuje-aplikacja-webowa">ile kosztuje aplikacja webowa</a>.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Czy portal klienta można zintegrować z naszym obecnym systemem?</summary>
+            <div class="faq__a"><p>Może to być możliwe, jeśli używane oprogramowanie udostępnia API lub inny sposób wymiany danych, np. eksport plików. Szczegóły trzeba zweryfikować technicznie, dlatego sprawdzamy to na etapie analizy, zanim podamy cenę.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Czy każdy klient będzie widział wyłącznie swoje dane?</summary>
+            <div class="faq__a"><p>Tak można zaprojektować system uprawnień: każdy klient widzi tylko przypisane do siebie zlecenia, wiadomości i dokumenty. Taki podział musi być prawidłowo zaimplementowany i przetestowany, dlatego sprawdzamy go osobno przed uruchomieniem portalu.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Czy klienci mogą pobierać dokumenty?</summary>
+            <div class="faq__a"><p>Tak, taka funkcja może zostać uwzględniona w zakresie projektu, z kontrolą dostępu do plików. Dokument pobierze tylko zalogowana osoba, która ma do niego uprawnienia.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Czy można dodawać kolejne funkcje po wdrożeniu?</summary>
+            <div class="faq__a"><p>Tak. Architekturę i zakres rozwoju planujemy tak, żeby portal dało się rozbudowywać etapami. To, jak łatwo dodać konkretną funkcję, zależy od przyjętej architektury i od samych wymagań, dlatego o planach rozwoju warto powiedzieć już na początku.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Czy każda firma potrzebuje dedykowanego portalu?</summary>
+            <div class="faq__a"><p>Nie. Jeśli standardowe narzędzie spełnia wszystkie Twoje potrzeby, może być prostszym i bardziej ekonomicznym wyborem. Dedykowany portal warto rozważyć, gdy obecne procesy są rozproszone między wiele narzędzi albo wymagają indywidualnego podejścia.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Czym portal klienta różni się od strony internetowej?</summary>
+            <div class="faq__a"><p>Strona internetowa prezentuje firmę i ofertę wszystkim odwiedzającym. Portal klienta jest dostępny po zalogowaniu i pokazuje każdemu klientowi jego własne sprawy: zlecenia, dokumenty i wiadomości. Wiele firm ma oba, a portal jest dostępny np. pod przyciskiem „Strefa klienta” na stronie. Jeśli potrzebujesz też nowej strony, zobacz <a href="/strony-internetowe">strony internetowe dla firm</a>.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RELATED ===== -->
+    <section class="section related">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__tag reveal">Czytaj dalej</span>
+          <h2 class="section__title reveal">Powiązane usługi i poradniki</h2>
+        </div>
+        <div class="related__grid">
+          <a class="nav-card reveal" href="/aplikacje-webowe">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Aplikacje webowe i systemy</h3>
+            <p>Oprogramowanie dla firm budowane wokół konkretnych procesów, od projektu po wdrożenie.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/integracja-ksef">
+            <span class="nav-card__num">Usługa</span>
+            <h3>Integracja KSeF</h3>
+            <p>Automatyczna wysyłka i odbiór faktur między Twoimi systemami a KSeF.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+          <a class="nav-card reveal" href="/poradnik/ile-kosztuje-aplikacja-webowa">
+            <span class="nav-card__num">Poradnik</span>
+            <h3>Ile kosztuje aplikacja webowa?</h3>
+            <p>Przykładowe przedziały cen, ukryte koszty i porównanie z gotowym narzędziem.</p>
+            <span class="nav-card__go">Czytaj dalej →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <h2>Sprawdźmy, jak portal klienta mógłby działać w Twojej firmie</h2>
+        <p>Opowiedz nam, jak dziś obsługujesz klientów, przekazujesz dokumenty i zarządzasz zleceniami. Pomożemy określić, jakie funkcje warto uwzględnić w dedykowanym portalu.</p>
+        <a href="/kontakt" class="btn btn--primary btn--lg" data-magnetic><span>Porozmawiajmy o projekcie</span></a>
+        <p class="cta__phone"><span data-i18n="call_or">lub zadzwoń:</span> <a href="tel:+48532237578">+48 532 237 578</a></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="fab" id="fab">
+    <a class="fab__call" href="tel:+48532237578" aria-label="Zadzwoń: +48 532 237 578"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>532 237 578</span></a>
+    <a class="fab__cta btn btn--primary" href="/kontakt"><span data-i18n="fab_cta">Wycena projektu</span></a>
+    <button class="fab__close" type="button" id="fabClose" aria-label="Ukryj przyciski kontaktu">×</button>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/assets/wordmark.webp" width="600" height="60" alt="Paggini" class="footer__wordmark" />
+        <p data-i18n="footer_tagline">Cyfrowe studio kreatywne. Strony, sklepy i aplikacje.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_nav">Nawigacja</p>
+          <a href="/uslugi" data-i18n="nav_services">Usługi</a>
+          <a href="/oferta" data-i18n="nav_offer">Oferta</a>
+          <a href="/proces" data-i18n="nav_process">Proces</a>
+          <a href="/realizacje" data-i18n="nav_work">Realizacje</a>
+          <a href="/poradnik" data-i18n="nav_guide">Poradnik</a>
+          <a href="/o-nas" data-i18n="nav_about">O nas</a>
+          <a href="/kontakt" data-i18n="nav_contact">Kontakt</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_services">Usługi</p>
+          <a href="/strony-internetowe" data-i18n="service_web_t">Strony internetowe</a>
+          <a href="/sklepy-internetowe" data-i18n="service_shop_t">Sklepy online</a>
+          <a href="/aplikacje-webowe" data-i18n="price_3_name">Aplikacje i systemy webowe</a>
+          <a href="/aplikacje-mobilne" data-i18n="price_4_name">Aplikacje mobilne</a>
+          <a href="/aplikacje-saas" data-i18n="footer_saas">Aplikacje SaaS</a>
+          <a href="/integracja-ksef" data-i18n="footer_ksef">Integracja KSeF</a>
+          <a href="/portal-klienta" data-i18n="footer_portal">Portal klienta</a>
+          <a href="/uslugi" data-i18n="service_brand_t">Branding & UI/UX</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title" data-i18n="footer_contact">Kontakt</p>
+          <a href="mailto:kontakt@paggini.com">kontakt@paggini.com</a>
+          <a href="tel:+48532237578">+48 532 237 578</a>
+          <a href="https://paggini.com">paggini.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Paggini. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer__made" data-i18n="footer_made">Zaprojektowane i zakodowane z pasją.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
