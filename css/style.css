@@ -1175,10 +1175,10 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .wa-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px 56px; align-items: end; margin-bottom: 56px; }
 .wa-head .section__title { margin-bottom: 0; }
 .wa-head .section__lead p + p { margin-top: 14px; }
-.wa-head .section__lead a, .wa-note a, .wa-text a, .faq__a a, .card p a {
+.wa-head .section__lead a, .wa-note a, .wa-text a, .faq__a a, .card p a, .feature a {
   color: var(--blue-bright); text-decoration: underline; text-decoration-color: rgba(79,176,255,0.35); text-underline-offset: 3px;
 }
-.wa-head .section__lead a:hover, .wa-note a:hover, .wa-text a:hover, .faq__a a:hover, .card p a:hover { text-decoration-color: var(--blue-bright); }
+.wa-head .section__lead a:hover, .wa-note a:hover, .wa-text a:hover, .faq__a a:hover, .card p a:hover, .feature a:hover { text-decoration-color: var(--blue-bright); }
 
 .wa-num { font-family: "Sora", sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.12em; color: var(--blue-bright); display: block; margin-bottom: 16px; }
 .wa-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -1338,4 +1338,32 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   .pk-mock__card--wide { grid-row: auto; }
   .pk-mock__card--msgs { display: none; }
   .pk-mock__top { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   DEDICATED CRM PAGE (dedykowany-crm), reuses .pk-mock
+   ============================================================ */
+.crm-stage { display: grid; grid-template-columns: 112px minmax(0, 1fr) 24px; gap: 10px; align-items: center; padding: 6px 0; color: var(--text-dim); }
+.crm-stage .pk-mock__bar { margin-top: 0; }
+.crm-stage b { font-weight: 600; color: var(--text); text-align: right; }
+.crm-task { display: flex; align-items: center; gap: 10px; padding: 7px 0; color: var(--text-dim); }
+.crm-task::before { content: ""; width: 14px; height: 14px; flex: none; border-radius: 4px; border: 1px solid var(--border-strong); }
+.crm-task small { margin-left: auto; color: var(--text-faint); font-size: 0.72rem; white-space: nowrap; }
+.pk-mock__status--lost { background: rgba(255,107,107,0.12); color: #ff6b6b; }
+
+.step h4 { font-size: 1.2rem; margin-bottom: 10px; }
+
+.crm-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.crm-grid-4 .card { padding: 28px 24px; }
+.crm-grid-4 .card h3 { font-size: 1.12rem; }
+.crm-grid-4 .card p { margin-bottom: 0; font-size: 0.92rem; }
+
+.crm-compare .card__list { gap: 12px; }
+.crm-compare .card__list li { font-size: 0.95rem; }
+.crm-compare .card h3 { margin-bottom: 18px; }
+
+@media (max-width: 1080px) { .crm-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .crm-grid-4 { grid-template-columns: 1fr; }
+  .pk-mock__card--offers { display: none; }
 }

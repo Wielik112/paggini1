@@ -15,6 +15,7 @@ paggini/
 ├── strona-internetowa-dla-warsztatu-samochodowego.html   # strona branżowa (warsztaty, rezerwacje)
 ├── integracja-ksef.html   # podstrona usługi: integracja KSeF
 ├── portal-klienta.html   # podstrona usługi: portal klienta
+├── dedykowany-crm.html   # podstrona usługi: dedykowany CRM
 ├── poradnik/           # poradnik (artykuły)
 ├── 404.html            # strona błędu (noindex)
 ├── uslugi.html         # podstrona: Usługi
