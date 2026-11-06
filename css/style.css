@@ -531,15 +531,6 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .faq__a { padding: 0 24px 22px; color: var(--text-dim); font-size: 0.96rem; line-height: 1.65; }
 .faq__a p { margin: 0; }
 
-/* in-progress project badge */
-.project__soon--progress {
-  display: inline-flex; align-items: center; gap: 9px;
-  color: var(--blue-bright); border-color: rgba(47,128,255,0.5);
-}
-.project__soon--progress::before {
-  content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--blue-bright);
-  box-shadow: 0 0 0 0 rgba(79,176,255,0.6); animation: progressPulse 1.8s ease-out infinite;
-}
 @keyframes progressPulse {
   0% { box-shadow: 0 0 0 0 rgba(79,176,255,0.6); }
   100% { box-shadow: 0 0 0 10px rgba(79,176,255,0); }
@@ -594,11 +585,6 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
 .project__media--2 { background: linear-gradient(135deg, #0a2440, #05121f); }
 .project__media--3 { background: linear-gradient(135deg, #101a3a, #0a0f22); }
 .project__media--4 { background: linear-gradient(135deg, #0d1430, #08152c); }
-.project__soon {
-  position: relative; z-index: 2; font-family: "Sora", sans-serif; font-weight: 600; font-size: 0.78rem;
-  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim);
-  padding: 7px 16px; border: 1px solid var(--border-strong); border-radius: 100px; backdrop-filter: blur(6px);
-}
 .project__body { padding: 22px 24px; display: flex; flex-direction: column; gap: 6px; }
 .project__cat { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-bright); font-weight: 600; }
 .project__body h2, .project__body h3 { font-size: 1.4rem; }
@@ -892,7 +878,7 @@ h1, h2, h3, h4 { font-family: "Sora", sans-serif; font-weight: 700; line-height:
   .nav.is-scrolled { background: rgba(5,6,10,0.94); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .nav__links { backdrop-filter: none; -webkit-backdrop-filter: none; }
   .lang__menu { backdrop-filter: none; -webkit-backdrop-filter: none; }
-  .btn--ghost, .project__soon { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .btn--ghost { backdrop-filter: none; -webkit-backdrop-filter: none; }
 
   /* don't keep dozens of cards on their own compositor layers */
   .btn, .card, .nav-card, .price, .project { will-change: auto; }
